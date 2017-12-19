@@ -9,7 +9,7 @@
 import UIKit
 import DropDown
 
-class SSLoginViewController: YMLoginViewController {
+class SSLoginViewController: YMBaseViewController {
 
     private var isDPShow = false
     private var dp: DropDown?
@@ -30,16 +30,23 @@ class SSLoginViewController: YMLoginViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.view.backgroundColor = UIColor.white
         setupDropDown()
     }
     
     private func setupDropDown() {
         dp = DropDown(anchorView: dropdownBtn)
-        dp.dataSource = ["one", "two", "three", "four", "five"]
+        dp?.dataSource = ["one", "two", "three", "four", "five"]
         
     }
     
-    private func dropDown() {
-        isDPShow ? dp?.show() : dp?.hide()
+    @objc private func dropDown() {
+        if isDPShow {
+            dp?.hide()
+            isDPShow = false
+        }else {
+            dp?.show()
+            isDPShow = true
+        }
     }
 }

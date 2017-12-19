@@ -90,6 +90,7 @@ class YMLoginViewController: YMBaseViewController {
         //跳转到师生登录界面
         let ssVC = SSLoginViewController()
         self.navigationController?.pushViewController(ssVC, animated: true)
+//        present(ssVC, animated: true, completion: nil)
     }
     
     fileprivate func setupBarButtonItem() {

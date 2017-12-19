@@ -1,0 +1,6 @@
+framework module Pods_GST_SY {
+  umbrella header "Pods-GST_SY-umbrella.h"
+
+  export *
+  module * { export * }
+}

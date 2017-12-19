@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="10117" systemVersion="15G31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="videocell" rowHeight="126" id="KGk-i7-Jjw" customClass="VideoTableViewCell" customModule="GST_SY" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="404" height="117"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="404" height="116"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="WnB-qt-Y6h">
+                        <rect key="frame" x="8" y="15" width="140" height="90"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="140" id="5SI-VY-cH3"/>
+                        </constraints>
+                    </imageView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Label" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="p7y-Qp-TFt">
+                        <rect key="frame" x="156" y="15" width="105" height="28"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MPj-Ah-d5q">
+                        <rect key="frame" x="312" y="79" width="35" height="35"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="35" id="JdK-sd-wwH"/>
+                            <constraint firstAttribute="width" constant="35" id="TNH-vU-eyb"/>
+                        </constraints>
+                        <state key="normal" title="Button" image="detail_interaction_bar_favorite"/>
+                    </button>
+                    <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3gF-FP-3BW">
+                        <rect key="frame" x="356" y="79" width="35" height="35"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="35" id="ddX-bd-NFZ"/>
+                            <constraint firstAttribute="width" constant="35" id="eLm-7S-5z8"/>
+                        </constraints>
+                        <state key="normal" title="Button" image="detail_interaction_bar_share_collection"/>
+                    </button>
+                </subviews>
+                <constraints>
+                    <constraint firstAttribute="trailingMargin" secondItem="p7y-Qp-TFt" secondAttribute="trailing" constant="50" id="07q-Pm-KZf"/>
+                    <constraint firstItem="WnB-qt-Y6h" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" constant="7" id="Qb6-bk-odH"/>
+                    <constraint firstItem="WnB-qt-Y6h" firstAttribute="top" secondItem="p7y-Qp-TFt" secondAttribute="top" id="XRj-lL-hLP"/>
+                    <constraint firstItem="3gF-FP-3BW" firstAttribute="leading" secondItem="MPj-Ah-d5q" secondAttribute="trailing" constant="9" id="d1U-OO-SrN"/>
+                    <constraint firstAttribute="bottom" secondItem="3gF-FP-3BW" secondAttribute="bottom" constant="10" id="fSk-on-tsA"/>
+                    <constraint firstItem="WnB-qt-Y6h" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" id="fX9-9Z-G1z"/>
+                    <constraint firstItem="3gF-FP-3BW" firstAttribute="bottom" secondItem="MPj-Ah-d5q" secondAttribute="bottom" id="jrd-Gf-dun"/>
+                    <constraint firstItem="WnB-qt-Y6h" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="oAO-e2-4Sv"/>
+                    <constraint firstItem="p7y-Qp-TFt" firstAttribute="leading" secondItem="WnB-qt-Y6h" secondAttribute="trailing" constant="26" id="obC-vs-08e"/>
+                    <constraint firstAttribute="trailing" secondItem="3gF-FP-3BW" secondAttribute="trailing" constant="20" id="wip-0w-aW5"/>
+                </constraints>
+            </tableViewCellContentView>
+            <connections>
+                <outlet property="btn_collect" destination="MPj-Ah-d5q" id="GWN-Up-6tc"/>
+                <outlet property="btn_share" destination="3gF-FP-3BW" id="FrR-9T-FES"/>
+                <outlet property="cellImg" destination="WnB-qt-Y6h" id="pul-st-5AJ"/>
+                <outlet property="lbCell" destination="p7y-Qp-TFt" id="Wl0-XN-2ng"/>
+            </connections>
+            <point key="canvasLocation" x="199" y="248.5"/>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <image name="detail_interaction_bar_favorite" width="92" height="92"/>
+        <image name="detail_interaction_bar_share_collection" width="92" height="92"/>
+    </resources>
+</document>

@@ -1,0 +1,6 @@
+framework module CKViewPager {
+  umbrella header "CKViewPager-umbrella.h"
+
+  export *
+  module * { export * }
+}

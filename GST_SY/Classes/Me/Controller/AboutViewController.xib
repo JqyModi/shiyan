@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11542" systemVersion="16G29" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11524"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="AboutViewController" customModule="GST_SY" customModuleProvider="target">
+            <connections>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Icon-60" translatesAutoresizingMaskIntoConstraints="NO" id="oRG-4M-xNq">
+                    <rect key="frame" x="145" y="121" width="80" height="80"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="80" id="dOK-oM-nyZ"/>
+                    </constraints>
+                </imageView>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tzx-E9-tni">
+                    <rect key="frame" x="0.0" y="271" width="375" height="161"/>
+                    <subviews>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="        实验掌上通，是一款用于学习小学科学、初中理化生、高中理化生等教学知识、实验理论知识的移动应用软件。学习教学实验理论，亲身体验实践实验，激发学生对理科知识，实践与理论的学习兴趣。" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" minimumFontSize="12" translatesAutoresizingMaskIntoConstraints="NO" id="kFG-Bf-wnW">
+                            <rect key="frame" x="8" y="16" width="359" height="137"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                            <color key="textColor" red="0.40000000600000002" green="0.40000000600000002" blue="0.40000000600000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                    </subviews>
+                    <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                </view>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="实验掌上通" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EL2-yb-u93">
+                    <rect key="frame" x="142" y="216" width="87" height="21"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <color key="textColor" red="0.40000000600000002" green="0.40000000600000002" blue="0.40000000600000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="广东广视通科教设备有限公司 版权所有" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SMa-bO-llB">
+                    <rect key="frame" x="38" y="495" width="299" height="21"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <color key="textColor" red="0.66666666666666663" green="0.66666666666666663" blue="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Copyright © 2014-2016 广视通" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="csa-sK-tNq">
+                    <rect key="frame" x="65" y="524" width="240" height="21"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <color key="textColor" red="0.66666666666666663" green="0.66666666666666663" blue="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+            </subviews>
+            <color key="backgroundColor" red="0.96078431369999995" green="0.96078431369999995" blue="0.96078431369999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="csa-sK-tNq" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" constant="-2.5" id="3P9-Ps-m9c"/>
+                <constraint firstItem="SMa-bO-llB" firstAttribute="top" secondItem="tzx-E9-tni" secondAttribute="bottom" constant="63" id="4LO-7C-Igw"/>
+                <constraint firstItem="tzx-E9-tni" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="271" id="4We-lF-1ZN"/>
+                <constraint firstItem="SMa-bO-llB" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="5rv-cQ-9Hb"/>
+                <constraint firstItem="EL2-yb-u93" firstAttribute="top" secondItem="oRG-4M-xNq" secondAttribute="bottom" constant="15" id="7wU-Et-jTa"/>
+                <constraint firstItem="tzx-E9-tni" firstAttribute="top" secondItem="EL2-yb-u93" secondAttribute="bottom" constant="34" id="JpK-tr-Kvu"/>
+                <constraint firstAttribute="trailing" secondItem="oRG-4M-xNq" secondAttribute="trailing" constant="150" id="Kag-Ox-PVm"/>
+                <constraint firstAttribute="bottom" secondItem="tzx-E9-tni" secondAttribute="bottom" constant="235" id="LCK-Kh-MsH"/>
+                <constraint firstItem="tzx-E9-tni" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="SRy-5T-gst"/>
+                <constraint firstAttribute="trailing" secondItem="csa-sK-tNq" secondAttribute="trailing" constant="70" id="cGl-0h-HBm"/>
+                <constraint firstItem="EL2-yb-u93" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" constant="-2" id="cTZ-AO-S2v"/>
+                <constraint firstItem="tzx-E9-tni" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="ji7-DM-D4i"/>
+                <constraint firstItem="csa-sK-tNq" firstAttribute="top" secondItem="SMa-bO-llB" secondAttribute="bottom" constant="8" symbolic="YES" id="tUr-RB-jfu"/>
+                <constraint firstItem="oRG-4M-xNq" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" constant="-2.5" id="vbE-Ic-xm2"/>
+            </constraints>
+            <point key="canvasLocation" x="25.5" y="51.5"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="Icon-60" width="60" height="60"/>
+    </resources>
+</document>

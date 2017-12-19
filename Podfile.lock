@@ -1,0 +1,89 @@
+PODS:
+  - Alamofire (4.5.1)
+  - BMPlayer (0.9.1):
+    - BMPlayer/Full (= 0.9.1)
+  - BMPlayer/Core (0.9.1)
+  - BMPlayer/Full (0.9.1):
+    - BMPlayer/Core
+    - NVActivityIndicatorView (~> 3.5)
+    - SnapKit (~> 3.2)
+  - Bugly (2.4.8)
+  - CKViewPager (2.0.6)
+  - CryptoSwift (0.7.2)
+  - DropDown (2.0.2)
+  - ESPullToRefresh (2.6)
+  - FDFullscreenPopGesture (1.1)
+  - Kingfisher (3.13.1)
+  - MOBFoundation (3.0.4)
+  - NVActivityIndicatorView (3.7.0):
+    - NVActivityIndicatorView/Presenter (= 3.7.0)
+  - NVActivityIndicatorView/Presenter (3.7.0)
+  - ShareSDK3 (4.0.2):
+    - MOBFoundation
+    - ShareSDK3/ShareSDK (= 4.0.2)
+  - ShareSDK3/ShareSDK (4.0.2):
+    - MOBFoundation
+  - ShareSDK3/ShareSDKPlatforms/Copy (4.0.2):
+    - MOBFoundation
+  - ShareSDK3/ShareSDKPlatforms/QQ (4.0.2):
+    - MOBFoundation
+  - ShareSDK3/ShareSDKPlatforms/SinaWeibo (4.0.2):
+    - MOBFoundation
+  - ShareSDK3/ShareSDKPlatforms/WeChat (4.0.2):
+    - MOBFoundation
+  - ShareSDK3/ShareSDKUI (4.0.2):
+    - MOBFoundation
+  - SMSSDK (3.0.1):
+    - MOBFoundation
+  - SnapKit (3.2.0)
+  - SVProgressHUD (2.2.1)
+  - SwiftyJSON (3.1.4)
+  - Toaster (2.1.0)
+  - UITableView+FDTemplateLayoutCell (1.6)
+
+DEPENDENCIES:
+  - Alamofire (~> 4.5.1)
+  - BMPlayer (~> 0.9.1)
+  - Bugly
+  - CKViewPager
+  - CryptoSwift (~> 0.7.1)
+  - DropDown
+  - ESPullToRefresh
+  - FDFullscreenPopGesture (~> 1.1)
+  - Kingfisher (~> 3.13.1)
+  - ShareSDK3
+  - ShareSDK3/ShareSDKPlatforms/Copy
+  - ShareSDK3/ShareSDKPlatforms/QQ
+  - ShareSDK3/ShareSDKPlatforms/SinaWeibo
+  - ShareSDK3/ShareSDKPlatforms/WeChat
+  - ShareSDK3/ShareSDKUI
+  - SMSSDK
+  - SnapKit (~> 3.2)
+  - SVProgressHUD
+  - SwiftyJSON
+  - Toaster
+  - UITableView+FDTemplateLayoutCell
+
+SPEC CHECKSUMS:
+  Alamofire: 2d95912bf4c34f164fdfc335872e8c312acaea4a
+  BMPlayer: e68ba160d9c05ea5fffc31d37448aa02433418ab
+  Bugly: da3c02408c14838d498429320545a8e439392978
+  CKViewPager: 388b0c2d1771ef81f498a7a4a4c48ab3e14fcce1
+  CryptoSwift: cd2158be2bf639aabc63ec804707c7137c90157c
+  DropDown: 75562633a203f57a917021b4edb96c76f293b0ec
+  ESPullToRefresh: 85f4990acf87f78c6a1466bbbee7a75d7de24db9
+  FDFullscreenPopGesture: a8a620179e3d9c40e8e00256dcee1c1a27c6d0f0
+  Kingfisher: ed9707a409cc47fddafbcd12a43a9757e3600af5
+  MOBFoundation: ee0d83f92fe394f7f2b145a407441d08ca1c831c
+  NVActivityIndicatorView: d3738df7e2e476aca0ba6bf32a8c9fbcfc33d64b
+  ShareSDK3: a01a35da3cd8f4d10d7f4394c7c42f8113392182
+  SMSSDK: a811c8ea6e89393097037b7cf6493248a40e50f0
+  SnapKit: 1ca44df72cfa543218d177cb8aab029d10d86ea7
+  SVProgressHUD: db27c54e6e18bc903341661fc9feb55e04905cc4
+  SwiftyJSON: c2842d878f95482ffceec5709abc3d05680c0220
+  Toaster: 8c3225dc465bef4aa57e147a288724576df8e439
+  UITableView+FDTemplateLayoutCell: 5c949b4a5059c404b442926c0e80f81d10a2d66f
+
+PODFILE CHECKSUM: cb481c865f0242ed4064a759c31a80430d323418
+
+COCOAPODS: 1.2.1

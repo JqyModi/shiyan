@@ -25,6 +25,7 @@
 		0487DE351F282E84006E7363 /* JContent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0487DE341F282E84006E7363 /* JContent.swift */; };
 		0487DE371F282FE6006E7363 /* OneContent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0487DE361F282FE6006E7363 /* OneContent.swift */; };
 		0487DE391F282FF6006E7363 /* SecondContent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0487DE381F282FF6006E7363 /* SecondContent.swift */; };
+		04A65EF31FEA004000BF263E /* SchoolModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04A65EF21FEA004000BF263E /* SchoolModel.swift */; };
 		04AF87621F0E4770004CEC5D /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 04AF87611F0E4770004CEC5D /* AppDelegate.m */; };
 		04B702B91F0E0B1400EF2691 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 04B702081F0E0B1400EF2691 /* Assets.xcassets */; };
 		04B702BA1F0E0B1400EF2691 /* YMCategoryHeaderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04B7020C1F0E0B1400EF2691 /* YMCategoryHeaderViewController.swift */; };
@@ -229,6 +230,7 @@
 		0487DE341F282E84006E7363 /* JContent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JContent.swift; sourceTree = "<group>"; };
 		0487DE361F282FE6006E7363 /* OneContent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OneContent.swift; sourceTree = "<group>"; };
 		0487DE381F282FF6006E7363 /* SecondContent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SecondContent.swift; sourceTree = "<group>"; };
+		04A65EF21FEA004000BF263E /* SchoolModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SchoolModel.swift; sourceTree = "<group>"; };
 		04AF87611F0E4770004CEC5D /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		04B702081F0E0B1400EF2691 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		04B7020C1F0E0B1400EF2691 /* YMCategoryHeaderViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YMCategoryHeaderViewController.swift; sourceTree = "<group>"; };
@@ -613,6 +615,7 @@
 			children = (
 				04B7025B1F0E0B1400EF2691 /* Controller */,
 				04B7026B1F0E0B1400EF2691 /* UserInfoModel.swift */,
+				04A65EF21FEA004000BF263E /* SchoolModel.swift */,
 			);
 			path = "Login&Register";
 			sourceTree = "<group>";
@@ -1251,6 +1254,7 @@
 				04B7033E1F0E0B1400EF2691 /* YMDetailChoiceButtonView.swift in Sources */,
 				04BB97B51F22F890001C84B2 /* ShowAnswerDetailTableViewCell.swift in Sources */,
 				04B702BE1F0E0B1400EF2691 /* YMPostDetailViewController.swift in Sources */,
+				04A65EF31FEA004000BF263E /* SchoolModel.swift in Sources */,
 				048119521F1F57AA0026ED16 /* PaperViewController1.swift in Sources */,
 				04B7031A1F0E0B1400EF2691 /* YMIstelphnum.swift in Sources */,
 				04B703471F0E0B1400EF2691 /* YMShareButtonView.swift in Sources */,

@@ -217,12 +217,13 @@ extension YMSettingViewController: UITableViewDataSource, UITableViewDelegate {
                 if UserDefaults.standard.bool(forKey: isLogin) {
                     var username = userDefault.object(forKey: "username") as? String
                     var userpass_md5 = userDefault.object(forKey: "userpassMD5") as? String
-                    
-                    YMNetworkTool.shareNetworkTool.loginResult(username!, userpass: userpass_md5!){[weak self](loginValidate) in
+                    //新增字段
+                    var table = userDefault.object(forKey: "table") as? String
+                    debugPrint("table ------> \(table)")
+                    YMNetworkTool.shareNetworkTool.loginResult(username!, userpass: userpass_md5!, school: table!){[weak self](loginValidate) in
                         self?.loginValidates=loginValidate
                         if (self!.loginValidates == true) {
                             print("自动登录成功")
-                      
                             let userinfo = UserInfoViewController()
                             userinfo.title = "账号信息"
                             userinfo.phoneNum = username
@@ -236,6 +237,7 @@ extension YMSettingViewController: UITableViewDataSource, UITableViewDelegate {
                             defaults.setValue("", forKey: "userpassMD5")
                             defaults.setValue("", forKey: "username")
                             defaults.set(false, forKey: isLogin)
+                            defaults.setValue("", forKey: "table")
                             defaults.synchronize()
                             
                         }

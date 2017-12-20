@@ -57,7 +57,7 @@ class YMLoginViewController: YMBaseViewController {
 //            SVProgressHUD.showError(withStatus: "手机号码输入有误")
 //        }
         if username!.isEmpty{
-            SVProgressHUD.showError(withStatus: "密码不能为空")
+            SVProgressHUD.showError(withStatus: "账号不能为空")
         }
         else if userpass!.isEmpty{
             SVProgressHUD.showError(withStatus: "密码不能为空")
@@ -89,8 +89,14 @@ class YMLoginViewController: YMBaseViewController {
     @IBAction func presentSSLogin() {
         //跳转到师生登录界面
         let ssVC = SSLoginViewController()
-        self.navigationController?.pushViewController(ssVC, animated: true)
-//        present(ssVC, animated: true, completion: nil)
+        let data = YMNetworkTool.shareNetworkTool.getSchoolList { (schools) in
+            if schools != nil {
+                ssVC.school = schools
+                ssVC.title = "师生登录"
+                ssVC.loginValidates = self.loginValidates
+                self.navigationController?.pushViewController(ssVC, animated: true)
+            }
+        }
     }
     
     fileprivate func setupBarButtonItem() {

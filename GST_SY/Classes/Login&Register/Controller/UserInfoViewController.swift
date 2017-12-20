@@ -30,15 +30,16 @@ class UserInfoViewController: YMBaseViewController {
         
         let userDefault = UserDefaults.standard
         accessToken = userDefault.object(forKey: "accessToken") as? String
-        print("accessToken:",accessToken)
+        let table = userDefault.object(forKey: "table") as? String
+        
+        debugPrint("accessToken:",accessToken)
+        debugPrint("table:",table)
         if accessToken != nil{
-     
-            YMNetworkTool.shareNetworkTool.userInfoList(accessToken!){ [weak self](results) in
+            YMNetworkTool.shareNetworkTool.userInfoList(accessToken!, table: table!){ [weak self](results) in
                 self?.user=results
                 print("user get",self?.user)
-                
-                 self!.setUserUI()
-                
+                //更新用户信息
+                self!.setUserUI()
             }
             
         }else{
@@ -66,6 +67,8 @@ class UserInfoViewController: YMBaseViewController {
         defaults.setValue("", forKey: "accessToken")
         defaults.setValue("", forKey: "userpassMD5")
         defaults.setValue("", forKey: "username")
+        //
+        defaults.setValue("", forKey: "table")
         defaults.set(false, forKey: isLogin)
         defaults.synchronize()
        

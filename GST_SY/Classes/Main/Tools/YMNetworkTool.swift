@@ -862,12 +862,15 @@ class YMNetworkTool: NSObject {
         }
     }
     
-    func loginResult(_ username: String, userpass: String, finished:@escaping (_ loginValidate: Bool ) -> ())
+    func loginResult(_ username: String, userpass: String, school: String = "", finished:@escaping (_ loginValidate: Bool ) -> ())
     {
         var loginValidate : Bool?
         let url = URLSTR + "user_login"
-        let params = ["user_name": username,
+        var params = ["user_name": username,
                       "user_pass":userpass]
+        if school != "" {
+            params["table"] = school
+        }
         Alamofire.request(url, method: .get, parameters: params, encoding: URLEncoding.default, headers: nil).responseJSON { (response) in
                 if let value = response.result.value {
                     let dict = JSON(value)
@@ -887,6 +890,8 @@ class YMNetworkTool: NSObject {
                         defaults.setValue(userpass, forKey: "userpassMD5")
                         defaults.set(true, forKey: isLogin)
                         defaults.setValue(userId, forKey: "userId")
+                        //
+                        defaults.setValue(school, forKey: "table")
                         defaults.synchronize() 
                         
                     }else{
@@ -1378,12 +1383,15 @@ class YMNetworkTool: NSObject {
         }
     }
 
- 
-    func userInfoList(_ accessToken: String,finished:@escaping (_ items: [UserInfoModel]) -> ()) {
+//    5a39ffd6986ef-a5a39ffd6986ef9.10347030-b5a39ffd6986ef0.08660714-1694
+    func userInfoList(_ accessToken: String,table: String = "", finished:@escaping (_ items: [UserInfoModel]) -> ()) {
         
         let url = URLSTR + "user_profile"
-        let params = ["accessToken": accessToken]
-        
+        var params = ["accessToken": accessToken]
+        if table != "" {
+            params["table"] = table
+        }
+//        5a3a05a678424-a5a3a05a6784240.45053935-b5a3a05a6784241.02290804-119
         Alamofire.request(url, method: .post, parameters: params, encoding: URLEncoding.default, headers: nil).responseJSON { (response) in
                 
                 if let value = response.result.value {
@@ -1472,13 +1480,16 @@ class YMNetworkTool: NSObject {
     }
 
 
-    func changepassResult(_ accessToken: String,old_pass: String,new_pass: String,finished:@escaping (_ error_codeMsg: Int ) -> ())
+    func changepassResult(_ accessToken: String,old_pass: String,new_pass: String,table: String = "", finished:@escaping (_ error_codeMsg: Int ) -> ())
     {
         var error_codeMsg : Int?
         let url = URLSTR + "change_pass"
-        let params = ["accessToken":accessToken,
+        var params = ["accessToken":accessToken,
                       "old_pass":old_pass,
                       "new_pass":new_pass]
+        if table != "" {
+            params["table"] = table
+        }
         Alamofire.request(url, method: .post, parameters: params, encoding: URLEncoding.default, headers: nil).responseJSON { (response) in
                 if let value = response.result.value {
                     let dict = JSON(value)
@@ -1552,12 +1563,35 @@ class YMNetworkTool: NSObject {
                     finished(error_codeMsg!)
                     
                 }
-                
         }
     }
     
 
-
+    func getSchoolList(finished: @escaping (_ result: [SchoolModel]?) -> ()) {
+        let url = URLSTR + "getAllSchool"
+        var error_codeMsg : Int?
+        
+        var schools = [SchoolModel]()
+        Alamofire.request(url, method: .get, parameters: nil, encoding: URLEncoding.default, headers: nil).responseJSON { (response) in
+            if let value = response.result.value {
+                let dict = JSON(value)
+                let success = dict["success"].boolValue
+                let message = dict["message"].stringValue
+                let data = dict["data"].arrayObject
+                if let list = data as? [[String : String]] {
+//                    SVProgressHUD.showProgress(0.5, status: message)
+                    debugPrint("list -----> \(list)")
+                    
+                    for item in list {
+                        let schoolModel = SchoolModel(dict: item)
+                        schools.append(schoolModel)
+                    }
+                    finished(schools)
+                }
+                finished(nil)
+            }
+        }
+    }
 
     
 }

@@ -35,6 +35,10 @@ class ChangepassViewController: YMBaseViewController {
         newpassword = newpassTextFlied.text?.md5()
 //         oldpassword = oldpassTextFlied.text?.md5Hash()
 //         newpassword = newpassTextFlied.text?.md5Hash()
+        
+        //table
+        let table = UserDefaults.standard.object(forKey: "table") as? String
+        
         if oldpassword!.isEmpty{
             Toast(text: "旧密码不能为空").show()
         }else if newpassword!.isEmpty{
@@ -43,7 +47,7 @@ class ChangepassViewController: YMBaseViewController {
             
         if accessToken != nil{
            
-            YMNetworkTool.shareNetworkTool.changepassResult(accessToken!, old_pass: oldpassword!,new_pass: newpassword){ [weak self](error_codeMsg) in
+            YMNetworkTool.shareNetworkTool.changepassResult(accessToken!, old_pass: oldpassword!,new_pass: newpassword, table: table!){ [weak self](error_codeMsg) in
                 self!.error_codeMsg=error_codeMsg
                 if self!.error_codeMsg == 0 {
                     

@@ -87,7 +87,7 @@ class SSLoginViewController: YMBaseViewController {
         
         let schoolStr = dropdownBtn.titleLabel?.text
         guard let schoolPy = getSchoolPy(schoolStr: schoolStr!) else {
-            SVProgressHUD.show(withStatus: "请先选择学校 ~ ")
+            SVProgressHUD.showInfo(withStatus: "请先选择学校 ~ ")
             return
         }
         
@@ -124,7 +124,7 @@ class SSLoginViewController: YMBaseViewController {
     }
     
     private func getSchoolPy(schoolStr: String) -> String? {
-        var py = ""
+        var py: String?
         for item in school! {
             if item.name == schoolStr {
                 py = item.pinyin!

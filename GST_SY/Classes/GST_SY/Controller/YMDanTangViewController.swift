@@ -190,7 +190,7 @@ class YMGST_SYViewController: YMBaseViewController,CarouselBannerViewDelegate,UI
             self.navigationController?.pushViewController(chuangke, animated: true)
         case 7:
             print("点击了：",indexPath.item)
-            let chuangke = ZhuangBeiVIewController()
+            let chuangke = VoteListCollectionViewController()
             chuangke.title = "活动赛事"
             self.navigationController?.pushViewController(chuangke, animated: true)
         case 8:

@@ -39,5 +39,13 @@ pod "UITableView+FDTemplateLayoutCell"
 pod 'Bugly'
 #下拉菜单
 pod "DropDown"
+
+# Pods for Vote
+pod 'SDWebImage'
+#  Swift Refresh
+pod 'DGElasticPullToRefresh'
+#  objc Refresh
+pod 'MJRefresh'
+
 end
 

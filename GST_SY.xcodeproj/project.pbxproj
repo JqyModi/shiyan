@@ -187,6 +187,16 @@
 		04D19AAE1F25A808006571EA /* ShowAnswerDetailTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 04D19AAC1F25A808006571EA /* ShowAnswerDetailTableViewCell.xib */; };
 		04D6C8301F21EA51002701ED /* XKeyBoard.m in Sources */ = {isa = PBXBuildFile; fileRef = 04D6C82F1F21EA51002701ED /* XKeyBoard.m */; };
 		04DEB09F1F22EFBE00661C84 /* ShowAnswerDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04DEB09D1F22EFBE00661C84 /* ShowAnswerDetailViewController.swift */; };
+		04FB3B69200F29EE00DE23AB /* test.json in Resources */ = {isa = PBXBuildFile; fileRef = 04FB3B5E200F29EE00DE23AB /* test.json */; };
+		04FB3B6A200F29EE00DE23AB /* VoteListModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04FB3B5F200F29EE00DE23AB /* VoteListModel.swift */; };
+		04FB3B6B200F29EE00DE23AB /* VoteRankTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04FB3B61200F29EE00DE23AB /* VoteRankTableViewCell.swift */; };
+		04FB3B6C200F29EE00DE23AB /* VoteRankTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04FB3B62200F29EE00DE23AB /* VoteRankTableViewController.swift */; };
+		04FB3B6D200F29EE00DE23AB /* VoteListCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04FB3B63200F29EE00DE23AB /* VoteListCollectionViewCell.swift */; };
+		04FB3B6E200F29EE00DE23AB /* VoteListCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04FB3B64200F29EE00DE23AB /* VoteListCollectionViewController.swift */; };
+		04FB3B6F200F29EE00DE23AB /* VotePlayerControlView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04FB3B67200F29EE00DE23AB /* VotePlayerControlView.swift */; };
+		04FB3B70200F29EE00DE23AB /* VoteDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04FB3B68200F29EE00DE23AB /* VoteDetailViewController.swift */; };
+		04FB3B72200F2A4200DE23AB /* NetworkTools.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04FB3B71200F2A4200DE23AB /* NetworkTools.swift */; };
+		04FB3B74200F2ABB00DE23AB /* UIColor+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04FB3B73200F2ABB00DE23AB /* UIColor+Extension.swift */; };
 		250041A91D3DD15D00994B58 /* GST_SYTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 250041A81D3DD15D00994B58 /* GST_SYTests.swift */; };
 		250041B41D3DD15D00994B58 /* GST_SYUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 250041B31D3DD15D00994B58 /* GST_SYUITests.swift */; };
 		3F5114A3C2C20AF7410BFC3A /* Pods_GST_SY.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 544E06A9EDDE2E9BEE6240F3 /* Pods_GST_SY.framework */; };
@@ -399,6 +409,16 @@
 		04D6C82E1F21EA51002701ED /* XKeyBoard.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XKeyBoard.h; sourceTree = "<group>"; };
 		04D6C82F1F21EA51002701ED /* XKeyBoard.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XKeyBoard.m; sourceTree = "<group>"; };
 		04DEB09D1F22EFBE00661C84 /* ShowAnswerDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShowAnswerDetailViewController.swift; sourceTree = "<group>"; };
+		04FB3B5E200F29EE00DE23AB /* test.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = test.json; sourceTree = "<group>"; };
+		04FB3B5F200F29EE00DE23AB /* VoteListModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VoteListModel.swift; sourceTree = "<group>"; };
+		04FB3B61200F29EE00DE23AB /* VoteRankTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VoteRankTableViewCell.swift; sourceTree = "<group>"; };
+		04FB3B62200F29EE00DE23AB /* VoteRankTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VoteRankTableViewController.swift; sourceTree = "<group>"; };
+		04FB3B63200F29EE00DE23AB /* VoteListCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VoteListCollectionViewCell.swift; sourceTree = "<group>"; };
+		04FB3B64200F29EE00DE23AB /* VoteListCollectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VoteListCollectionViewController.swift; sourceTree = "<group>"; };
+		04FB3B67200F29EE00DE23AB /* VotePlayerControlView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VotePlayerControlView.swift; sourceTree = "<group>"; };
+		04FB3B68200F29EE00DE23AB /* VoteDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VoteDetailViewController.swift; sourceTree = "<group>"; };
+		04FB3B71200F2A4200DE23AB /* NetworkTools.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkTools.swift; sourceTree = "<group>"; };
+		04FB3B73200F2ABB00DE23AB /* UIColor+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Extension.swift"; sourceTree = "<group>"; };
 		1CD2F7757BC3D4C6F2D2BC26 /* Pods-GST_SY.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GST_SY.release.xcconfig"; path = "Pods/Target Support Files/Pods-GST_SY/Pods-GST_SY.release.xcconfig"; sourceTree = "<group>"; };
 		250041901D3DD15D00994B58 /* GST_SY.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GST_SY.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		250041A41D3DD15D00994B58 /* GST_SY.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GST_SY.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -468,6 +488,7 @@
 		04B7020A1F0E0B1400EF2691 /* Classify */ = {
 			isa = PBXGroup;
 			children = (
+				04FB3B5B200F1BF400DE23AB /* Module */,
 				04B7020B1F0E0B1400EF2691 /* Controller */,
 				04B702141F0E0B1400EF2691 /* Model */,
 				04B7021A1F0E0B1400EF2691 /* View */,
@@ -669,6 +690,7 @@
 				04B7026E1F0E0B1400EF2691 /* String+Extension.swift */,
 				04B7026F1F0E0B1400EF2691 /* UITableView+EmptyData.swift */,
 				04B702701F0E0B1400EF2691 /* UIView+Extension.swift */,
+				04FB3B73200F2ABB00DE23AB /* UIColor+Extension.swift */,
 			);
 			path = Category;
 			sourceTree = "<group>";
@@ -686,6 +708,7 @@
 		04B702751F0E0B1400EF2691 /* Tools */ = {
 			isa = PBXGroup;
 			children = (
+				04FB3B71200F2A4200DE23AB /* NetworkTools.swift */,
 				04B702761F0E0B1400EF2691 /* ExAlamofire.swift */,
 				04B702771F0E0B1400EF2691 /* YMConst.swift */,
 				04B702781F0E0B1400EF2691 /* YMIstelphnum.swift */,
@@ -860,6 +883,61 @@
 				04D6C82F1F21EA51002701ED /* XKeyBoard.m */,
 			);
 			path = XKeyBoard;
+			sourceTree = "<group>";
+		};
+		04FB3B5B200F1BF400DE23AB /* Module */ = {
+			isa = PBXGroup;
+			children = (
+				04FB3B5C200F29EE00DE23AB /* VoteList */,
+			);
+			path = Module;
+			sourceTree = "<group>";
+		};
+		04FB3B5C200F29EE00DE23AB /* VoteList */ = {
+			isa = PBXGroup;
+			children = (
+				04FB3B5D200F29EE00DE23AB /* Model */,
+				04FB3B60200F29EE00DE23AB /* Rank */,
+				04FB3B63200F29EE00DE23AB /* VoteListCollectionViewCell.swift */,
+				04FB3B64200F29EE00DE23AB /* VoteListCollectionViewController.swift */,
+				04FB3B65200F29EE00DE23AB /* VoteListDetail */,
+			);
+			path = VoteList;
+			sourceTree = "<group>";
+		};
+		04FB3B5D200F29EE00DE23AB /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				04FB3B5E200F29EE00DE23AB /* test.json */,
+				04FB3B5F200F29EE00DE23AB /* VoteListModel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		04FB3B60200F29EE00DE23AB /* Rank */ = {
+			isa = PBXGroup;
+			children = (
+				04FB3B61200F29EE00DE23AB /* VoteRankTableViewCell.swift */,
+				04FB3B62200F29EE00DE23AB /* VoteRankTableViewController.swift */,
+			);
+			path = Rank;
+			sourceTree = "<group>";
+		};
+		04FB3B65200F29EE00DE23AB /* VoteListDetail */ = {
+			isa = PBXGroup;
+			children = (
+				04FB3B66200F29EE00DE23AB /* Player */,
+				04FB3B68200F29EE00DE23AB /* VoteDetailViewController.swift */,
+			);
+			path = VoteListDetail;
+			sourceTree = "<group>";
+		};
+		04FB3B66200F29EE00DE23AB /* Player */ = {
+			isa = PBXGroup;
+			children = (
+				04FB3B67200F29EE00DE23AB /* VotePlayerControlView.swift */,
+			);
+			path = Player;
 			sourceTree = "<group>";
 		};
 		250041871D3DD15D00994B58 = {
@@ -1070,6 +1148,7 @@
 				04B7031D1F0E0B1400EF2691 /* AboutViewController.xib in Resources */,
 				04B702B91F0E0B1400EF2691 /* Assets.xcassets in Resources */,
 				04B702DF1F0E0B1400EF2691 /* WenkuTableViewCell.xib in Resources */,
+				04FB3B69200F29EE00DE23AB /* test.json in Resources */,
 				04B7030D1F0E0B1400EF2691 /* YMLoginViewController.xib in Resources */,
 				04B703071F0E0B1400EF2691 /* SendCodeViewController.xib in Resources */,
 				04B702DB1F0E0B1400EF2691 /* PeiXunTableViewCell.xib in Resources */,
@@ -1183,6 +1262,7 @@
 				04B702DE1F0E0B1400EF2691 /* WenkuTableViewCell.swift in Sources */,
 				04B702D71F0E0B1400EF2691 /* HuiZhanViewController.swift in Sources */,
 				04B702EE1F0E0B1400EF2691 /* KaoShi.swift in Sources */,
+				04FB3B6C200F29EE00DE23AB /* VoteRankTableViewController.swift in Sources */,
 				04732D501F1DE46D009BBD8A /* PaperViewController.swift in Sources */,
 				04B703061F0E0B1400EF2691 /* SendCodeViewController.swift in Sources */,
 				04B702BB1F0E0B1400EF2691 /* YMCategoryViewController.swift in Sources */,
@@ -1214,14 +1294,17 @@
 				04B703191F0E0B1400EF2691 /* YMConst.swift in Sources */,
 				04B702E71F0E0B1400EF2691 /* ZiXunDetailVIewController.swift in Sources */,
 				0487DE371F282FE6006E7363 /* OneContent.swift in Sources */,
+				04FB3B74200F2ABB00DE23AB /* UIColor+Extension.swift in Sources */,
 				04B702CD1F0E0B1400EF2691 /* YMSeeAllTopicCell.swift in Sources */,
 				04B702DA1F0E0B1400EF2691 /* PeiXunTableViewCell.swift in Sources */,
 				04B702FE1F0E0B1400EF2691 /* YMSearchRecordView.swift in Sources */,
 				04B703211F0E0B1400EF2691 /* HistoryViewController.swift in Sources */,
 				04B7034D1F0E0B1400EF2691 /* WOWDropMenuColumn.swift in Sources */,
 				04B702EB1F0E0B1400EF2691 /* CK_Cate.swift in Sources */,
+				04FB3B72200F2A4200DE23AB /* NetworkTools.swift in Sources */,
 				04B702D31F0E0B1400EF2691 /* ChuangKeViewController.swift in Sources */,
 				04B7032B1F0E0B1400EF2691 /* AppDelegate.swift in Sources */,
+				04FB3B6B200F29EE00DE23AB /* VoteRankTableViewCell.swift in Sources */,
 				04B7031C1F0E0B1400EF2691 /* AboutViewController.swift in Sources */,
 				04B703081F0E0B1400EF2691 /* SetPassViewController.swift in Sources */,
 				04B703381F0E0B1400EF2691 /* YMProductDetail.swift in Sources */,
@@ -1237,6 +1320,7 @@
 				04B703331F0E0B1400EF2691 /* YMTMALLViewController.swift in Sources */,
 				04B703041F0E0B1400EF2691 /* ResetViewController.swift in Sources */,
 				04B702E41F0E0B1400EF2691 /* YMSearchViewController.swift in Sources */,
+				04FB3B6D200F29EE00DE23AB /* VoteListCollectionViewCell.swift in Sources */,
 				04B703131F0E0B1400EF2691 /* UITableView+EmptyData.swift in Sources */,
 				04B7031B1F0E0B1400EF2691 /* YMNetworkTool.swift in Sources */,
 				04B7032E1F0E0B1400EF2691 /* VideoPlayViewController.swift in Sources */,
@@ -1272,9 +1356,11 @@
 				04B703471F0E0B1400EF2691 /* YMShareButtonView.swift in Sources */,
 				04B702E21F0E0B1400EF2691 /* YMDanTangViewController.swift in Sources */,
 				04B702FF1F0E0B1400EF2691 /* YMSortCell.swift in Sources */,
+				04FB3B6E200F29EE00DE23AB /* VoteListCollectionViewController.swift in Sources */,
 				04CB29EC1F73AFA00020FFC9 /* UIView+SDAutoLayout.m in Sources */,
 				04B702F91F0E0B1400EF2691 /* YMHomeCell.swift in Sources */,
 				04B702F71F0E0B1400EF2691 /* GridCollectionViewCell.swift in Sources */,
+				04FB3B6A200F29EE00DE23AB /* VoteListModel.swift in Sources */,
 				04B702EF1F0E0B1400EF2691 /* MingShi.swift in Sources */,
 				04B703361F0E0B1400EF2691 /* YMComment.swift in Sources */,
 				04859B0F1F1C693C0065A549 /* KaoPingTableViewCell.swift in Sources */,
@@ -1293,12 +1379,14 @@
 				04B702EA1F0E0B1400EF2691 /* ZiXunViewController.swift in Sources */,
 				04B7030F1F0E0B1400EF2691 /* YMRegisterViewController.swift in Sources */,
 				04B703231F0E0B1400EF2691 /* YMMeViewController.swift in Sources */,
+				04FB3B70200F29EE00DE23AB /* VoteDetailViewController.swift in Sources */,
 				04B702C71F0E0B1400EF2691 /* ExtUIImageView.swift in Sources */,
 				04B702C31F0E0B1400EF2691 /* WenKu.swift in Sources */,
 				0452EF261FE90C2E00E0EE84 /* SSLoginViewController.swift in Sources */,
 				04B7032F1F0E0B1400EF2691 /* VideoTableViewCell.swift in Sources */,
 				04B702BA1F0E0B1400EF2691 /* YMCategoryHeaderViewController.swift in Sources */,
 				04B702E61F0E0B1400EF2691 /* ZhuangBeiVIewController.swift in Sources */,
+				04FB3B6F200F29EE00DE23AB /* VotePlayerControlView.swift in Sources */,
 				04B702D11F0E0B1400EF2691 /* YMVerticalButton.swift in Sources */,
 				04B702D51F0E0B1400EF2691 /* ExperimentTableViewCell.swift in Sources */,
 				04B7033C1F0E0B1400EF2691 /* YMCommentCell.swift in Sources */,

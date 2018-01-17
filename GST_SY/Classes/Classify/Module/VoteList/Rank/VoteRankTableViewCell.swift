@@ -29,6 +29,7 @@ class VoteRankTableViewCell: UITableViewCell {
         if item == 0 {
             imageName = "rank_1"
             setAwardUI(imageName: imageName, color: UIColor.red)
+            
         }else if item == 1 {
             imageName = "rank_2"
             setAwardUI(imageName: imageName, color: UIColor.green)
@@ -44,6 +45,7 @@ class VoteRankTableViewCell: UITableViewCell {
     private func setAwardUI(imageName: String, color: UIColor) {
         titleLabel.textColor = color
         coverImageView.image = UIImage(named: imageName)
+        coverImageView.tintColor = color
     }
     
     private func setupUI() {

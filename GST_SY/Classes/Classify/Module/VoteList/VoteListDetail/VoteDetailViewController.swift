@@ -113,7 +113,6 @@ class VoteDetailViewController: UIViewController {
         super.viewDidLoad()
         
     }
-
     
     private func setupUI() {
         view.backgroundColor = UIColor.init(white: 0.93, alpha: 1)

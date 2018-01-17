@@ -108,7 +108,7 @@ class VoteListCollectionViewController: UICollectionViewController {
         search.searchBarStyle = .minimal
         search.placeholder = "输入关键字搜索"
 //        search.backgroundColor = UIColor.green
-        search.text = "测试"
+//        search.text = "测试"
         search.showsCancelButton = true
         search.sizeToFit()
         return search

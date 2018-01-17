@@ -168,7 +168,7 @@ extension ZiXunViewController: ZiXunTableViewCellDelegate,UITableViewDelegate,UI
        
         let video = ZiXunDetailVIewController()
         video.title="资讯详情"
-        video.content=content as NSString!
+//        video.content=content as NSString!
         self.navigationController?.pushViewController(video, animated: true)
     }
     

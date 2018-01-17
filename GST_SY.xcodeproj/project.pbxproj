@@ -12,6 +12,9 @@
 		041255CB1F78CDE7006FC362 /* UIImageView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 041255CA1F78CDE7006FC362 /* UIImageView+Extension.swift */; };
 		0452EF261FE90C2E00E0EE84 /* SSLoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0452EF251FE90C2E00E0EE84 /* SSLoginViewController.swift */; };
 		0452EF281FE90C7D00E0EE84 /* SSLoginViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0452EF271FE90C7D00E0EE84 /* SSLoginViewController.xib */; };
+		0465E30A200EFC8500530DF3 /* News.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0465E309200EFC8500530DF3 /* News.swift */; };
+		0465E30C200EFD0D00530DF3 /* NewsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0465E30B200EFD0D00530DF3 /* NewsTableViewCell.swift */; };
+		0465E30E200EFD4E00530DF3 /* NewsTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0465E30D200EFD4E00530DF3 /* NewsTableViewCell.xib */; };
 		0469038E1F26C41C005BAA84 /* ExtensionString.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0469038D1F26C41C005BAA84 /* ExtensionString.swift */; };
 		04732D501F1DE46D009BBD8A /* PaperViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04732D4E1F1DE46D009BBD8A /* PaperViewController.swift */; };
 		04732D511F1DE46D009BBD8A /* PaperViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 04732D4F1F1DE46D009BBD8A /* PaperViewController.xib */; };
@@ -217,6 +220,9 @@
 		041255CA1F78CDE7006FC362 /* UIImageView+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIImageView+Extension.swift"; sourceTree = "<group>"; };
 		0452EF251FE90C2E00E0EE84 /* SSLoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SSLoginViewController.swift; sourceTree = "<group>"; };
 		0452EF271FE90C7D00E0EE84 /* SSLoginViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SSLoginViewController.xib; sourceTree = "<group>"; };
+		0465E309200EFC8500530DF3 /* News.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = News.swift; sourceTree = "<group>"; };
+		0465E30B200EFD0D00530DF3 /* NewsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsTableViewCell.swift; sourceTree = "<group>"; };
+		0465E30D200EFD4E00530DF3 /* NewsTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NewsTableViewCell.xib; sourceTree = "<group>"; };
 		0469038D1F26C41C005BAA84 /* ExtensionString.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExtensionString.swift; sourceTree = "<group>"; };
 		04732D4E1F1DE46D009BBD8A /* PaperViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PaperViewController.swift; sourceTree = "<group>"; };
 		04732D4F1F1DE46D009BBD8A /* PaperViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PaperViewController.xib; sourceTree = "<group>"; };
@@ -480,6 +486,8 @@
 				04B702111F0E0B1400EF2691 /* YMPostDetailViewController.xib */,
 				04B702121F0E0B1400EF2691 /* YMSeeAllController.swift */,
 				04B702131F0E0B1400EF2691 /* YMSeeAllController.xib */,
+				0465E30B200EFD0D00530DF3 /* NewsTableViewCell.swift */,
+				0465E30D200EFD4E00530DF3 /* NewsTableViewCell.xib */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -494,6 +502,7 @@
 				04B702191F0E0B1400EF2691 /* YMGroup.swift */,
 				04859B101F1C6B550065A549 /* KaoPing.swift */,
 				0407AC261F1CCF380008A925 /* Paper.swift */,
+				0465E309200EFC8500530DF3 /* News.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -1081,6 +1090,7 @@
 				04B7034B1F0E0B1400EF2691 /* Rectangle 506@2x.png in Resources */,
 				04B7032D1F0E0B1400EF2691 /* SettingCell.plist in Resources */,
 				04B702C11F0E0B1400EF2691 /* YMSeeAllController.xib in Resources */,
+				0465E30E200EFD4E00530DF3 /* NewsTableViewCell.xib in Resources */,
 				04D19AAE1F25A808006571EA /* ShowAnswerDetailTableViewCell.xib in Resources */,
 				04B7033F1F0E0B1400EF2691 /* YMDetailChoiceButtonView.xib in Resources */,
 				04B703101F0E0B1400EF2691 /* YMRegisterViewController.xib in Resources */,
@@ -1194,11 +1204,13 @@
 				04B703261F0E0B1400EF2691 /* YMMeChoiceView.swift in Sources */,
 				04B703121F0E0B1400EF2691 /* String+Extension.swift in Sources */,
 				04B702F21F0E0B1400EF2691 /* YMHomeItem.swift in Sources */,
+				0465E30A200EFC8500530DF3 /* News.swift in Sources */,
 				04B703151F0E0B1400EF2691 /* YMBaseViewController.swift in Sources */,
 				04CB29EB1F73AFA00020FFC9 /* UITableView+SDAutoTableViewCellHeight.m in Sources */,
 				04B703271F0E0B1400EF2691 /* YMMeFooterView.swift in Sources */,
 				04B702F31F0E0B1400EF2691 /* YMSearchResult.swift in Sources */,
 				04B702FB1F0E0B1400EF2691 /* YMRefreshControl.swift in Sources */,
+				0465E30C200EFD0D00530DF3 /* NewsTableViewCell.swift in Sources */,
 				04B703191F0E0B1400EF2691 /* YMConst.swift in Sources */,
 				04B702E71F0E0B1400EF2691 /* ZiXunDetailVIewController.swift in Sources */,
 				0487DE371F282FE6006E7363 /* OneContent.swift in Sources */,

@@ -35,7 +35,7 @@ class YMTabBarController: UITabBarController {
         /*
          * YMSettingViewController,这个Controller是属于更多设置
          */
-        addChildViewController("YMSettingViewController", title: "更多设置", imageName: "TabBar_me_boy_23x23_")
+        addChildViewController("YMSettingViewController", title: "个人中心", imageName: "TabBar_me_boy_23x23_")
     }
   
     fileprivate func addChildViewController(_ childControllerName: String, title: String, imageName: String) {

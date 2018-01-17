@@ -34,14 +34,15 @@ class YMGST_SYViewController: YMBaseViewController,CarouselBannerViewDelegate,UI
     
     let courses = [
         ["name":"同步视频","pic":"grid_tb.png"],
-        ["name":"仿真实验","pic":"grid_fz.png"],
+        ["name":"实验文库","pic":"grid_wk.png"],
         ["name":"考评系统","pic":"grid_kp.png"],
         ["name":"备考视频","pic":"grid_bk.png"],
-        ["name":"实验文库","pic":"grid_wk.png"],
+        ["name":"实验装备","pic":"grid_zb.png"],
         ["name":"名师讲堂","pic":"grid_jt.png"],
         ["name":"创新实验","pic":"grid_cx.png"],
-        ["name":"实验装备","pic":"grid_zb.png"],
-        ["name":"会展中心","pic":"grid_hz.png"]
+        ["name":"活动赛事","pic":"grid_hd.png"],
+        ["name":"新闻动态","pic":"grid_hz.png"]
+
     ]
     
     override func viewDidLoad() {
@@ -156,10 +157,11 @@ class YMGST_SYViewController: YMBaseViewController,CarouselBannerViewDelegate,UI
             self.navigationController?.pushViewController(syncVideo, animated: true)
             syncVideo.title = "同步视频"
         case 1:
-            print("点击了：",indexPath.item)
-            let chuangke = YMCategoryViewController(nibName: nil, bundle: nil)
+            let chuangke = WenKuViewController()
+            chuangke.title = "实验文库"
+
             self.navigationController?.pushViewController(chuangke, animated: true)
-            chuangke.title = "仿真实验"
+            
         case 2:
             let chuangke = KaoPingViewController()
             chuangke.title = "考评系统"
@@ -172,10 +174,10 @@ class YMGST_SYViewController: YMBaseViewController,CarouselBannerViewDelegate,UI
             
             self.navigationController?.pushViewController(chuangke, animated: true)
         case 4:
-            let chuangke = WenKuViewController()
-            chuangke.title = "实验文库"
+            let chuangke = ZhuangBeiVIewController()
+            chuangke.title = "实验装备"
             self.navigationController?.pushViewController(chuangke, animated: true)
-            print("点击了：",indexPath.item)
+
         case 5:
             print("点击了：",indexPath.item)
             let chuangke = MingShiViewController()
@@ -189,12 +191,12 @@ class YMGST_SYViewController: YMBaseViewController,CarouselBannerViewDelegate,UI
         case 7:
             print("点击了：",indexPath.item)
             let chuangke = ZhuangBeiVIewController()
-            chuangke.title = "实验装备"
+            chuangke.title = "活动赛事"
             self.navigationController?.pushViewController(chuangke, animated: true)
         case 8:
             //http://shiyan360.cn/index.php/api/article_list?desc_type=0&category_id=134
             let chuangke = HuiZhanViewController()
-             chuangke.title = "会展中心"
+             chuangke.title = "新闻动态"
             chuangke.categoryid = "134"
             self.navigationController?.pushViewController(chuangke, animated: true)
             print("点击了：",indexPath.item)
@@ -224,6 +226,8 @@ class YMGST_SYViewController: YMBaseViewController,CarouselBannerViewDelegate,UI
     }
 
 }
+
+
 
 
 

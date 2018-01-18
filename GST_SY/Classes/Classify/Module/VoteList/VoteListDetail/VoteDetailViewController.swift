@@ -24,10 +24,10 @@ class VoteDetailViewController: UIViewController {
         let totalStr = text.substring(from: s.endIndex)
         
         let alert = UIAlertController(title: "温馨提示", message: msg, preferredStyle: .alert)
-        let cancel = UIAlertAction(title: "取消", style: .cancel) { (action) in
+        let cancel = UIAlertAction(title: "取消", style: .cancel) { [unowned self] (action) in
             debugPrint(#function)
         }
-        let ok = UIAlertAction(title: "确定", style: .destructive) { (action) in
+        let ok = UIAlertAction(title: "确定", style: .destructive) { [unowned self] (action) in
             debugPrint(#function)
             self.dismiss(animated: true, completion: nil)
         }
@@ -41,7 +41,7 @@ class VoteDetailViewController: UIViewController {
         }else {
             //获取当前票数刷新界面
             let url = "http://shiyan360.cn/api/vote_setinc"
-            NetworkTools.sharedSingleton.requestVote(urlStr: url, id: (vote?.id!)!, completionHandler: { (result) in
+            NetworkTools.sharedSingleton.requestVote(urlStr: url, id: (vote?.id!)!, completionHandler: { [unowned self] (result) in
                 if let voteCount = result!["piao"] as? String {
                     debugPrint("voteCount ----> \(voteCount)")
                     DispatchQueue.main.async {
@@ -79,7 +79,7 @@ class VoteDetailViewController: UIViewController {
             videoPlayer.setVideo(resource: asset)
             
             //监听播放进度
-            videoPlayer.playTimeDidChange = { (time1, time2) in
+            videoPlayer.playTimeDidChange = { [unowned self] (time1, time2) in
                 debugPrint("time1 = \(time1) : time2 = \(time2)")
                 self.pro = time1
                 self.total = time2
@@ -102,12 +102,21 @@ class VoteDetailViewController: UIViewController {
             //隐藏票数Label
             totalLabel.isHidden = true
         }
+        debugPrint("状态栏1：----> \(UIApplication.shared.isStatusBarHidden)")
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        
+        debugPrint("状态栏2：----> \(UIApplication.shared.isStatusBarHidden)")
+        //直接销毁掉视频播放器
+        
     }
     
     //隐藏状态栏
-    override var prefersStatusBarHidden: Bool{
-        return false
-    }
+//    override var prefersStatusBarHidden: Bool{
+//        return true
+//    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -137,7 +146,7 @@ class VoteDetailViewController: UIViewController {
 //        }
         
         videoPlayer.snp.makeConstraints { (make) in
-            make.top.equalTo(videoView).offset(20)
+            make.top.equalTo(videoView)
             make.left.right.equalTo(videoView)
             // Note here, the aspect ratio 16:9 priority is lower than 1000 on the line, because the 4S iPhone aspect ratio is not 16:9
             make.height.equalTo(videoPlayer.snp.width).multipliedBy(9.0/16.0).priority(750)
@@ -217,5 +226,10 @@ class VoteDetailViewController: UIViewController {
 //        vote.backgroundColor = UIColor.lightGray
         return vote
     }()
+    
+    deinit {
+        debugPrint("deinit")
+        NotificationCenter.default.removeObserver(videoPlayer, name: NSNotification.Name.UIApplicationDidChangeStatusBarOrientation, object: nil)
+    }
 }
 

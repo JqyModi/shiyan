@@ -840,7 +840,7 @@ class YMNetworkTool: NSObject {
         let url = URLSTR + "news"
         let params = ["page":page] as [String : Any]
         
-        Alamofire.request(url, method: .post, parameters: params, encoding: URLEncoding.default, headers: nil).responseJSON { (response) in
+        Alamofire.request(url, method: .get, parameters: params, encoding: URLEncoding.default, headers: nil).responseJSON { (response) in
             if let value = response.result.value {
                 let dict = JSON(value)
                 print("dict:",dict)

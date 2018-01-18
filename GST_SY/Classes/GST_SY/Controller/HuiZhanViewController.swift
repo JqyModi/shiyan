@@ -57,8 +57,7 @@ class HuiZhanViewController: YMBaseViewController {
         
         self.tableView.es_addInfiniteScrolling {
             [weak self] in
-            if self!.videos.count <= 20{
-                
+            if self!.videos.count == 0 {
                 self?.tableView.es_stopLoadingMore()
                 /// If no more data
                 self?.tableView.es_noticeNoMoreData()
@@ -155,10 +154,6 @@ extension HuiZhanViewController: ZiXunTableViewCellDelegate,UITableViewDataSourc
         let cell = tableView.dequeueReusableCell(withIdentifier: hzmessageCellID) as! NewsTableViewCell
         cell.selectionStyle = .none
         cell.newsItem = data[indexPath.row]
-        //        cell.delegate = self
-        //        cell.textLabel?.text = "同步视频" + String(indexPath.row)
-        //        cell.imageView?.image=resizeImageWithAspect(UIImage(named: babyImage[indexPath.row])!,scaledToMaxWidth: 140.0, maxHeight: 20.0)
-        //        cell?.imageView?.image=UIImage(named: babyImage[indexPath.row])
         return cell
     }
     

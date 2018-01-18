@@ -213,6 +213,16 @@ class VoteListCollectionViewController: UICollectionViewController {
         loadData()
     }
     
+    override func viewWillLayoutSubviews() {
+        debugPrint("状态栏8：----> \(UIApplication.shared.isStatusBarHidden)")
+        //判断当前状态栏状态
+        if UIApplication.shared.isStatusBarHidden {
+            UIApplication.shared.isStatusBarHidden = false
+        }
+        super.viewWillLayoutSubviews()
+        debugPrint("状态栏9：----> \(UIApplication.shared.isStatusBarHidden)")
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -231,7 +241,6 @@ class VoteListCollectionViewController: UICollectionViewController {
             standard.set(isOver, forKey: "isOverdue")
             standard.synchronize()
         }
-        
     }
 
     // MARK: UICollectionViewDataSource

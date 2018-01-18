@@ -106,7 +106,7 @@ class HuiZhanViewController: YMBaseViewController {
         self.view.addSubview(tableView)
         tableView.delegate = self
         tableView.dataSource = self
-        tableView.rowHeight = 60
+        tableView.rowHeight = 80
         
         let nib = UINib(nibName: String(describing: NewsTableViewCell.self), bundle: nil)
         tableView.register(nib, forCellReuseIdentifier: hzmessageCellID)

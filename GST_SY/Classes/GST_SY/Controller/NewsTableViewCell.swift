@@ -11,9 +11,11 @@ import UIKit
 class NewsTableViewCell: UITableViewCell {
     
     @IBOutlet weak var lbCell: UILabel!
+    @IBOutlet weak var timeLabel: UILabel!
     var newsItem: News? {
         didSet {
             lbCell.text = newsItem!.title
+            timeLabel.text = "更新时间：" + String.formatDateAndTime(str: (newsItem?.dateline)!)
         }
     }
     override func awakeFromNib() {
@@ -31,7 +33,7 @@ class NewsTableViewCell: UITableViewCell {
         self.lbCell.textColor = GSTGlobalFontColor()
         self.lbCell.font = UIFont.systemFont(ofSize: GSTGlobalFontSmallSize())
         
-        self.lbCell.textAlignment = .center
+        self.lbCell.textAlignment = .left
     }
     
     //重写frame属性而不是方法

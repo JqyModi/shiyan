@@ -507,8 +507,6 @@
 				04B702111F0E0B1400EF2691 /* YMPostDetailViewController.xib */,
 				04B702121F0E0B1400EF2691 /* YMSeeAllController.swift */,
 				04B702131F0E0B1400EF2691 /* YMSeeAllController.xib */,
-				0465E30B200EFD0D00530DF3 /* NewsTableViewCell.swift */,
-				0465E30D200EFD4E00530DF3 /* NewsTableViewCell.xib */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -559,6 +557,8 @@
 		04B702271F0E0B1400EF2691 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				0465E30B200EFD0D00530DF3 /* NewsTableViewCell.swift */,
+				0465E30D200EFD4E00530DF3 /* NewsTableViewCell.xib */,
 				04859B121F1C8FAC0065A549 /* KaoPingTableViewCell.xib */,
 				04B702281F0E0B1400EF2691 /* CarouselBannerView.swift */,
 				04B702291F0E0B1400EF2691 /* ChuangKeViewController.swift */,

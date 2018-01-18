@@ -14,10 +14,11 @@ class KaoPingTableViewCell: UITableViewCell {
     weak var delegate: KaoPingTableViewCellDelegate?
     
     @IBOutlet weak var lbCell: UILabel!
+    @IBOutlet weak var timeLabel: UILabel!
     var kp: KaoPing? {
         didSet {
-            
             lbCell.text = kp!.paper
+            timeLabel.text = "更新时间：" + String.formatDateAndTime(str: (kp?.addtime)!)
         }
     }
     override func awakeFromNib() {
@@ -45,7 +46,7 @@ class KaoPingTableViewCell: UITableViewCell {
         self.lbCell.textColor = GSTGlobalFontColor()
         self.lbCell.font = UIFont.systemFont(ofSize: GSTGlobalFontSmallSize())
         
-        self.lbCell.textAlignment = .center
+        self.lbCell.textAlignment = .left
     }
     
     //重写frame属性而不是方法

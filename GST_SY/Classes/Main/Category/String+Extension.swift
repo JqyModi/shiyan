@@ -21,4 +21,13 @@ public extension String {
         let predicate = NSPredicate(format: "SELF MATCHES %@", patternString)
         return predicate.evaluate(with: string)
     }
+    
+    static func formatDateAndTime(str: String) -> String {
+        var formatStr = ""
+        let format = DateFormatter()
+        format.dateFormat = "yyyy-MM-dd HH:mm:ss"
+        formatStr = format.string(from: Date(timeIntervalSince1970: TimeInterval(str)!))
+        debugPrint("formatStr ----> \(formatStr)")
+        return formatStr
+    }
 }

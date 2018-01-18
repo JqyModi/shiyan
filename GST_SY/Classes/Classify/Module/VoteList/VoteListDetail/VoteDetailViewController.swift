@@ -174,7 +174,7 @@ class VoteDetailViewController: UIViewController {
         
         //数据展示
         descLabel.text = "简介：" + (vote?.remark!)!
-        voteBtn.setTitle("为她投票", for: .normal)
+        voteBtn.setTitle("为他(她)投1票", for: .normal)
         totalLabel.text = "当前票数：" + (vote?.piao!)!
         
         //点击事件
@@ -217,7 +217,7 @@ class VoteDetailViewController: UIViewController {
     private lazy var voteBtn: UIButton = {
         let vote = UIButton()
         vote.setTitleColor(UIColor.white, for: .normal)
-        vote.backgroundColor = UIColor.orange
+        vote.backgroundColor = UIColor(red: 0.2, green: 0.6, blue: 1.0, alpha: 1.0)
         vote.sizeToFit()
         vote.titleLabel?.textAlignment = .center
         vote.titleLabel?.font = UIFont.systemFont(ofSize: 14)

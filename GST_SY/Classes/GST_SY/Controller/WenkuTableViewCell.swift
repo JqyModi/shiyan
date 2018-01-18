@@ -16,10 +16,11 @@ class WenkuTableViewCell: UITableViewCell {
   
     
     @IBOutlet weak var lbCell: UILabel!
+    @IBOutlet weak var timeLabel: UILabel!
     var videoItem: WenKu? {
         didSet {
-            
             lbCell.text = videoItem!.title
+            timeLabel.text = "更新时间：" + (videoItem?.time)!
         }
     }
     override func awakeFromNib() {
@@ -37,7 +38,7 @@ class WenkuTableViewCell: UITableViewCell {
         self.lbCell.textColor = GSTGlobalFontColor()
         self.lbCell.font = UIFont.systemFont(ofSize: GSTGlobalFontSmallSize())
         
-        self.lbCell.textAlignment = .center
+        self.lbCell.textAlignment = .left
     }
     
     //重写frame属性而不是方法

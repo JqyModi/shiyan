@@ -117,7 +117,7 @@ class VoteListCollectionViewController: UICollectionViewController {
     lazy var headerBtn: UIButton = {
         let header = UIButton()
         header.setTitleColor(UIColor.white, for: .normal)
-        header.backgroundColor = UIColor.orange
+        header.backgroundColor = UIColor(red: 0.2, green: 0.6, blue: 1.0, alpha: 1.0)
         header.sizeToFit()
         header.titleLabel?.textAlignment = .center
         header.titleLabel?.font = UIFont.systemFont(ofSize: 14)

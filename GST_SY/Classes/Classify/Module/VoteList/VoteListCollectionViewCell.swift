@@ -48,7 +48,7 @@ class VoteListCollectionViewCell: UICollectionViewCell {
             make.bottom.equalTo(totalLabel.snp.top).offset(-10)
             make.centerX.equalTo(contentView.snp.centerX)
             make.width.equalTo(totalLabel)
-            make.height.equalTo(totalLabel)
+            make.height.equalTo(totalLabel).offset(10)
         }
         
         titleLabel.snp.makeConstraints { (make) in
@@ -111,7 +111,7 @@ class VoteListCollectionViewCell: UICollectionViewCell {
     private lazy var voteBtn: UIButton = {
         let vote = UIButton()
         vote.setTitleColor(UIColor.white, for: .normal)
-        vote.backgroundColor = UIColor.orange
+        vote.backgroundColor = UIColor(red: 0.2, green: 0.6, blue: 1.0, alpha: 1.0)
         vote.sizeToFit()
         vote.titleLabel?.textAlignment = .center
         vote.titleLabel?.font = UIFont.systemFont(ofSize: 14)

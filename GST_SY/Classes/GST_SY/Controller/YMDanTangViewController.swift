@@ -5,6 +5,7 @@
 
 
 import UIKit
+import Toaster
 
 class YMGST_SYViewController: YMBaseViewController,CarouselBannerViewDelegate,UICollectionViewDelegate,UICollectionViewDataSource{
     var channels = [YMChannel]()
@@ -163,9 +164,19 @@ class YMGST_SYViewController: YMBaseViewController,CarouselBannerViewDelegate,UI
             self.navigationController?.pushViewController(chuangke, animated: true)
             
         case 2:
-            let chuangke = KaoPingViewController()
-            chuangke.title = "考评系统"
-            self.navigationController?.pushViewController(chuangke, animated: true)
+            //判断用户是否登录
+            let userDefault = UserDefaults.standard
+            let accessToken = userDefault.object(forKey: "accessToken") as? String
+            print("accessToken:",accessToken)
+            if (accessToken != "") {
+                let chuangke = KaoPingViewController()
+                chuangke.title = "考评系统"
+                self.navigationController?.pushViewController(chuangke, animated: true)
+            }else {
+                Toast(text: "您还没有登录哦 ~ 请先到个人中心登录").show()
+                return
+            }
+            
             print("点击了：",indexPath.item)
         case 3:
             print("点击了：",indexPath.item)

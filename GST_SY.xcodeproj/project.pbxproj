@@ -18,6 +18,7 @@
 		0469038E1F26C41C005BAA84 /* ExtensionString.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0469038D1F26C41C005BAA84 /* ExtensionString.swift */; };
 		04732D501F1DE46D009BBD8A /* PaperViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04732D4E1F1DE46D009BBD8A /* PaperViewController.swift */; };
 		04732D511F1DE46D009BBD8A /* PaperViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 04732D4F1F1DE46D009BBD8A /* PaperViewController.xib */; };
+		047D38D52010741200A44D9F /* XZView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 047D38D42010741200A44D9F /* XZView.swift */; };
 		048119521F1F57AA0026ED16 /* PaperViewController1.swift in Sources */ = {isa = PBXBuildFile; fileRef = 048119511F1F57AA0026ED16 /* PaperViewController1.swift */; };
 		04859B0C1F1C65450065A549 /* KaoPingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04859B0A1F1C65450065A549 /* KaoPingViewController.swift */; };
 		04859B0F1F1C693C0065A549 /* KaoPingTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04859B0E1F1C693C0065A549 /* KaoPingTableViewCell.swift */; };
@@ -236,6 +237,7 @@
 		0469038D1F26C41C005BAA84 /* ExtensionString.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExtensionString.swift; sourceTree = "<group>"; };
 		04732D4E1F1DE46D009BBD8A /* PaperViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PaperViewController.swift; sourceTree = "<group>"; };
 		04732D4F1F1DE46D009BBD8A /* PaperViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PaperViewController.xib; sourceTree = "<group>"; };
+		047D38D42010741200A44D9F /* XZView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XZView.swift; sourceTree = "<group>"; };
 		048119511F1F57AA0026ED16 /* PaperViewController1.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PaperViewController1.swift; sourceTree = "<group>"; };
 		04859B0A1F1C65450065A549 /* KaoPingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KaoPingViewController.swift; sourceTree = "<group>"; };
 		04859B0E1F1C693C0065A549 /* KaoPingTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KaoPingTableViewCell.swift; sourceTree = "<group>"; };
@@ -468,6 +470,23 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		047D38D2201073A700A44D9F /* KPModule */ = {
+			isa = PBXGroup;
+			children = (
+				047D38D3201073E900A44D9F /* View */,
+			);
+			name = KPModule;
+			path = "New Group";
+			sourceTree = "<group>";
+		};
+		047D38D3201073E900A44D9F /* View */ = {
+			isa = PBXGroup;
+			children = (
+				047D38D42010741200A44D9F /* XZView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
 		04B702091F0E0B1400EF2691 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
@@ -547,6 +566,7 @@
 		04B702261F0E0B1400EF2691 /* GST_SY */ = {
 			isa = PBXGroup;
 			children = (
+				047D38D2201073A700A44D9F /* KPModule */,
 				04B702271F0E0B1400EF2691 /* Controller */,
 				04B702411F0E0B1400EF2691 /* Model */,
 				04B7024D1F0E0B1400EF2691 /* View */,
@@ -1358,6 +1378,7 @@
 				04B702FF1F0E0B1400EF2691 /* YMSortCell.swift in Sources */,
 				04FB3B6E200F29EE00DE23AB /* VoteListCollectionViewController.swift in Sources */,
 				04CB29EC1F73AFA00020FFC9 /* UIView+SDAutoLayout.m in Sources */,
+				047D38D52010741200A44D9F /* XZView.swift in Sources */,
 				04B702F91F0E0B1400EF2691 /* YMHomeCell.swift in Sources */,
 				04B702F71F0E0B1400EF2691 /* GridCollectionViewCell.swift in Sources */,
 				04FB3B6A200F29EE00DE23AB /* VoteListModel.swift in Sources */,

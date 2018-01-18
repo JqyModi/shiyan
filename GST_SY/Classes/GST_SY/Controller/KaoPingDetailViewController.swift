@@ -161,6 +161,8 @@ class KaoPingDetailViewController: ViewPagerController, ViewPagerDelegate, ViewP
         }else{
             item2!.isEnabled = false
         }
+        
+        /*
         paperVC = PaperViewController()
         let paper = self.data[Int(index)]
         paperVC!.paper = paper
@@ -180,9 +182,13 @@ class KaoPingDetailViewController: ViewPagerController, ViewPagerDelegate, ViewP
             }
             
         }
-
-        
         return paperVC
+        */
+        
+        let vc = XZViewController()
+        let paper = self.data[Int(index)]
+        vc.paper = paper
+        return vc
     }
     func viewPager(_ viewPager: ViewPagerController!, didChangeTabTo index: UInt) {
         print("didChangeTabToIndex  =  \(index)")

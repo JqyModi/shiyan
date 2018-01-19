@@ -198,12 +198,16 @@ extension KaoPingViewController: KaoPingTableViewCellDelegate,UITableViewDelegat
         let paperId = data[row].id
         let paperName = data[row].paper
         //跳转到详情页
-        let kpVC = KaoPingDetailViewController()
+//        let kpVC = KaoPingDetailViewController()
+//        kpVC.paperId = paperId
+//        kpVC.paperName = paperName
+//        kpVC.title="开始答题"
+        
+        let kpVC = KPViewController()
         kpVC.paperId = paperId
-        kpVC.paperName = paperName
         kpVC.title="开始答题"
+        
         self.navigationController?.pushViewController(kpVC, animated: true)
-//        self.presentViewController(kpVC, animated: true, completion: nil)
     }
     
 }

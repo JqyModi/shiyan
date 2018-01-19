@@ -10,6 +10,7 @@
 		0407AC241F1C9C990008A925 /* KaoPingDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0407AC221F1C9C990008A925 /* KaoPingDetailViewController.swift */; };
 		0407AC271F1CCF380008A925 /* Paper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0407AC261F1CCF380008A925 /* Paper.swift */; };
 		041255CB1F78CDE7006FC362 /* UIImageView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 041255CA1F78CDE7006FC362 /* UIImageView+Extension.swift */; };
+		043CCFAA2011D6A800D91444 /* KPViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 043CCFA92011D6A800D91444 /* KPViewController.swift */; };
 		0452EF261FE90C2E00E0EE84 /* SSLoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0452EF251FE90C2E00E0EE84 /* SSLoginViewController.swift */; };
 		0452EF281FE90C7D00E0EE84 /* SSLoginViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0452EF271FE90C7D00E0EE84 /* SSLoginViewController.xib */; };
 		0465E30A200EFC8500530DF3 /* News.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0465E309200EFC8500530DF3 /* News.swift */; };
@@ -229,6 +230,7 @@
 		0407AC221F1C9C990008A925 /* KaoPingDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KaoPingDetailViewController.swift; sourceTree = "<group>"; };
 		0407AC261F1CCF380008A925 /* Paper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Paper.swift; sourceTree = "<group>"; };
 		041255CA1F78CDE7006FC362 /* UIImageView+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIImageView+Extension.swift"; sourceTree = "<group>"; };
+		043CCFA92011D6A800D91444 /* KPViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KPViewController.swift; sourceTree = "<group>"; };
 		0452EF251FE90C2E00E0EE84 /* SSLoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SSLoginViewController.swift; sourceTree = "<group>"; };
 		0452EF271FE90C7D00E0EE84 /* SSLoginViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SSLoginViewController.xib; sourceTree = "<group>"; };
 		0465E309200EFC8500530DF3 /* News.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = News.swift; sourceTree = "<group>"; };
@@ -470,9 +472,18 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		043CCFA82011D66D00D91444 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				043CCFA92011D6A800D91444 /* KPViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
 		047D38D2201073A700A44D9F /* KPModule */ = {
 			isa = PBXGroup;
 			children = (
+				043CCFA82011D66D00D91444 /* Controller */,
 				047D38D3201073E900A44D9F /* View */,
 			);
 			name = KPModule;
@@ -1311,6 +1322,7 @@
 				04B702F31F0E0B1400EF2691 /* YMSearchResult.swift in Sources */,
 				04B702FB1F0E0B1400EF2691 /* YMRefreshControl.swift in Sources */,
 				0465E30C200EFD0D00530DF3 /* NewsTableViewCell.swift in Sources */,
+				043CCFAA2011D6A800D91444 /* KPViewController.swift in Sources */,
 				04B703191F0E0B1400EF2691 /* YMConst.swift in Sources */,
 				04B702E71F0E0B1400EF2691 /* ZiXunDetailVIewController.swift in Sources */,
 				0487DE371F282FE6006E7363 /* OneContent.swift in Sources */,

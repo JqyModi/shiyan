@@ -30,8 +30,7 @@ pod "ShareSDK3/ShareSDKPlatforms/SinaWeibo"
 pod "ShareSDK3/ShareSDKPlatforms/WeChat"
 pod 'ShareSDK3/ShareSDKPlatforms/Copy'
 #导入viewpager库
-#pod "Tabman"
-#pod "ViewPagerController"
+pod "Tabman"
 pod "CKViewPager"
 #1.6版本
 pod "UITableView+FDTemplateLayoutCell"

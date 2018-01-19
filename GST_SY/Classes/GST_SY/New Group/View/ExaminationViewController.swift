@@ -12,17 +12,54 @@ import SDWebImage
 
 class ExaminationViewController: UIViewController {
 
+    //可变字典存储答案：线程不安全
+    lazy var paperAnswer = Dictionary<String, String>()
+    
+    var index: Int?
+    
     var paper: Paper? {
         didSet {
             fillData()
         }
     }
+    //将当天试题题目作为Key保存答案
+    var key = ""
     
-    @objc private func optionDidTap() {
-        debugPrint(#function)
+    @objc private func optionDidTap(gesture: UITapGestureRecognizer) {
+//        debugPrint(#function)
+        if let label = gesture.view as? UILabel {
+//            let title = label.text
+            //更新答案选中标记
+            showXZAnswer(label: label)
+        }
+        
+    }
+    
+    private func showXZAnswer(label: UILabel) {
+        //将title做成MD5来做Key
+        switch label {
+        case option1:
+            answer.text = "答案：(A)"
+            paperAnswer[key] = "A"
+        case option2:
+            answer.text = "答案：(B)"
+            paperAnswer[key] = "B"
+        case option3:
+            answer.text = "答案：(C)"
+            paperAnswer[key] = "C"
+        case option4:
+            answer.text = "答案：(D)"
+            paperAnswer[key] = "D"
+        default:
+            break
+        }
     }
     
     private func fillData() {
+        
+        key = (paper?.title.md5())!
+        debugPrint("key ----->>>  \(key)")
+        
         subject.text = "题目：" + (paper?.title)!
         
         if paper?.img == "" {
@@ -50,6 +87,24 @@ class ExaminationViewController: UIViewController {
     
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        //判断答案是否存在
+        if let value = PaperAnswers[key] as? String {
+            if paper?.type == "xz" {
+                answer.text = "答案：(\(value))"
+            }else {
+                fillBlank.text = value
+            }
+        }
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        //将当前答案保存
+        PaperAnswers.addEntries(from: self.paperAnswer)
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         //布局
@@ -62,14 +117,17 @@ class ExaminationViewController: UIViewController {
     
     private func setupEvent() {
         //定义点击手势：一个手势只能添加到一个控件上
-        let tap1 = UITapGestureRecognizer(target: self, action: "optionDidTap")
+        let tap1 = UITapGestureRecognizer(target: self, action: #selector(ExaminationViewController.optionDidTap(gesture:)))
         option1.addGestureRecognizer(tap1)
-        let tap2 = UITapGestureRecognizer(target: self, action: "optionDidTap")
+        let tap2 = UITapGestureRecognizer(target: self, action: #selector(ExaminationViewController.optionDidTap(gesture:)))
         option2.addGestureRecognizer(tap2)
-        let tap3 = UITapGestureRecognizer(target: self, action: "optionDidTap")
+        let tap3 = UITapGestureRecognizer(target: self, action: #selector(ExaminationViewController.optionDidTap(gesture:)))
         option3.addGestureRecognizer(tap3)
-        let tap4 = UITapGestureRecognizer(target: self, action: "optionDidTap")
+        let tap4 = UITapGestureRecognizer(target: self, action: #selector(ExaminationViewController.optionDidTap(gesture:)))
         option4.addGestureRecognizer(tap4)
+        
+        //添加fillBlank监听用户输入的填空题答案
+        fillBlank.delegate = self
     }
     
     private func handleURLWithImage(str: String) -> URL {
@@ -345,5 +403,15 @@ class ExaminationViewController: UIViewController {
         let v = UIView()
         return v
     }()
+}
+
+extension ExaminationViewController: UITextViewDelegate {
+    
+    func textViewDidEndEditing(_ textView: UITextView) {
+        //将当前答案记录到字典中
+        let text = textView.text
+        //将当前的title作为key
+        paperAnswer[key] = text
+    }
     
 }

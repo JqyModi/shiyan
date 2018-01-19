@@ -601,14 +601,6 @@ class YMNetworkTool: NSObject {
                     
                 }
                 finished(results)
-                //                    if results.count>0 {
-                //                        finished(items: results)
-                //                        print("题目条数：\(results.count)")
-                //                    }else{
-                //                        print("暂无内容")
-                //                        JLToast.makeText("服务器数据异常，请稍后再试").show()
-                //                    }
-                
             }
         }
     }

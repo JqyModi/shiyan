@@ -20,6 +20,8 @@ PODS:
   - NVActivityIndicatorView (3.7.0):
     - NVActivityIndicatorView/Presenter (= 3.7.0)
   - NVActivityIndicatorView/Presenter (3.7.0)
+  - Pageboy (2.1.0)
+  - PureLayout (3.0.2)
   - SDWebImage (4.2.2):
     - SDWebImage/Core (= 4.2.2)
   - SDWebImage/Core (4.2.2)
@@ -43,6 +45,9 @@ PODS:
   - SnapKit (3.2.0)
   - SVProgressHUD (2.2.1)
   - SwiftyJSON (3.1.4)
+  - Tabman (1.1.2):
+    - Pageboy (~> 2.0)
+    - PureLayout (~> 3.0)
   - Toaster (2.1.0)
   - UITableView+FDTemplateLayoutCell (1.6)
 
@@ -69,6 +74,7 @@ DEPENDENCIES:
   - SnapKit (~> 3.2)
   - SVProgressHUD
   - SwiftyJSON
+  - Tabman
   - Toaster
   - UITableView+FDTemplateLayoutCell
 
@@ -86,15 +92,18 @@ SPEC CHECKSUMS:
   MJRefresh: 5f8552bc25ca8751c010f621c1098dbdaacbccd6
   MOBFoundation: ee0d83f92fe394f7f2b145a407441d08ca1c831c
   NVActivityIndicatorView: d3738df7e2e476aca0ba6bf32a8c9fbcfc33d64b
+  Pageboy: f137e98cdb92c1913401d9d3c8888951ff81a630
+  PureLayout: 4d550abe49a94f24c2808b9b95db9131685fe4cd
   SDWebImage: 89a9d32cd520bbb46eb14e541d5109b3564af198
   ShareSDK3: a01a35da3cd8f4d10d7f4394c7c42f8113392182
   SMSSDK: a811c8ea6e89393097037b7cf6493248a40e50f0
   SnapKit: 1ca44df72cfa543218d177cb8aab029d10d86ea7
   SVProgressHUD: db27c54e6e18bc903341661fc9feb55e04905cc4
   SwiftyJSON: c2842d878f95482ffceec5709abc3d05680c0220
+  Tabman: 94692b62fc58ed4945220be2f3f0ad7406aa3699
   Toaster: 8c3225dc465bef4aa57e147a288724576df8e439
   UITableView+FDTemplateLayoutCell: 5c949b4a5059c404b442926c0e80f81d10a2d66f
 
-PODFILE CHECKSUM: 2bc0ff0ceb7c8ec3f7105fcc9d7c0dd357ce974f
+PODFILE CHECKSUM: a472022b9fc755d82715122b91dff4a242a3d0f5
 
 COCOAPODS: 1.2.1

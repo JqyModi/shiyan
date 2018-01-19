@@ -10,12 +10,16 @@ import UIKit
 import SnapKit
 import SDWebImage
 
-class XZViewController: UIViewController {
+class ExaminationViewController: UIViewController {
 
     var paper: Paper? {
         didSet {
             fillData()
         }
+    }
+    
+    @objc private func optionDidTap() {
+        debugPrint(#function)
     }
     
     private func fillData() {
@@ -48,9 +52,24 @@ class XZViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        //布局
         setupUI()
         //运行时设置UITextView提示文本控件
         fillBlank.setValue(placeHolderLabel, forKeyPath: "_placeholderLabel")
+        //事件
+        setupEvent()
+    }
+    
+    private func setupEvent() {
+        //定义点击手势：一个手势只能添加到一个控件上
+        let tap1 = UITapGestureRecognizer(target: self, action: "optionDidTap")
+        option1.addGestureRecognizer(tap1)
+        let tap2 = UITapGestureRecognizer(target: self, action: "optionDidTap")
+        option2.addGestureRecognizer(tap2)
+        let tap3 = UITapGestureRecognizer(target: self, action: "optionDidTap")
+        option3.addGestureRecognizer(tap3)
+        let tap4 = UITapGestureRecognizer(target: self, action: "optionDidTap")
+        option4.addGestureRecognizer(tap4)
     }
     
     private func handleURLWithImage(str: String) -> URL {
@@ -259,6 +278,7 @@ class XZViewController: UIViewController {
         l.sizeToFit()
         l.textColor = UIColor.brown
 //        l.backgroundColor = UIColor.randomColor
+        l.isUserInteractionEnabled = true
         return l
     }()
     lazy var option2: UILabel = {
@@ -268,6 +288,7 @@ class XZViewController: UIViewController {
         l.sizeToFit()
         l.textColor = UIColor.brown
 //        l.backgroundColor = UIColor.randomColor
+        l.isUserInteractionEnabled = true
         return l
     }()
     lazy var option3: UILabel = {
@@ -277,6 +298,7 @@ class XZViewController: UIViewController {
         l.sizeToFit()
         l.textColor = UIColor.brown
 //        l.backgroundColor = UIColor.randomColor
+        l.isUserInteractionEnabled = true
         return l
     }()
     lazy var option4: UILabel = {
@@ -286,6 +308,7 @@ class XZViewController: UIViewController {
         l.sizeToFit()
         l.textColor = UIColor.brown
 //        l.backgroundColor = UIColor.randomColor
+        l.isUserInteractionEnabled = true
         return l
     }()
     

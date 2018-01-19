@@ -156,7 +156,6 @@ class KaoPingDetailViewController: ViewPagerController, ViewPagerDelegate, ViewP
         
         //是否显示提交按钮
         if PaperAnswers.count >= data.count - 2 {
-//            item2.accessibilityElementsHidden = false
             item2!.isEnabled = true
         }else{
             item2!.isEnabled = false
@@ -185,7 +184,7 @@ class KaoPingDetailViewController: ViewPagerController, ViewPagerDelegate, ViewP
         return paperVC
         */
         
-        let vc = XZViewController()
+        let vc = ExaminationViewController()
         let paper = self.data[Int(index)]
         vc.paper = paper
         return vc
@@ -199,9 +198,4 @@ class KaoPingDetailViewController: ViewPagerController, ViewPagerDelegate, ViewP
     func viewPager(_ viewPager: ViewPagerController!, viewForTabAt index: UInt) -> UIView! {
         return nil
     }
-    
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-    }
-    
 }

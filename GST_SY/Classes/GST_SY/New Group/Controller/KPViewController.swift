@@ -10,8 +10,9 @@ import UIKit
 import Tabman
 import Pageboy
 import SnapKit
+import Toaster
 
-class KPViewController: TabmanViewController, PageboyViewControllerDataSource {
+class KPViewController: TabmanViewController {
 
     var viewControllers = [UIViewController]()
     
@@ -83,13 +84,15 @@ class KPViewController: TabmanViewController, PageboyViewControllerDataSource {
         let item3 = UITabBarItem(title: "下一题", image: UIImage(named: "next"), tag: 2)
         let items = [item1,item2,item3]
         tabbar.setItems(items, animated: true)
-//        tabbar.delegate = self
+        tabbar.delegate = self
         return tabbar
     }()
 
 }
 
-extension KPViewController {
+extension KPViewController: PageboyViewControllerDataSource, UITabBarDelegate {
+    
+    //MARK: -PageboyViewControllerDataSource
     func numberOfViewControllers(in pageboyViewController: PageboyViewController) -> Int {
         //一开始进来没有数据：异步加载数据：数据加载完成重新刷新数据
         return viewControllers.count
@@ -99,10 +102,54 @@ extension KPViewController {
 //        let vc = ExaminationViewController()
 //        vc.paper = self.papers[index]
 //        return vc
+        if PaperAnswers.count == papers.count || papers.count == 1 {
+            let submitItem = tabBar.items![1]
+            debugPrint("显示提交按钮")
+            submitItem.isEnabled = true
+        }
         return self.viewControllers[index]
     }
     
     func defaultPage(for pageboyViewController: PageboyViewController) -> PageboyViewController.Page? {
         return nil
     }
+    
+    //MARK: -UITabBarDelegate
+    
+    func tabBar(_ tabBar: UITabBar, didSelect item: UITabBarItem) {
+        switch item.tag {
+        case 0:
+            debugPrint("上一题")
+            //上一题操作
+            if self.currentIndex == 0 {
+                Toast(text: "已经是第一题了").show()
+            }else{
+                scrollToPage(PageboyViewController.Page.previous, animated: true)
+            }
+            break
+        case 1:
+            debugPrint("提交")
+            //跳转到答案显示详情页
+            let showAnswer = ShowAnswerDetailViewController()
+            showAnswer.title = "试题解析"
+            //传递数据到详情页
+            showAnswer.data = self.papers
+            showAnswer.paperId = self.paperId
+            showAnswer.paperName = self.paperName
+            self.navigationController?.pushViewController(showAnswer, animated: true)
+            break
+        case 2:
+            debugPrint("下一题")
+            //下一题操作
+            if self.currentIndex == viewControllers.count - 1 {
+                Toast(text: "没有更多题目了").show()
+            }else{
+                scrollToPage(PageboyViewController.Page.next, animated: true)
+            }
+            break
+        default:
+            break
+        }
+    }
+    
 }

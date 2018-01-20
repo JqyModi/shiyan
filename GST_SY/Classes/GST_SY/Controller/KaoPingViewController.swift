@@ -206,7 +206,8 @@ extension KaoPingViewController: KaoPingTableViewCellDelegate,UITableViewDelegat
         let kpVC = KPViewController()
         kpVC.paperId = paperId
         kpVC.title="开始答题"
-        
+        //清空答案缓存
+        PaperAnswers.removeAllObjects()
         self.navigationController?.pushViewController(kpVC, animated: true)
     }
     

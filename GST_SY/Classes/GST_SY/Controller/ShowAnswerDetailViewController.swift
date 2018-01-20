@@ -12,7 +12,7 @@ import UITableView_FDTemplateLayoutCell
 /*
  显示答案详情页
 */
-class ShowAnswerDetailViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
+class ShowAnswerDetailViewController: UIViewController {
     //定义变量
     var answers = NSMutableDictionary()
     var submitData = NSMutableDictionary()
@@ -45,7 +45,7 @@ class ShowAnswerDetailViewController: UIViewController, UITableViewDataSource, U
         tableView!.delegate = self
         tableView!.dataSource = self
         //注册复用class
-        tableView!.register(ShowAnswerDetailTableViewCell.classForCoder(), forCellReuseIdentifier: "cell")
+        tableView!.register(ParseTableViewCell.classForCoder(), forCellReuseIdentifier: "cell")
         tableView!.tableFooterView = UIView()
         tableView!.separatorStyle = UITableViewCellSeparatorStyle.singleLine
         tableView!.separatorColor = UIColor.red
@@ -126,51 +126,7 @@ class ShowAnswerDetailViewController: UIViewController, UITableViewDataSource, U
         YMNetworkTool.shareNetworkTool.submitAnswer(str)
     }
 
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return data.count
-    }
-    
-    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        let row = indexPath.row
-        let model = self.data[row]
-        
-        let userData = ((PaperAnswers.value(forKey: String(row)) as AnyObject).value(forKey: "user") as AnyObject).description!
-        model.userRight = userData
-        
-        /* model 为模型实例， keyPath 为 model 的属性名，通过 kvc 统一赋值接口 */
-//        return tableView.cellHeightForIndexPath(indexPath, model: model, keyPath: "model", cellClass: ShowAnswerDetailTableViewCell.classForCoder(), contentViewWidth: SCREENW)
 
-        return self.cellHeight(for: indexPath, cellContentViewWidth: SCREENW, tableView: tableView)
-    }
-    
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        //获取可复用的Cell
-        let Indetifier = "cell"
-        var cell2:ShowAnswerDetailTableViewCell? = tableView.dequeueReusableCell(withIdentifier: Indetifier) as? ShowAnswerDetailTableViewCell
-        if cell2 != nil{
-            cell2 = ShowAnswerDetailTableViewCell(style:UITableViewCellStyle.default,reuseIdentifier:Indetifier)
-        }
-//        else{
-//            //删除所有子视图
-//            while(cell2?.contentView.subviews.last != nil){
-//                cell2?.contentView.subviews.last?.removeFromSuperview()
-//            }
-//        }
-        
-        let row = indexPath.row
-        let model = self.data[row]
-        
-        let userData = ((PaperAnswers.value(forKey: String(row)) as AnyObject).value(forKey: "user") as AnyObject).description!
-        model.userRight = userData
-        
-        cell2!.setModelWithPaper(model)
-        
-//        self.fillData(cell!, row: indexPath.row)
-        
-        cell2!.useCellFrameCache(with: indexPath, tableView: tableView)
-
-        return cell2!
-    }
     
     func fillData(_ cell: ShowAnswerDetailTableViewCell, row: Int) {
         cell.selectionStyle = .none
@@ -249,4 +205,41 @@ class ShowAnswerDetailViewController: UIViewController, UITableViewDataSource, U
         cell.pJiexi!.adjustsFontSizeToFitWidth = true
     }
     
+}
+
+extension ShowAnswerDetailViewController: UITableViewDataSource, UITableViewDelegate {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return data.count
+    }
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        let row = indexPath.row
+        let model = self.data[row]
+        
+        let userData = ((PaperAnswers.value(forKey: String(row)) as AnyObject).value(forKey: "user") as AnyObject).description!
+        model.userRight = userData
+        
+        /* model 为模型实例， keyPath 为 model 的属性名，通过 kvc 统一赋值接口 */
+        //        return tableView.cellHeightForIndexPath(indexPath, model: model, keyPath: "model", cellClass: ShowAnswerDetailTableViewCell.classForCoder(), contentViewWidth: SCREENW)
+        
+        return self.cellHeight(for: indexPath, cellContentViewWidth: SCREENW, tableView: tableView)
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        //获取可复用的Cell
+        let Indetifier = "cell"
+//        var cell2 = tableView.dequeueReusableCell(withIdentifier: Indetifier) as? ShowAnswerDetailTableViewCell
+//        let row = indexPath.row
+//        let model = self.data[row]
+//
+//        let userData = ((PaperAnswers.value(forKey: String(row)) as AnyObject).value(forKey: "user") as AnyObject).description!
+//        model.userRight = userData
+//        cell2!.setModelWithPaper(model)
+//        cell2!.useCellFrameCache(with: indexPath, tableView: tableView)
+//        return cell2!
+        
+        let cell = tableView.dequeueReusableCell(withIdentifier: Indetifier, for: indexPath) as? ParseTableViewCell
+        cell?.paper = data[indexPath.row]
+        return cell!
+    }
 }

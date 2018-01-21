@@ -12,6 +12,9 @@ import UITableView_FDTemplateLayoutCell
 /*
  显示答案详情页
 */
+
+private let Indetifier = "cell"
+
 class ShowAnswerDetailViewController: UIViewController {
     //定义变量
     var answers = NSMutableDictionary()
@@ -39,24 +42,51 @@ class ShowAnswerDetailViewController: UIViewController {
     fileprivate func setupTableView() {
 //        tableView = UITableView(frame: CGRectMake(0,(self.navigationController?.navigationBar.height)!+20,self.view.width,self.view.height-(self.navigationController?.navigationBar.height)!-20))
         tableView = UITableView(frame: self.view.frame)
-        //        tableView.frame = view.bounds
-//        self.automaticallyAdjustsScrollViewInsets =  false
         self.view.addSubview(tableView!)
         tableView!.delegate = self
         tableView!.dataSource = self
         //注册复用class
-        tableView!.register(ParseTableViewCell.classForCoder(), forCellReuseIdentifier: "cell")
+        tableView!.register(ParseTableViewCell.classForCoder(), forCellReuseIdentifier: Indetifier)
         tableView!.tableFooterView = UIView()
         tableView!.separatorStyle = UITableViewCellSeparatorStyle.singleLine
         tableView!.separatorColor = UIColor.red
         tableView!.separatorInset = UIEdgeInsetsMake(0, 0, 0, 0)
     }
     
+    private func prepareTableView() {
+        
+        self.tableView = UITableView(frame: self.view.frame)
+        self.tableView?.tableFooterView = UIView()
+        self.tableView?.separatorStyle = UITableViewCellSeparatorStyle.singleLine
+        self.tableView?.separatorColor = UIColor.red
+        self.tableView?.separatorInset = UIEdgeInsetsMake(0, 0, 0, 0)
+        
+        self.view.addSubview(tableView!)
+        
+        self.tableView?.register(ParseTableViewCell.self, forCellReuseIdentifier: Indetifier)
+        
+        self.tableView?.delegate = self
+        self.tableView?.dataSource = self
+        
+        //设置行高
+        self.tableView?.rowHeight = 200
+        
+        //设置分割线
+        self.tableView?.separatorStyle = .none
+        
+        //自动计算行高：Cell自动布局1
+        //1.设置估计值
+        self.tableView?.estimatedRowHeight = (tableView?.rowHeight)!
+        //2.设置自动计算
+        self.tableView?.rowHeight = UITableViewAutomaticDimension
+    }
+    
     func initView(){
         //初始化背景及导航栏
         self.view.backgroundColor = UIColor.gray
         self.navigationController?.navigationBar.backgroundColor = YMGlobalGreenColor()
-        self.setupTableView()
+//        self.setupTableView()
+        prepareTableView()
         
         self.submitDataToServer()
     }
@@ -212,22 +242,21 @@ extension ShowAnswerDetailViewController: UITableViewDataSource, UITableViewDele
         return data.count
     }
     
-    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        let row = indexPath.row
-        let model = self.data[row]
-        
-        let userData = ((PaperAnswers.value(forKey: String(row)) as AnyObject).value(forKey: "user") as AnyObject).description!
-        model.userRight = userData
-        
-        /* model 为模型实例， keyPath 为 model 的属性名，通过 kvc 统一赋值接口 */
-        //        return tableView.cellHeightForIndexPath(indexPath, model: model, keyPath: "model", cellClass: ShowAnswerDetailTableViewCell.classForCoder(), contentViewWidth: SCREENW)
-        
-        return self.cellHeight(for: indexPath, cellContentViewWidth: SCREENW, tableView: tableView)
-    }
+//    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+//        let row = indexPath.row
+//        let model = self.data[row]
+//
+//        let userData = ((PaperAnswers.value(forKey: String(row)) as AnyObject).value(forKey: "user") as AnyObject).description!
+//        model.userRight = userData
+//
+//        /* model 为模型实例， keyPath 为 model 的属性名，通过 kvc 统一赋值接口 */
+//        //        return tableView.cellHeightForIndexPath(indexPath, model: model, keyPath: "model", cellClass: ShowAnswerDetailTableViewCell.classForCoder(), contentViewWidth: SCREENW)
+//
+//        return self.cellHeight(for: indexPath, cellContentViewWidth: SCREENW, tableView: tableView)
+//    }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         //获取可复用的Cell
-        let Indetifier = "cell"
 //        var cell2 = tableView.dequeueReusableCell(withIdentifier: Indetifier) as? ShowAnswerDetailTableViewCell
 //        let row = indexPath.row
 //        let model = self.data[row]

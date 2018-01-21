@@ -25,7 +25,7 @@
 		04859B0F1F1C693C0065A549 /* KaoPingTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04859B0E1F1C693C0065A549 /* KaoPingTableViewCell.swift */; };
 		04859B111F1C6B550065A549 /* KaoPing.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04859B101F1C6B550065A549 /* KaoPing.swift */; };
 		04859B131F1C8FAC0065A549 /* KaoPingTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 04859B121F1C8FAC0065A549 /* KaoPingTableViewCell.xib */; };
-		04868C362012E80700BFDA37 /* ParseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04868C352012E80700BFDA37 /* ParseViewController.swift */; };
+		04868C362012E80700BFDA37 /* ParseTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04868C352012E80700BFDA37 /* ParseTableViewCell.swift */; };
 		0487DE311F282E60006E7363 /* XContent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0487DE301F282E60006E7363 /* XContent.swift */; };
 		0487DE331F282E74006E7363 /* TContent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0487DE321F282E74006E7363 /* TContent.swift */; };
 		0487DE351F282E84006E7363 /* JContent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0487DE341F282E84006E7363 /* JContent.swift */; };
@@ -246,7 +246,7 @@
 		04859B0E1F1C693C0065A549 /* KaoPingTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KaoPingTableViewCell.swift; sourceTree = "<group>"; };
 		04859B101F1C6B550065A549 /* KaoPing.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KaoPing.swift; sourceTree = "<group>"; };
 		04859B121F1C8FAC0065A549 /* KaoPingTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = KaoPingTableViewCell.xib; sourceTree = "<group>"; };
-		04868C352012E80700BFDA37 /* ParseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParseViewController.swift; sourceTree = "<group>"; };
+		04868C352012E80700BFDA37 /* ParseTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParseTableViewCell.swift; sourceTree = "<group>"; };
 		0487DE301F282E60006E7363 /* XContent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XContent.swift; sourceTree = "<group>"; };
 		0487DE321F282E74006E7363 /* TContent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TContent.swift; sourceTree = "<group>"; };
 		0487DE341F282E84006E7363 /* JContent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JContent.swift; sourceTree = "<group>"; };
@@ -478,7 +478,7 @@
 			isa = PBXGroup;
 			children = (
 				043CCFA92011D6A800D91444 /* KPViewController.swift */,
-				04868C352012E80700BFDA37 /* ParseViewController.swift */,
+				04868C352012E80700BFDA37 /* ParseTableViewCell.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -1386,7 +1386,7 @@
 				04BB97B51F22F890001C84B2 /* ShowAnswerDetailTableViewCell.swift in Sources */,
 				04B702BE1F0E0B1400EF2691 /* YMPostDetailViewController.swift in Sources */,
 				04A65EF31FEA004000BF263E /* SchoolModel.swift in Sources */,
-				04868C362012E80700BFDA37 /* ParseViewController.swift in Sources */,
+				04868C362012E80700BFDA37 /* ParseTableViewCell.swift in Sources */,
 				048119521F1F57AA0026ED16 /* PaperViewController1.swift in Sources */,
 				04B7031A1F0E0B1400EF2691 /* YMIstelphnum.swift in Sources */,
 				04B703471F0E0B1400EF2691 /* YMShareButtonView.swift in Sources */,

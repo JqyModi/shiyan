@@ -7,10 +7,13 @@
 //
 
 import UIKit
+import SnapKit
 
 class ParseTableViewCell: UITableViewCell {
     
     var index: Int?
+    
+    private var heightContraint: Constraint?
     
     override init(style: UITableViewCellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
@@ -20,8 +23,8 @@ class ParseTableViewCell: UITableViewCell {
         
         //布局
         setupUI()
-        //事件
-        setupEvent()
+//        //事件
+//        setupEvent()
     }
     
     required init?(coder aDecoder: NSCoder) {
@@ -151,9 +154,6 @@ class ParseTableViewCell: UITableViewCell {
         containerView.addSubview(bottomView)
         
         //添加约束
-        containerView.snp.updateConstraints { (make) in
-            make.edges.equalTo(contentView)
-        }
         
         subject.snp.makeConstraints { (make) in
             make.top.left.equalTo(containerView).offset(8)
@@ -169,7 +169,7 @@ class ParseTableViewCell: UITableViewCell {
         answer.snp.makeConstraints { (make) in
             make.left.equalTo(containerView).offset(8)
             make.top.equalTo(picView.snp.bottom).offset(10)
-            make.right.equalTo(containerView).offset(-8)
+            make.right.equalTo(subject)
             make.height.equalTo(21)
         }
         
@@ -197,6 +197,7 @@ class ParseTableViewCell: UITableViewCell {
             make.left.equalTo(answer)
             make.top.equalTo(option4.snp.bottom).offset(10)
             make.right.equalTo(answer)
+            make.height.equalTo(answer)
         }
         userAnswer.snp.makeConstraints { (make) in
             make.left.equalTo(option4)
@@ -207,6 +208,7 @@ class ParseTableViewCell: UITableViewCell {
             make.left.equalTo(answer)
             make.top.equalTo(userAnswer.snp.bottom).offset(10)
             make.right.equalTo(answer)
+            make.height.equalTo(answer)
         }
         parse.snp.makeConstraints { (make) in
             make.left.equalTo(option4)
@@ -217,7 +219,32 @@ class ParseTableViewCell: UITableViewCell {
             make.left.right.equalTo(containerView)
             make.top.equalTo(parse.snp.bottom).offset(10)
             make.height.equalTo(20)
-            make.bottom.equalTo(containerView)
+            make.bottom.equalTo(self)
+        }
+        
+        containerView.snp.makeConstraints { (make) in
+//            self.heightContraint = make.height.equalTo(0).constraint
+            make.bottom.equalTo(contentView)
+//            self.heightContraint?.deactivate()
+        }
+        
+        //添加contentView布局约束：Cell自动布局3
+        contentView.snp.makeConstraints { (make) in
+            //新增bottomView布局
+            make.bottom.equalTo(containerView.snp.bottom)
+            //这里相对于self而非contentView
+            make.top.equalTo(self.snp.top)
+            make.left.equalTo(self.snp.left)
+            make.right.equalTo(self.snp.right)
+        }
+    }
+    
+    func cellType(bool: Bool){
+        if bool{
+            self.heightContraint?.activate()
+        }
+        else{
+            self.heightContraint?.deactivate()
         }
     }
     
@@ -330,7 +357,7 @@ class ParseTableViewCell: UITableViewCell {
     
     lazy var bottomView: UIView = {
         let v = UIView()
-        //        v.backgroundColor = UIColor.randomColor
+        v.backgroundColor = UIColor.randomColor
         return v
     }()
     

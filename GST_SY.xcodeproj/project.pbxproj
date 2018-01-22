@@ -31,6 +31,7 @@
 		0487DE351F282E84006E7363 /* JContent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0487DE341F282E84006E7363 /* JContent.swift */; };
 		0487DE371F282FE6006E7363 /* OneContent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0487DE361F282FE6006E7363 /* OneContent.swift */; };
 		0487DE391F282FF6006E7363 /* SecondContent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0487DE381F282FF6006E7363 /* SecondContent.swift */; };
+		0494F7472015750500C45DBD /* ParseTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0494F7462015750500C45DBD /* ParseTableViewController.swift */; };
 		04A65EF31FEA004000BF263E /* SchoolModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04A65EF21FEA004000BF263E /* SchoolModel.swift */; };
 		04AF87621F0E4770004CEC5D /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 04AF87611F0E4770004CEC5D /* AppDelegate.m */; };
 		04B702B91F0E0B1400EF2691 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 04B702081F0E0B1400EF2691 /* Assets.xcassets */; };
@@ -252,6 +253,7 @@
 		0487DE341F282E84006E7363 /* JContent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JContent.swift; sourceTree = "<group>"; };
 		0487DE361F282FE6006E7363 /* OneContent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OneContent.swift; sourceTree = "<group>"; };
 		0487DE381F282FF6006E7363 /* SecondContent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SecondContent.swift; sourceTree = "<group>"; };
+		0494F7462015750500C45DBD /* ParseTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParseTableViewController.swift; sourceTree = "<group>"; };
 		04A65EF21FEA004000BF263E /* SchoolModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SchoolModel.swift; sourceTree = "<group>"; };
 		04AF87611F0E4770004CEC5D /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		04B702081F0E0B1400EF2691 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -479,6 +481,7 @@
 			children = (
 				043CCFA92011D6A800D91444 /* KPViewController.swift */,
 				04868C352012E80700BFDA37 /* ParseTableViewCell.swift */,
+				0494F7462015750500C45DBD /* ParseTableViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -1337,6 +1340,7 @@
 				04B7034D1F0E0B1400EF2691 /* WOWDropMenuColumn.swift in Sources */,
 				04B702EB1F0E0B1400EF2691 /* CK_Cate.swift in Sources */,
 				04FB3B72200F2A4200DE23AB /* NetworkTools.swift in Sources */,
+				0494F7472015750500C45DBD /* ParseTableViewController.swift in Sources */,
 				04B702D31F0E0B1400EF2691 /* ChuangKeViewController.swift in Sources */,
 				04B7032B1F0E0B1400EF2691 /* AppDelegate.swift in Sources */,
 				04FB3B6B200F29EE00DE23AB /* VoteRankTableViewCell.swift in Sources */,

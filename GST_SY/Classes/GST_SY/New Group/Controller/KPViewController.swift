@@ -130,13 +130,17 @@ extension KPViewController: PageboyViewControllerDataSource, UITabBarDelegate {
         case 1:
             debugPrint("提交")
             //跳转到答案显示详情页
-            let showAnswer = ShowAnswerDetailViewController()
-            showAnswer.title = "试题解析"
-            //传递数据到详情页
-            showAnswer.data = self.papers
-            showAnswer.paperId = self.paperId
-            showAnswer.paperName = self.paperName
-            self.navigationController?.pushViewController(showAnswer, animated: true)
+//            let showAnswer = ShowAnswerDetailViewController()
+//            showAnswer.title = "试题解析"
+//            //传递数据到详情页
+//            showAnswer.data = self.papers
+//            showAnswer.paperId = self.paperId
+//            showAnswer.paperName = self.paperName
+            
+            let parseVC = ParseTableViewController()
+            parseVC.papers = papers
+            parseVC.title = "试题解析"
+            self.navigationController?.pushViewController(parseVC, animated: true)
             break
         case 2:
             debugPrint("下一题")

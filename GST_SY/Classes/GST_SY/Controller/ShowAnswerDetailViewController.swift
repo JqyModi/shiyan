@@ -267,7 +267,19 @@ extension ShowAnswerDetailViewController: UITableViewDataSource, UITableViewDele
 //        cell2!.useCellFrameCache(with: indexPath, tableView: tableView)
 //        return cell2!
         
-        let cell = tableView.dequeueReusableCell(withIdentifier: Indetifier, for: indexPath) as? ParseTableViewCell
+        var cell = tableView.dequeueReusableCell(withIdentifier: Indetifier, for: indexPath) as? ParseTableViewCell
+        
+        if cell == nil {
+            cell = ParseTableViewCell(style: .default, reuseIdentifier: Indetifier)
+        }else {
+//            for view in (cell?.contentView.subviews)! {
+//                view.removeFromSuperview()
+//            }
+//            while cell?.contentView.subviews.last != nil {
+//                cell?.contentView.subviews.last?.removeFromSuperview()
+//            }
+        }
+        
         cell?.paper = data[indexPath.row]
         return cell!
     }

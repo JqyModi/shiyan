@@ -62,6 +62,8 @@ class ParseTableViewCell: UITableViewCell {
             option2.text = "B." + (paper?.B)!
             option3.text = "C." + (paper?.C)!
             option4.text = "D." + (paper?.D)!
+        }else {
+//            hiddenOption()
         }
         //获取用户答案
         let answer = PaperAnswers[key] as? String ?? "没有作答 ~"
@@ -137,6 +139,8 @@ class ParseTableViewCell: UITableViewCell {
     }
     
     private func setupUI() {
+//        self.backgroundColor = UIColor.red
+//        contentView.backgroundColor = UIColor.green
         
         contentView.addSubview(containerView)
         
@@ -216,26 +220,17 @@ class ParseTableViewCell: UITableViewCell {
             make.right.equalTo(option4)
         }
         bottomView.snp.makeConstraints { (make) in
-            make.left.right.equalTo(containerView)
             make.top.equalTo(parse.snp.bottom).offset(10)
             make.height.equalTo(20)
-            make.bottom.equalTo(self)
+            make.left.equalTo(parse)
+            make.right.equalTo(parse)
         }
         
         containerView.snp.makeConstraints { (make) in
 //            self.heightContraint = make.height.equalTo(0).constraint
-            make.bottom.equalTo(contentView)
+            make.edges.equalTo(contentView)
+            make.bottom.equalTo(bottomView).offset(-10)
 //            self.heightContraint?.deactivate()
-        }
-        
-        //添加contentView布局约束：Cell自动布局3
-        contentView.snp.makeConstraints { (make) in
-            //新增bottomView布局
-            make.bottom.equalTo(containerView.snp.bottom)
-            //这里相对于self而非contentView
-            make.top.equalTo(self.snp.top)
-            make.left.equalTo(self.snp.left)
-            make.right.equalTo(self.snp.right)
         }
     }
     
@@ -357,7 +352,7 @@ class ParseTableViewCell: UITableViewCell {
     
     lazy var bottomView: UIView = {
         let v = UIView()
-        v.backgroundColor = UIColor.randomColor
+//        v.backgroundColor = UIColor.randomColor
         return v
     }()
     

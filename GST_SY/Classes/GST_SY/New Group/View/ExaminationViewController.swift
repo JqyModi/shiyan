@@ -418,4 +418,13 @@ extension ExaminationViewController: UITextViewDelegate {
         PaperAnswers[key] = text
     }
     
+    //解决键盘弹出时遮挡输入框问题
+    func textView(_ textView: UITextView, shouldChangeTextIn range: NSRange, replacementText text: String) -> Bool {
+        //如果为回车则将键盘收起
+        if (text == "\n") {
+            textView.resignFirstResponder()
+            return false
+        }
+        return true
+    }
 }

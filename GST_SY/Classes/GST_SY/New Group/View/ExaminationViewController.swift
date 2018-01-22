@@ -40,16 +40,16 @@ class ExaminationViewController: UIViewController {
         switch label {
         case option1:
             answer.text = "答案：(A)"
-            paperAnswer[key] = "A"
+            PaperAnswers[key] = "A"
         case option2:
             answer.text = "答案：(B)"
-            paperAnswer[key] = "B"
+            PaperAnswers[key] = "B"
         case option3:
             answer.text = "答案：(C)"
-            paperAnswer[key] = "C"
+            PaperAnswers[key] = "C"
         case option4:
             answer.text = "答案：(D)"
-            paperAnswer[key] = "D"
+            PaperAnswers[key] = "D"
         default:
             break
         }
@@ -102,7 +102,9 @@ class ExaminationViewController: UIViewController {
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
         //将当前答案保存
-        PaperAnswers.addEntries(from: self.paperAnswer)
+        debugPrint("即将保存答案2：\(paperAnswer)")
+//        PaperAnswers.addEntries(from: self.paperAnswer)
+        debugPrint("保存后的答案：\(PaperAnswers)")
     }
     
     override func viewDidLoad() {
@@ -410,8 +412,10 @@ extension ExaminationViewController: UITextViewDelegate {
     func textViewDidEndEditing(_ textView: UITextView) {
         //将当前答案记录到字典中
         let text = textView.text
+        debugPrint("即将保存答案1：\(text)")
         //将当前的title作为key
         paperAnswer[key] = text
+        PaperAnswers[key] = text
     }
     
 }

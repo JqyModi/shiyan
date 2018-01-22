@@ -159,12 +159,12 @@ class YMSettingViewController: YMBaseViewController, UIActionSheetDelegate {
 extension YMSettingViewController: UITableViewDataSource, UITableViewDelegate {
     
     func numberOfSections(in tableView: UITableView) -> Int {
-        return settings.count ?? 0
+        return settings.count
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         let setting = settings[section] as! [YMSetting]
-        return setting.count ?? 0
+        return setting.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -189,7 +189,7 @@ extension YMSettingViewController: UITableViewDataSource, UITableViewDelegate {
         let cell = tableView?.cellForRow(at: indexPath) as! YMSettingCell
         
         cell.rightLabel.text = userInfo["cacheSize"] as? String
-        print("缓存大笑：",userInfo["cacheSize"] as? String)
+        print("缓存大笑：",userInfo["cacheSize"] as? String ?? "0.0")
     }
     
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
@@ -211,15 +211,15 @@ extension YMSettingViewController: UITableViewDataSource, UITableViewDelegate {
              
                 let userDefault = UserDefaults.standard
                 accessToken = userDefault.object(forKey: "accessToken") as? String
-                print("accessToken:",accessToken)
+                debugPrint("accessToken:",accessToken ?? "")
                 
             
                 if UserDefaults.standard.bool(forKey: isLogin) {
-                    var username = userDefault.object(forKey: "username") as? String
-                    var userpass_md5 = userDefault.object(forKey: "userpassMD5") as? String
+                    let username = userDefault.object(forKey: "username") as? String
+                    let userpass_md5 = userDefault.object(forKey: "userpassMD5") as? String
                     //新增字段
-                    var table = userDefault.object(forKey: "table") as? String
-                    debugPrint("table ------> \(table)")
+                    let table = userDefault.object(forKey: "table") as? String
+                    debugPrint("table ------> \(String(describing: table))")
                     YMNetworkTool.shareNetworkTool.loginResult(username!, userpass: userpass_md5!, school: table!){[weak self](loginValidate) in
                         self?.loginValidates=loginValidate
                         if (self!.loginValidates == true) {

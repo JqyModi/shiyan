@@ -102,9 +102,9 @@ extension KPViewController: PageboyViewControllerDataSource, UITabBarDelegate {
 //        let vc = ExaminationViewController()
 //        vc.paper = self.papers[index]
 //        return vc
-        if PaperAnswers.count == papers.count || papers.count == 1 {
+        //是否显示提交按钮:PaperAnswers.count - 1 ：多加了2个字段：paperId,paperName 及 最后一页需要提交时才会将答案添加到字典中
+        if PaperAnswers.count - 1 == papers.count || papers.count == 1 {
             let submitItem = tabBar.items![1]
-            debugPrint("显示提交按钮")
             submitItem.isEnabled = true
         }
         return self.viewControllers[index]
@@ -130,13 +130,6 @@ extension KPViewController: PageboyViewControllerDataSource, UITabBarDelegate {
         case 1:
             debugPrint("提交")
             //跳转到答案显示详情页
-//            let showAnswer = ShowAnswerDetailViewController()
-//            showAnswer.title = "试题解析"
-//            //传递数据到详情页
-//            showAnswer.data = self.papers
-//            showAnswer.paperId = self.paperId
-//            showAnswer.paperName = self.paperName
-            
             let parseVC = ParseTableViewController()
             parseVC.papers = papers
             parseVC.title = "试题解析"

@@ -42,7 +42,6 @@ class ParseTableViewCell: UITableViewCell {
     private func fillData() {
         
         key = (paper?.title.md5())!
-        debugPrint("key ----->>>  \(key)")
         
         subject.text = "题目：" + (paper?.title)!
         
@@ -139,8 +138,8 @@ class ParseTableViewCell: UITableViewCell {
     }
     
     private func setupUI() {
-//        self.backgroundColor = UIColor.red
-//        contentView.backgroundColor = UIColor.green
+        
+        contentView.backgroundColor = UIColor.init(white: 0.96, alpha: 1.0)
         
         contentView.addSubview(containerView)
         

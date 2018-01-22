@@ -7,7 +7,10 @@
 //
 
 import UIKit
+import SwiftyJSON
+
 private let reuseIdentifier = "reuseIdentifier"
+
 class ParseTableViewController: UITableViewController {
     
     var papers = [Paper]()
@@ -16,9 +19,60 @@ class ParseTableViewController: UITableViewController {
         super.viewDidLoad()
 
         setupTableView()
+        
+        //提交答案
+        submitDataToServer()
+    }
+    
+    
+    func submitDataToServer(){
+        let submitData = NSMutableDictionary()
+        let xcontent = NSMutableDictionary()
+        let tcontent = NSMutableDictionary()
+        let jcontent = NSMutableDictionary()
+        //封装需要提交到服务器的数据
+        let defaults : UserDefaults = UserDefaults.standard
+        let sid = defaults.value(forKey: "userId")
+        
+        submitData["hour"] = "0"
+        submitData["minute"] = "10"
+        submitData["cp_id"] = PaperAnswers["paperId"]
+        submitData["sid"] = sid
+        submitData["title"] = PaperAnswers["paperName"]
+        var x = 1, t = 1, j = 1
+        for (paper) in papers {
+            let key = paper.title.md5()
+            let dictTemp = NSMutableDictionary()
+            dictTemp["user"] = PaperAnswers[key]
+            
+            switch paper.type {
+            case "xz":
+                xcontent["\(x)"] = dictTemp
+                x = x + 1
+            case "tk":
+                tcontent["\(t)"] = dictTemp
+                t = t + 1
+            case "jd":
+                jcontent["\(j)"] = dictTemp
+                j = j + 1
+            default:
+                break
+            }
+        }
+        
+        submitData["xcontent"] = xcontent
+        submitData["tcontent"] = tcontent
+        submitData["jcontent"] = jcontent
+        
+        let json = JSON(submitData)
+        let str = json.description
+        print("提交到服务器的数据：str = \(str)")
+        
+        YMNetworkTool.shareNetworkTool.submitAnswer(str)
     }
     
     private func setupTableView() {
+        tableView.backgroundColor = UIColor.init(white: 0.96, alpha: 1.0)
         tableView.tableFooterView = UIView()
         tableView.separatorColor = UIColor.red
         tableView.separatorInset = UIEdgeInsetsMake(0, 0, 0, 0)
@@ -44,7 +98,7 @@ class ParseTableViewController: UITableViewController {
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return papers.count ?? 0
+        return papers.count 
     }
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {

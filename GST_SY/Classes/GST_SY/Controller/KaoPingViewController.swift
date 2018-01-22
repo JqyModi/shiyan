@@ -208,6 +208,9 @@ extension KaoPingViewController: KaoPingTableViewCellDelegate,UITableViewDelegat
         kpVC.title="开始答题"
         //清空答案缓存
         PaperAnswers.removeAllObjects()
+        //将试题ID及Name封装到答案(PaperAnswers)中：方便提交
+        PaperAnswers["paperId"] = paperId
+        PaperAnswers["paperName"] = paperName
         self.navigationController?.pushViewController(kpVC, animated: true)
     }
     

@@ -15,6 +15,12 @@ class ParseTableViewController: UITableViewController {
     
     var papers = [Paper]()
     
+    override func viewWillLayoutSubviews() {
+        super.viewWillLayoutSubviews()
+        //重写返回操作
+        self.navigationItem.leftBarButtonItem = UIBarButtonItem(title: "返回", style: UIBarButtonItemStyle.plain, target: self, action: #selector(ParseTableViewController.back))
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -22,8 +28,16 @@ class ParseTableViewController: UITableViewController {
         
         //提交答案
         submitDataToServer()
+        
     }
     
+    @objc private func back() {
+        debugPrint(#function)
+        //跳转到指定vc 不在返回答题界面
+        let vcArry = self.navigationController?.viewControllers
+        let vc = vcArry![(vcArry?.count)!-3]
+        self.navigationController?.popToViewController(vc, animated: true)
+    }
     
     func submitDataToServer(){
         let submitData = NSMutableDictionary()

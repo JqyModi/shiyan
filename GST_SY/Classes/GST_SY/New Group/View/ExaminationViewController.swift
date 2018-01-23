@@ -22,8 +22,10 @@ class ExaminationViewController: UIViewController {
             fillData()
         }
     }
-    //将当天试题题目作为Key保存答案
+    //将当前试题题目作为Key保存答案
     var key = ""
+    
+    var activedTextViewRect: CGRect?
     
     @objc private func optionDidTap(gesture: UITapGestureRecognizer) {
 //        debugPrint(#function)
@@ -130,6 +132,57 @@ class ExaminationViewController: UIViewController {
         
         //添加fillBlank监听用户输入的填空题答案
         fillBlank.delegate = self
+        
+        //注册键盘弹出监听
+        NotificationCenter.default.addObserver(self, selector: #selector(ExaminationViewController.keyboardWillShow(notification:)), name: NSNotification.Name.UIKeyboardWillShow, object: nil)
+        
+        NotificationCenter.default.addObserver(self, selector: #selector(ExaminationViewController.keyboardWillHide(notification:)), name: NSNotification.Name.UIKeyboardWillHide, object: nil)
+    }
+    
+    //监听键盘弹出
+    @objc private func keyboardWillShow(notification: Notification) {
+        //取出键盘最终的frame
+        let keyBoardRect = notification.userInfo![UIKeyboardFrameEndUserInfoKey] as? CGRect
+        //取出键盘弹出需要花费的时间
+        let duration = notification.userInfo![UIKeyboardAnimationDurationUserInfoKey] as? Double
+
+        debugPrint("keyBoardRect = \(keyBoardRect)  ::: duration = \(duration)")
+
+        //获取最佳位置距离屏幕上方的距离
+        let pre = ((self.fillBlank.origin.y) + (self.fillBlank.size.height))
+        let next = (self.view.size.height - (keyBoardRect?.size.height)!)
+        if (pre > next) {//键盘的高度 高于textView的高度 需要滚动
+            UIView.animate(withDuration: duration!, animations: {
+                //是否需要刷新界面
+                self.view.layoutIfNeeded()
+                let y = pre - next
+                debugPrint("y ::: \(y)")
+                debugPrint("keyBoardRect ::: \(keyBoardRect)")
+                self.view.frame.origin.y = -((keyBoardRect?.size.height)! - 30)
+            })
+        }
+    }
+    //监听键盘弹出
+//    @objc private func keyboardWillShow(notification: NSNotification) {
+//        let info = notification.userInfo!
+//        let keyboardFrame = (info[UIKeyboardFrameEndUserInfoKey]! as AnyObject).cgRectValue
+//        let responderTextField = fillBlank
+//
+//        let distanceToKeyboard = (keyboardFrame?.origin.y)! - (responderTextField.convert(responderTextField.frame, to: view)).maxY
+//
+//        if distanceToKeyboard < 0 {
+//            view.frame.origin.y -= -distanceToKeyboard
+//        }
+//    }
+    //监听键盘消失
+    @objc private func keyboardWillHide(notification: NSNotification) {
+        //取出键盘弹出需要花费的时间
+        let duration = notification.userInfo![UIKeyboardAnimationDurationUserInfoKey] as? Double
+        UIView.animate(withDuration: duration!, animations: {
+            //是否需要刷新界面
+            self.view.layoutIfNeeded()
+            self.view.frame.origin.y = 0
+        })
     }
     
     private func handleURLWithImage(str: String) -> URL {
@@ -138,6 +191,11 @@ class ExaminationViewController: UIViewController {
         urlStr = urlStr.replacingOccurrences(of: " ", with: "")
 //        debugPrint("url2  ----> \(urlStr)")
         return URL(string: urlStr)!
+    }
+    
+    deinit {
+        NotificationCenter.default.removeObserver(self)
+        debugPrint(#function)
     }
     
     private func showOption() {

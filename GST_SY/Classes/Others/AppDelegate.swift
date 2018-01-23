@@ -15,6 +15,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         window = UIWindow(frame: UIScreen.main.bounds)
         window?.makeKeyAndVisible()
        
+//        window?.backgroundColor = UIColor.white
+        
         /*是否进入引导页*/
         
         if !UserDefaults.standard.bool(forKey: YMFirstLaunch) {

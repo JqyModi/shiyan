@@ -191,6 +191,7 @@
 		04D19AAE1F25A808006571EA /* ShowAnswerDetailTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 04D19AAC1F25A808006571EA /* ShowAnswerDetailTableViewCell.xib */; };
 		04D6C8301F21EA51002701ED /* XKeyBoard.m in Sources */ = {isa = PBXBuildFile; fileRef = 04D6C82F1F21EA51002701ED /* XKeyBoard.m */; };
 		04DEB09F1F22EFBE00661C84 /* ShowAnswerDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04DEB09D1F22EFBE00661C84 /* ShowAnswerDetailViewController.swift */; };
+		04E265202017056300A0E574 /* CustomTabBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04E2651F2017056300A0E574 /* CustomTabBar.swift */; };
 		04FB3B69200F29EE00DE23AB /* test.json in Resources */ = {isa = PBXBuildFile; fileRef = 04FB3B5E200F29EE00DE23AB /* test.json */; };
 		04FB3B6A200F29EE00DE23AB /* VoteListModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04FB3B5F200F29EE00DE23AB /* VoteListModel.swift */; };
 		04FB3B6B200F29EE00DE23AB /* VoteRankTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04FB3B61200F29EE00DE23AB /* VoteRankTableViewCell.swift */; };
@@ -417,6 +418,7 @@
 		04D6C82E1F21EA51002701ED /* XKeyBoard.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XKeyBoard.h; sourceTree = "<group>"; };
 		04D6C82F1F21EA51002701ED /* XKeyBoard.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XKeyBoard.m; sourceTree = "<group>"; };
 		04DEB09D1F22EFBE00661C84 /* ShowAnswerDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShowAnswerDetailViewController.swift; sourceTree = "<group>"; };
+		04E2651F2017056300A0E574 /* CustomTabBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTabBar.swift; sourceTree = "<group>"; };
 		04FB3B5E200F29EE00DE23AB /* test.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = test.json; sourceTree = "<group>"; };
 		04FB3B5F200F29EE00DE23AB /* VoteListModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VoteListModel.swift; sourceTree = "<group>"; };
 		04FB3B61200F29EE00DE23AB /* VoteRankTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VoteRankTableViewCell.swift; sourceTree = "<group>"; };
@@ -500,6 +502,7 @@
 			isa = PBXGroup;
 			children = (
 				047D38D42010741200A44D9F /* ExaminationViewController.swift */,
+				04E2651F2017056300A0E574 /* CustomTabBar.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -1431,6 +1434,7 @@
 				04B702D11F0E0B1400EF2691 /* YMVerticalButton.swift in Sources */,
 				04B702D51F0E0B1400EF2691 /* ExperimentTableViewCell.swift in Sources */,
 				04B7033C1F0E0B1400EF2691 /* YMCommentCell.swift in Sources */,
+				04E265202017056300A0E574 /* CustomTabBar.swift in Sources */,
 				04B702C01F0E0B1400EF2691 /* YMSeeAllController.swift in Sources */,
 				04B702CF1F0E0B1400EF2691 /* YMTopHeaderView.swift in Sources */,
 				04B702E51F0E0B1400EF2691 /* YMTopicViewController.swift in Sources */,

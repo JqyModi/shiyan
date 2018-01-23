@@ -74,8 +74,8 @@ class KPViewController: TabmanViewController {
     }
     
     //懒加载一个UITabBar
-    lazy var tabBar: UITabBar = {
-        let tabbar = UITabBar()
+    lazy var tabBar: CustomTabBar = {
+        let tabbar = CustomTabBar()
         //设置Tabbar颜色
         tabbar.backgroundColor = UIColor.white
         let item1 = UITabBarItem(title: "上一题", image: UIImage(named: "pre"), tag: 0)
@@ -84,10 +84,28 @@ class KPViewController: TabmanViewController {
         let item3 = UITabBarItem(title: "下一题", image: UIImage(named: "next"), tag: 2)
         let items = [item1,item2,item3]
         tabbar.setItems(items, animated: true)
+        tabbar.sizeToFit()
         tabbar.delegate = self
         return tabbar
     }()
 
+    class ActionTabBar: UITabBar {
+        
+        override var frame: CGRect {
+            get {
+                return super.frame
+            }
+            set {
+                var tmp = newValue
+                debugPrint("tmp1 >>>> \(tmp)")
+                if let superview = self.superview, tmp.maxY != superview.frame.height {
+                    tmp.origin.y = superview.frame.height - tmp.height - 20
+                }
+                debugPrint("tmp2 >>>> \(tmp)")
+                super.frame = tmp
+            }
+        }
+    }
 }
 
 extension KPViewController: PageboyViewControllerDataSource, UITabBarDelegate {

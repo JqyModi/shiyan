@@ -136,7 +136,17 @@ class YMProductViewController: YMBaseViewController {
     }
 
     fileprivate func setupTableView() {
-        tableView = UITableView(frame:  CGRect(x: 0, y: kTitlesViewY+44, width: SCREENW, height: SCREENH-(kTitlesViewY+44)))
+        
+        //适配iPhone X下头部分类视图被遮挡问题1
+        //        @available(iOS 11.0, *)
+        let currentVersion = Double(UIDevice.current.systemVersion)
+        //        currentVersion! >= 11.0 ：不能判断是否是iPhone X：通过分辨率判断
+        if UIDevice.current.isX() {
+            tableView = UITableView(frame:  CGRect(x: 0, y: kTitlesViewY+44+30, width: SCREENW, height: SCREENH-(kTitlesViewY+44)))
+        }else {
+            tableView = UITableView(frame:  CGRect(x: 0, y: kTitlesViewY+44, width: SCREENW, height: SCREENH-(kTitlesViewY+44)))
+        }
+        
         //        tableView.frame = view.bounds
         self.automaticallyAdjustsScrollViewInsets =  false
         self.view.addSubview(tableView)
@@ -182,12 +192,16 @@ class YMProductViewController: YMBaseViewController {
         WOWDropMenuSetting.cellSelectionColor = UIColor.red
         WOWDropMenuSetting.columnTitleFont = UIFont.systemFont(ofSize: GSTGlobalFontMiddleSize())
         
-//        if prefersStatusBarHidden {
-//            self.menuView = WOWDropMenuView(frame:CGRect(x: 0, y: kTitlesViewY - statusH, width: SCREENW, height: 44))
-//        }else{
-//            self.menuView = WOWDropMenuView(frame:CGRect(x: 0, y: kTitlesViewY, width: SCREENW, height: 44))
-//        }
-        self.menuView = WOWDropMenuView(frame:CGRect(x: 0, y: kTitlesViewY, width: SCREENW, height: 44))
+        //适配iPhone X下头部分类视图被遮挡问题2
+        //        @available(iOS 11.0, *)
+        let currentVersion = Double(UIDevice.current.systemVersion)
+        //        currentVersion! >= 11.0 ：不能判断是否是iPhone X：通过分辨率判断
+        if UIDevice.current.isX() {
+            self.menuView = WOWDropMenuView(frame:CGRect(x: 0, y: kTitlesViewY + 30, width: SCREENW, height: 44))
+        }else {
+            self.menuView = WOWDropMenuView(frame:CGRect(x: 0, y: kTitlesViewY, width: SCREENW, height: 44))
+        }
+        
         
         self.menuView.delegate = self
         self.view.addSubview(self.menuView)

@@ -192,6 +192,7 @@
 		04D6C8301F21EA51002701ED /* XKeyBoard.m in Sources */ = {isa = PBXBuildFile; fileRef = 04D6C82F1F21EA51002701ED /* XKeyBoard.m */; };
 		04DEB09F1F22EFBE00661C84 /* ShowAnswerDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04DEB09D1F22EFBE00661C84 /* ShowAnswerDetailViewController.swift */; };
 		04E265202017056300A0E574 /* CustomTabBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04E2651F2017056300A0E574 /* CustomTabBar.swift */; };
+		04E2652220172FD900A0E574 /* UIDevice+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04E2652120172FD900A0E574 /* UIDevice+Extension.swift */; };
 		04FB3B69200F29EE00DE23AB /* test.json in Resources */ = {isa = PBXBuildFile; fileRef = 04FB3B5E200F29EE00DE23AB /* test.json */; };
 		04FB3B6A200F29EE00DE23AB /* VoteListModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04FB3B5F200F29EE00DE23AB /* VoteListModel.swift */; };
 		04FB3B6B200F29EE00DE23AB /* VoteRankTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04FB3B61200F29EE00DE23AB /* VoteRankTableViewCell.swift */; };
@@ -419,6 +420,7 @@
 		04D6C82F1F21EA51002701ED /* XKeyBoard.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XKeyBoard.m; sourceTree = "<group>"; };
 		04DEB09D1F22EFBE00661C84 /* ShowAnswerDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShowAnswerDetailViewController.swift; sourceTree = "<group>"; };
 		04E2651F2017056300A0E574 /* CustomTabBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTabBar.swift; sourceTree = "<group>"; };
+		04E2652120172FD900A0E574 /* UIDevice+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIDevice+Extension.swift"; sourceTree = "<group>"; };
 		04FB3B5E200F29EE00DE23AB /* test.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = test.json; sourceTree = "<group>"; };
 		04FB3B5F200F29EE00DE23AB /* VoteListModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VoteListModel.swift; sourceTree = "<group>"; };
 		04FB3B61200F29EE00DE23AB /* VoteRankTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VoteRankTableViewCell.swift; sourceTree = "<group>"; };
@@ -755,6 +757,7 @@
 				04B702791F0E0B1400EF2691 /* YMNetworkTool.swift */,
 				0469038D1F26C41C005BAA84 /* ExtensionString.swift */,
 				041255CA1F78CDE7006FC362 /* UIImageView+Extension.swift */,
+				04E2652120172FD900A0E574 /* UIDevice+Extension.swift */,
 			);
 			path = Tools;
 			sourceTree = "<group>";
@@ -1360,6 +1363,7 @@
 				04B703171F0E0B1400EF2691 /* YMTabBarController.swift in Sources */,
 				04B703011F0E0B1400EF2691 /* YMSortTableView.swift in Sources */,
 				04B703331F0E0B1400EF2691 /* YMTMALLViewController.swift in Sources */,
+				04E2652220172FD900A0E574 /* UIDevice+Extension.swift in Sources */,
 				04B703041F0E0B1400EF2691 /* ResetViewController.swift in Sources */,
 				04B702E41F0E0B1400EF2691 /* YMSearchViewController.swift in Sources */,
 				04FB3B6D200F29EE00DE23AB /* VoteListCollectionViewCell.swift in Sources */,

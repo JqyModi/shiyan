@@ -21,7 +21,7 @@
 //            let encodedURLRequest = try encoding.encode(urlRequest, with: parameters)
 //            return request(encodedURLRequest)
 //        } catch {
-//            print(error)
+//            debugPrint(error)
 //            return request(URLRequest(url: URL(string: "http://example.com/wrong_request")!))
 //        }
 //    }

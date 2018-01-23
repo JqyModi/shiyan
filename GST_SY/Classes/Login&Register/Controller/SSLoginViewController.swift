@@ -105,8 +105,8 @@ class SSLoginViewController: YMBaseViewController {
                 self?.loginValidates = loginValidate
                 
                 if (self!.loginValidates == true) {
-                    print("loginValidates:",self!.loginValidates)
-                    print("登录成功")
+                    debugPrint("loginValidates:",self!.loginValidates)
+                    debugPrint("登录成功")
                     SVProgressHUD.showError(withStatus: "登录成功")
                     let userInfoViewController = UserInfoViewController()
                     userInfoViewController.title="账号信息"
@@ -115,7 +115,7 @@ class SSLoginViewController: YMBaseViewController {
                     self?.navigationController?.popToRootViewController(animated: true)
                 }
                 else{
-                    print("登录失败")
+                    debugPrint("登录失败")
                     SVProgressHUD.showError(withStatus: "登录失败")
                 }
             }

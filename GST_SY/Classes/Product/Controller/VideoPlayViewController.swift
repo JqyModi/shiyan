@@ -27,8 +27,8 @@ class VideoPlayViewController: UIViewController {
 //        setupPlayerManager()
         preparePlayer()
         setupPlayerResource()
-        print("vc name:",videoname)
-        print("vc url:",videourl)
+        debugPrint("vc name:",videoname)
+        debugPrint("vc url:",videourl)
         BMPlayerConf.allowLog = true
         
         
@@ -93,7 +93,7 @@ class VideoPlayViewController: UIViewController {
     deinit {
    
         player.prepareToDealloc()
-        print("VideoPlayViewController Deinit")
+        debugPrint("VideoPlayViewController Deinit")
     }
     
 }

@@ -70,13 +70,13 @@ class YMShareButtonView: UIView {
                 //分享到微信朋友圈
 //                ShareSDK
                 ShareSDK.share(SSDKPlatformType.subTypeWechatTimeline, parameters: shareParames, onStateChanged: { (respState, nil, entity, error) in
-                    print("分享回调")
+                    debugPrint("分享回调")
                     
                     switch respState{
                         
-                    case SSDKResponseState.success: print("分享成功")
-                    case SSDKResponseState.fail:    print("授权失败,错误描述:\(error)")
-                    case SSDKResponseState.cancel:  print("操作取消")
+                    case SSDKResponseState.success: debugPrint("分享成功")
+                    case SSDKResponseState.fail:    debugPrint("授权失败,错误描述:\(error)")
+                    case SSDKResponseState.cancel:  debugPrint("操作取消")
                         
                     default:
                         break
@@ -87,13 +87,13 @@ class YMShareButtonView: UIView {
             case .weChatSession:
                 //分享到微信好友
                 ShareSDK.share(SSDKPlatformType.subTypeWechatSession, parameters: shareParames, onStateChanged: { (respState, nil, entity, error) in
-                    print("分享回调")
+                    debugPrint("分享回调")
                     
                     switch respState{
                         
-                    case SSDKResponseState.success: print("分享成功")
-                    case SSDKResponseState.fail:    print("授权失败,错误描述:\(error)")
-                    case SSDKResponseState.cancel:  print("操作取消")
+                    case SSDKResponseState.success: debugPrint("分享成功")
+                    case SSDKResponseState.fail:    debugPrint("授权失败,错误描述:\(error)")
+                    case SSDKResponseState.cancel:  debugPrint("操作取消")
                         
                     default:
                         break
@@ -114,13 +114,13 @@ class YMShareButtonView: UIView {
                                                         title : "分享标题",
                                                         type : SSDKContentType.auto)
                 ShareSDK.share(SSDKPlatformType.subTypeQZone, parameters: shareParames, onStateChanged: { (respState, nil, entity, error) in
-                    print("分享回调")
+                    debugPrint("分享回调")
                     
                     switch respState{
                         
-                    case SSDKResponseState.success: print("分享成功")
-                    case SSDKResponseState.fail:    print("授权失败,错误描述:\(error)")
-                    case SSDKResponseState.cancel:  print("操作取消")
+                    case SSDKResponseState.success: debugPrint("分享成功")
+                    case SSDKResponseState.fail:    debugPrint("授权失败,错误描述:\(error)")
+                    case SSDKResponseState.cancel:  debugPrint("操作取消")
                         
                     default:
                         break
@@ -136,9 +136,9 @@ class YMShareButtonView: UIView {
 //                    
 //                    switch state{
 //                        
-//                    case SSDKResponseState.success: print("分享成功")
-//                    case SSDKResponseState.fail:    print("授权失败,错误描述:\(error)")
-//                    case SSDKResponseState.cancel:  print("操作取消")
+//                    case SSDKResponseState.success: debugPrint("分享成功")
+//                    case SSDKResponseState.fail:    debugPrint("授权失败,错误描述:\(error)")
+//                    case SSDKResponseState.cancel:  debugPrint("操作取消")
 //                        
 //                    default:
 //                        break
@@ -146,13 +146,13 @@ class YMShareButtonView: UIView {
 //                    
 //                }
                 ShareSDK.share(SSDKPlatformType.typeQQ, parameters: shareParames, onStateChanged: { (respState, nil, entity, error) in
-                    print("分享回调")
+                    debugPrint("分享回调")
                     
                     switch respState{
                         
-                    case SSDKResponseState.success: print("分享成功")
-                    case SSDKResponseState.fail:    print("授权失败,错误描述:\(error)")
-                    case SSDKResponseState.cancel:  print("操作取消")
+                    case SSDKResponseState.success: debugPrint("分享成功")
+                    case SSDKResponseState.fail:    debugPrint("授权失败,错误描述:\(error)")
+                    case SSDKResponseState.cancel:  debugPrint("操作取消")
                         
                     default:
                         break
@@ -170,13 +170,13 @@ class YMShareButtonView: UIView {
                                                         title : "分享标题",
                                                         type : SSDKContentType.auto)
                 ShareSDK.share(SSDKPlatformType.typeCopy, parameters: shareParames, onStateChanged: { (respState, nil, entity, error) in
-                    print("分享回调")
+                    debugPrint("分享回调")
                     
                     switch respState{
                         
-                    case SSDKResponseState.success: print("分享成功")
-                    case SSDKResponseState.fail:    print("授权失败,错误描述:\(error)")
-                    case SSDKResponseState.cancel:  print("操作取消")
+                    case SSDKResponseState.success: debugPrint("分享成功")
+                    case SSDKResponseState.fail:    debugPrint("授权失败,错误描述:\(error)")
+                    case SSDKResponseState.cancel:  debugPrint("操作取消")
                         
                     default:
                         break
@@ -186,7 +186,7 @@ class YMShareButtonView: UIView {
                 break
             }
         }
-        print(button.titleLabel!.text!)
+        debugPrint(button.titleLabel!.text!)
     }
     
     required init?(coder aDecoder: NSCoder) {

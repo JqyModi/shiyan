@@ -68,7 +68,7 @@ class KaoPingViewController: YMBaseViewController {
             self!.page = 1
             self!.loadVideoData()
 //            self!.data = self!.papers
-            print("data:",self!.data)
+            debugPrint("data:",self!.data)
             self?.tableView.es_stopPullToRefresh(ignoreDate: true)
             /// Set ignore footer or not
             self?.tableView.es_stopPullToRefresh(ignoreDate: true, ignoreFooter: false)
@@ -85,10 +85,10 @@ class KaoPingViewController: YMBaseViewController {
                     
                 }else{
                     self?.page = self!.page!+1
-                    print("page",self!.page)
+                    debugPrint("page",self!.page)
                     self!.loadmoreVideoData()
                     self?.tableView.es_stopLoadingMore()
-                    print("self?.papers.count:",self?.papers.count)
+                    debugPrint("self?.papers.count:",self?.papers.count)
                 }
                 
                 self!.tableView!.reloadData()
@@ -104,7 +104,7 @@ class KaoPingViewController: YMBaseViewController {
             self!.papers.removeAll()
             self?.papers=items
             self!.data = self!.papers
-            print("data:",self!.data)
+            debugPrint("data:",self!.data)
             self!.tableView.reloadData()
         }
         
@@ -116,7 +116,7 @@ class KaoPingViewController: YMBaseViewController {
         YMNetworkTool.shareNetworkTool.getKaoPing(school!, banji: banji!,nj: nj!,xueke: xueke!, page: page!){ [weak self](items) in
             self?.papers=items
             self!.data.append(contentsOf: self!.papers)
-            print("data.count:",self!.data.count)
+            debugPrint("data.count:",self!.data.count)
         }
         
     }

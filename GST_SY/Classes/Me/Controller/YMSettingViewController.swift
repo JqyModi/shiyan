@@ -135,7 +135,7 @@ class YMSettingViewController: YMBaseViewController, UIActionSheetDelegate {
     
     func actionSheet(_ actionSheet: UIActionSheet, clickedButtonAt buttonIndex: Int) {
         if buttonIndex == 0 {
-            print("bottonIndex = \(buttonIndex)")
+            debugPrint("bottonIndex = \(buttonIndex)")
             let cache = KingfisherManager.shared.cache
             cache.clearDiskCache()
             cache.clearMemoryCache()
@@ -189,7 +189,7 @@ extension YMSettingViewController: UITableViewDataSource, UITableViewDelegate {
         let cell = tableView?.cellForRow(at: indexPath) as! YMSettingCell
         
         cell.rightLabel.text = userInfo["cacheSize"] as? String
-        print("缓存大笑：",userInfo["cacheSize"] as? String ?? "0.0")
+        debugPrint("缓存大笑：",userInfo["cacheSize"] as? String ?? "0.0")
     }
     
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
@@ -205,7 +205,7 @@ extension YMSettingViewController: UITableViewDataSource, UITableViewDelegate {
         
         switch indexPath.section {
         case 0:
-            print("section 0:",indexPath.section)
+            debugPrint("section 0:",indexPath.section)
             switch indexPath.row {
             case 0:
              
@@ -223,14 +223,14 @@ extension YMSettingViewController: UITableViewDataSource, UITableViewDelegate {
                     YMNetworkTool.shareNetworkTool.loginResult(username!, userpass: userpass_md5!, school: table!){[weak self](loginValidate) in
                         self?.loginValidates=loginValidate
                         if (self!.loginValidates == true) {
-                            print("自动登录成功")
+                            debugPrint("自动登录成功")
                             let userinfo = UserInfoViewController()
                             userinfo.title = "账号信息"
                             userinfo.phoneNum = username
                             self!.navigationController?.pushViewController(userinfo, animated: true)
                         }
                         else{
-                            print("自动登录失败")
+                            debugPrint("自动登录失败")
                             //保存accessToken
                             let defaults : UserDefaults = UserDefaults.standard
                             defaults.setValue("", forKey: "accessToken")
@@ -250,10 +250,10 @@ extension YMSettingViewController: UITableViewDataSource, UITableViewDelegate {
                     self.navigationController?.pushViewController(login, animated: true)
                 }
                 
-                print("sec 0 row 0:",indexPath.row)
+                debugPrint("sec 0 row 0:",indexPath.row)
                 break
             case 1:
-                print("sec 0 row 1:",indexPath.row)
+                debugPrint("sec 0 row 1:",indexPath.row)
                 
                 let userinfo = CollectViewController()
                 userinfo.title="我的收藏"
@@ -261,7 +261,7 @@ extension YMSettingViewController: UITableViewDataSource, UITableViewDelegate {
           
                 break
             case 2:
-                print("sec 0 row 2:",indexPath.row)
+                debugPrint("sec 0 row 2:",indexPath.row)
                 //浏览记录
                 let userinfo = HistoryViewController()
                 userinfo.title="浏览记录"
@@ -274,14 +274,14 @@ extension YMSettingViewController: UITableViewDataSource, UITableViewDelegate {
         case 1:
             switch indexPath.row {
             case 0:
-                print("sec 1 row 0:",indexPath.row)
+                debugPrint("sec 1 row 0:",indexPath.row)
                 let feedback = FeedBackViewController()
                 feedback.title = "意见反馈"
                 self.navigationController?.pushViewController(feedback, animated: true)
      
                 break
             case 1:
-                print("sec 1 row 1:",indexPath.row)
+                debugPrint("sec 1 row 1:",indexPath.row)
                 
                 let alertController = UIAlertController(title: "扫描二维码，下载实验掌上通",message: "\n\n\n\n\n\n\n\n\n\n\n\n", preferredStyle: .alert)
               
@@ -298,12 +298,12 @@ extension YMSettingViewController: UITableViewDataSource, UITableViewDelegate {
              
                 break
             case 2:
-                print("sec 1 row 2:",indexPath.row)
+                debugPrint("sec 1 row 2:",indexPath.row)
                 //清楚缓存
                 clearCacheAlertController(indexPath)
                 break
             case 3:
-                print("sec 1 row 3:",indexPath.row)
+                debugPrint("sec 1 row 3:",indexPath.row)
       
                 let userinfo = AboutViewController()
                 userinfo.title="关于我们"

@@ -36,6 +36,6 @@ extension YMPostDetailViewController: UIWebViewDelegate {
     
     func webViewDidFinishLoad(_ webView: UIWebView) {
         UIApplication.shared.isNetworkActivityIndicatorVisible = false
-        print(webView.stringByEvaluatingJavaScript(from: "document.documentElement.innerHTML"))
+        debugPrint(webView.stringByEvaluatingJavaScript(from: "document.documentElement.innerHTML"))
     }
 }

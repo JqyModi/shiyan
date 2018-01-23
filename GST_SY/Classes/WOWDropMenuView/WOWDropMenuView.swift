@@ -254,7 +254,7 @@ extension WOWDropMenuView:UITableViewDelegate,UITableViewDataSource{
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         let count = WOWDropMenuSetting.rowTitles.count
-        print("下拉菜单Count ＝ \(count)")
+        debugPrint("下拉菜单Count ＝ \(count)")
         return WOWDropMenuSetting.rowTitles[currentColumn].count
     }
     

@@ -52,7 +52,7 @@ class YMProductViewController: YMBaseViewController {
 
             self?.videos=videos
             self!.data = self!.videos
-            print("data--videos  ---->  \(self!.data.description)")
+            debugPrint("data--videos  ---->  \(self!.data.description)")
             self!.tableView!.reloadData()
         }
     
@@ -72,7 +72,7 @@ class YMProductViewController: YMBaseViewController {
             self!.page = 1
             self!.loadVideoData()
             self!.data = self!.videos
-            print("data:",self!.data)
+            debugPrint("data:",self!.data)
             self?.tableView.es_stopPullToRefresh(ignoreDate: true)
             /// Set ignore footer or not
             self?.tableView.es_stopPullToRefresh(ignoreDate: true, ignoreFooter: false)
@@ -89,10 +89,10 @@ class YMProductViewController: YMBaseViewController {
                 
             }else{
                 self?.page = self!.page!+1
-                print("page",self!.page)
+                debugPrint("page",self!.page)
                 self!.loadmoreVideoData()
                 self?.tableView.es_stopLoadingMore()
-                print("self?.videos.count:",self?.videos.count)
+                debugPrint("self?.videos.count:",self?.videos.count)
             }
             
             self!.tableView!.reloadData()
@@ -107,7 +107,7 @@ class YMProductViewController: YMBaseViewController {
      
 //        hignlightCollectButton(1)
         
-        print("desctype = \(desctype)  :  categoryid = \(categoryid)  :  gradeid = \(gradeid)")
+        debugPrint("desctype = \(desctype)  :  categoryid = \(categoryid)  :  gradeid = \(gradeid)")
        YMNetworkTool.shareNetworkTool.testPost2(desctype!, categoryid: categoryid!,gradeid: gradeid!, page: page!){ [weak self](videos) in
         
             if videos.count > 0 {
@@ -115,7 +115,7 @@ class YMProductViewController: YMBaseViewController {
                 self?.videos=videos
                 self?.data.removeAll()
                 self!.data = self!.videos
-                print("data:",self!.data[0].name)
+                debugPrint("data:",self!.data[0].name)
                 //刷新数据
                 self!.tableView.reloadData()
             }else{
@@ -128,7 +128,7 @@ class YMProductViewController: YMBaseViewController {
         YMNetworkTool.shareNetworkTool.testPost2(desctype!, categoryid: categoryid!,gradeid: gradeid!, page: page!){ [weak self](items) in
             self?.videos=items
             self!.data.append(contentsOf: self!.videos)
-            print("data.count:",self!.data.count)
+            debugPrint("data.count:",self!.data.count)
         }
         //当收藏条目大于20条时需要计算page：data.count / 20 : 默认每页放20条
         var page1 = data.count / 20
@@ -174,7 +174,7 @@ class YMProductViewController: YMBaseViewController {
     }
     
     fileprivate func configMenuView(){
-//        print("该方法调用了\(count++)次")
+//        debugPrint("该方法调用了\(count++)次")
         WOWDropMenuSetting.columnTitles = ["全部年级","全部分类","按最新"]
         WOWDropMenuSetting.rowTitles =  [
             ["不限","选修6","选修5","选修4","选修3","选修2","选修1","必修三","必修二","必修一","初三","初二","初一","小六","小五","小四","小三"],
@@ -219,27 +219,27 @@ extension YMProductViewController: VideoTableViewCellDelegate,UITableViewDelegat
     
      func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         //获取重用的cell
-        print("row ======== \(indexPath.row)")
+        debugPrint("row ======== \(indexPath.row)")
         
         let cell = tableView.dequeueReusableCell(withIdentifier: messageCellID) as! VideoTableViewCell
         cell.selectionStyle = .none
         cell.videoItem = data[indexPath.row] 
-        print("cell ======== \(cell)")
+        debugPrint("cell ======== \(cell)")
         
         //检查并显示是否收藏
         //通过视频在数据库中的id来查询校验改item是否被收藏过：有返回2:无返回0:收藏成功
         if self.collectList.count > 0 {
-//            print("开始高亮显示收藏item")
+//            debugPrint("开始高亮显示收藏item")
             if self.collectList.contains(data[indexPath.row].id) {
-                print("高亮显示按钮图片 id == \(data[indexPath.row].id)")
-                print("count1 ======= \(count1)")
+                debugPrint("高亮显示按钮图片 id == \(data[indexPath.row].id)")
+                debugPrint("count1 ======= \(count1)")
                 //由于cell重用导致没有收藏的item也高亮显示了 : 加个else解决
                 cell.btn_collect.setBackgroundImage(UIImage(named: "detail_interaction_bar_favorite_pressed"), for: UIControlState())
             }else{
                 cell.btn_collect.setBackgroundImage(UIImage(named: "detail_interaction_bar_favorite"), for: UIControlState())
             }
         }else{
-            print("还没有收藏任何数据")
+            debugPrint("还没有收藏任何数据")
 //            JLToast.makeText("还没有收藏任何数据", delay: 0.5, duration: JLToastDelay.ShortDelay).show()
         }
         
@@ -272,13 +272,13 @@ extension YMProductViewController: VideoTableViewCellDelegate,UITableViewDelegat
         
      func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
-        print(indexPath.row)
+        debugPrint(indexPath.row)
         
    
          let url = data[indexPath.row].videoUrl
          let name = data[indexPath.row].name
-        print("url:",url)
-        print("name:",name)
+        debugPrint("url:",url)
+        debugPrint("name:",name)
       
         let video = VideoPlayViewController()
         video.videoname=name as NSString!
@@ -298,13 +298,13 @@ extension YMProductViewController: VideoTableViewCellDelegate,UITableViewDelegat
      
         let userDefault = UserDefaults.standard
         let accessToken = userDefault.object(forKey: "accessToken") as? String
-        print("accessToken:",accessToken)
+        debugPrint("accessToken:",accessToken)
         let model = "play"
         if collectTAG == 0{
             //通过上面设置的tag来获取到当前item中视频信息对应数据库中的视频id
             let id = data[collectbtn.tag].id
-            print("collectButton id ----> ===== \(id)")
-            print("collectButton attentionArr ----> ===== \(attentionArr.description)")
+            debugPrint("collectButton id ----> ===== \(id)")
+            debugPrint("collectButton attentionArr ----> ===== \(attentionArr.description)")
             //通过视频在数据库中的id来查询校验改item是否被收藏过：有返回2:无返回0:收藏成功
             if accessToken != nil {
         YMNetworkTool.shareNetworkTool.collectResult(accessToken!,model: model,id: id!){[weak self](error_codeMsg) in
@@ -315,23 +315,23 @@ extension YMProductViewController: VideoTableViewCellDelegate,UITableViewDelegat
 //                collectbtn.selected = true
 //                collectbtn.setImage(UIImage(named: "detail_interaction_bar_favorite_pressed"), forState: .Selected)
                 collectbtn.setBackgroundImage(UIImage(named: "detail_interaction_bar_favorite_pressed"), for: UIControlState())
-                print("收藏成功")
+                debugPrint("收藏成功")
                 Toast(text: "收藏成功").show()
-                print("name:",self!.data[collectbtn.tag].name)
+                debugPrint("name:",self!.data[collectbtn.tag].name)
                 
             }else if self!.error_codeMsg == 2 {
-                print("已经收藏过了")
+                debugPrint("已经收藏过了")
 //                JLToast.makeText("已经收藏过了", delay: 0.5, duration: JLToastDelay.ShortDelay).show()
-                print("name:",self!.data[collectbtn.tag].name)
+                debugPrint("name:",self!.data[collectbtn.tag].name)
                 //取消收藏
                 self!.cancelCollect(id!, accessToken: accessToken!, model: model,collectbtn: collectbtn)
             }else{
-                print("请重新登录")
+                debugPrint("请重新登录")
                 Toast(text: "请重新登录").show()
             }
                 }
             }else{
-                print("请先进行登录")
+                debugPrint("请先进行登录")
                 Toast(text: "请先进行登录").show()
             }
      
@@ -355,19 +355,19 @@ extension YMProductViewController: VideoTableViewCellDelegate,UITableViewDelegat
 //                collectbtn.selected = false
 //                collectbtn.setImage(UIImage(named: "detail_interaction_bar_favorite"), forState: .Normal)
                 collectbtn.setBackgroundImage(UIImage(named: "detail_interaction_bar_favorite"), for: UIControlState())
-                print("取消收藏")
+                debugPrint("取消收藏")
                 Toast(text: "取消收藏").show()
-                print("name:",self!.data[collectbtn.tag].name)
+                debugPrint("name:",self!.data[collectbtn.tag].name)
             }else{
-                print("请重新登录")
+                debugPrint("请重新登录")
                 Toast(text: "请重新登录").show()
             }
         }
     }
     
     func shareButton(_ sender: UIButton){
-        print(sender.tag)
-        print("name:",data[sender.tag].name)
+        debugPrint(sender.tag)
+        debugPrint("name:",data[sender.tag].name)
         YMActionSheet.show()
     }
 }
@@ -455,8 +455,8 @@ extension YMProductViewController:DropMenuViewDelegate{
                 break
             default:
                 gradeid = vd_gdcate[row - 1].id
-                print("gradeid:",gradeid)
-                print("gradeidname:",vd_gdcate[row - 1].name)
+                debugPrint("gradeid:",gradeid)
+                debugPrint("gradeidname:",vd_gdcate[row - 1].name)
                 loadVideoData()
                 break
             }
@@ -513,8 +513,8 @@ extension YMProductViewController:DropMenuViewDelegate{
                 break
             default:
                 categoryid = vd_cate[row - 1].id
-                print("categoryid:",categoryid)
-                print("categoryidname:",vd_cate[row - 1].name)
+                debugPrint("categoryid:",categoryid)
+                debugPrint("categoryidname:",vd_cate[row - 1].name)
                 loadVideoData()
                 break
             }
@@ -547,7 +547,7 @@ extension YMProductViewController:DropMenuViewDelegate{
     
     //当视图将要显示的时候调用
     override func viewWillAppear(_ animated: Bool) {
-        print("视图将要显示")
+        debugPrint("视图将要显示")
         //刷新下拉菜单的数据源
         self.tableView.es_startPullToRefresh()
         configMenuView()
@@ -565,7 +565,7 @@ extension YMProductViewController:DropMenuViewDelegate{
         //
         let userDefault = UserDefaults.standard
         let accessToken = userDefault.object(forKey: "accessToken") as? String
-        print("accessToken:",accessToken)
+        debugPrint("accessToken:",accessToken)
         let model = "play"
         if accessToken != nil {
             YMNetworkTool.shareNetworkTool.collectList(accessToken!, model: model, page: page, finished: { (items) in
@@ -581,7 +581,7 @@ extension YMProductViewController:DropMenuViewDelegate{
                 
             })
         }else{
-            print("请先进行登录")
+            debugPrint("请先进行登录")
 //            Toast(text: "请先进行登录").show()
         }
         

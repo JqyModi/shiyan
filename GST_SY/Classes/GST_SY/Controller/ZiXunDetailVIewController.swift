@@ -28,7 +28,7 @@ class ZiXunDetailVIewController: YMBaseViewController {
         webView.delegate = self
         view.addSubview(webView)
         
-        print("fl url:",content)
+        debugPrint("fl url:",content)
     }
 }
 

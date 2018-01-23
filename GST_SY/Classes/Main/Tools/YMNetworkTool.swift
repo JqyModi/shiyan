@@ -424,13 +424,13 @@ class YMNetworkTool: NSObject {
                       "category_id":categoryid,
                       "gradeid":gradeid,
                       "page":page] as [String : Any]
-        print("testPost2  --- > desctype = \(desctype)  :  categoryid = \(categoryid)  :  gradeid = \(gradeid)")
+        debugPrint("testPost2  --- > desctype = \(desctype)  :  categoryid = \(categoryid)  :  gradeid = \(gradeid)")
         Alamofire.request(url, method: .get, parameters: params, encoding: URLEncoding.default, headers: nil).responseJSON { (response) in
             if let value = response.result.value {
                 let dict = JSON(value)
                 if dict["data"].arrayObject != nil{
                     let data = dict["data"].arrayObject
-                    //                        print("data:",data)
+                    //                        debugPrint("data:",data)
                     var results = [VideoModel]()
                     
                     for item in data!{
@@ -440,7 +440,7 @@ class YMNetworkTool: NSObject {
                     finished(results)
                 }
                 else{
-                    print("暂无内容")
+                    debugPrint("暂无内容")
                 }
             }else{
                 SVProgressHUD.showError(withStatus: "数据加载失败请检测网络是否正常")
@@ -458,11 +458,11 @@ class YMNetworkTool: NSObject {
             
             if let value = response.result.value {
                 let dict = JSON(value)
-                //                    print("dict:",dict)
+                //                    debugPrint("dict:",dict)
                 
                 if dict["data"].arrayObject != nil{
                     let data = dict["data"].arrayObject
-                    //                        print("data:",data)
+                    //                        debugPrint("data:",data)
                     var results = [VideoModel]()
                     
                     for item in data!{
@@ -472,7 +472,7 @@ class YMNetworkTool: NSObject {
                     finished(results)
                 }
                 else{
-                    print("暂无内容")
+                    debugPrint("暂无内容")
                 }
                 
             }
@@ -489,11 +489,11 @@ class YMNetworkTool: NSObject {
             
             if let value = response.result.value {
                 let dict = JSON(value)
-                //                    print("dict:",dict)
+                //                    debugPrint("dict:",dict)
                 
                 if dict["data"].arrayObject != nil{
                     let data = dict["data"].arrayObject
-                    //                        print("data:",data)
+                    //                        debugPrint("data:",data)
                     var results = [WenKu]()
                     
                     for item in data!{
@@ -507,7 +507,7 @@ class YMNetworkTool: NSObject {
                     finished(results)
                 }
                 else{
-                    print("暂无内容")
+                    debugPrint("暂无内容")
                 }
                 
             }
@@ -538,10 +538,10 @@ class YMNetworkTool: NSObject {
             
             if let value = response.result.value {
                 let dict = JSON(value)
-                //                    print("dict:",dict)
+                //                    debugPrint("dict:",dict)
                 if dict["data"].arrayObject != nil{
                     let data = dict["data"].arrayObject
-                    //                        print("data:",data)
+                    //                        debugPrint("data:",data)
                     var results = [KaoPing]()
                     
                     for item in data!{
@@ -550,7 +550,7 @@ class YMNetworkTool: NSObject {
                     }
                     finished(results)
                 }else{
-                    print("暂无内容")
+                    debugPrint("暂无内容")
                 }
                 
             }
@@ -570,7 +570,7 @@ class YMNetworkTool: NSObject {
             
             if let value = response.result.value {
                 let dict = JSON(value)
-                //                    print("dict:",dict)
+                //                    debugPrint("dict:",dict)
                 var results = [Paper]()
                 
                 let xcontentJson = dict["xcontent"].dictionaryObject
@@ -630,7 +630,7 @@ class YMNetworkTool: NSObject {
                 }
                 else{
                     Toast(text: "数据提交失败").show()
-                    print("暂无内容")
+                    debugPrint("暂无内容")
                 }
                 
             }
@@ -648,11 +648,11 @@ class YMNetworkTool: NSObject {
             
             if let value = response.result.value {
                 let dict = JSON(value)
-                //                    print("dict:",dict)
+                //                    debugPrint("dict:",dict)
                 
                 if dict["data"].arrayObject != nil{
                     let data = dict["data"].arrayObject
-                    //                        print("data:",data)
+                    //                        debugPrint("data:",data)
                     var results = [VideoModel]()
                     
                     for item in data!{
@@ -662,7 +662,7 @@ class YMNetworkTool: NSObject {
                     finished(results)
                 }
                 else{
-                    print("暂无内容")
+                    debugPrint("暂无内容")
                 }
                 
             }
@@ -680,11 +680,11 @@ class YMNetworkTool: NSObject {
             
             if let value = response.result.value {
                 let dict = JSON(value)
-                //                    print("dict:",dict)
+                //                    debugPrint("dict:",dict)
                 
                 if dict["data"].arrayObject != nil{
                     let data = dict["data"].arrayObject
-                    //                        print("data:",data)
+                    //                        debugPrint("data:",data)
                     var results = [VideoModel]()
                     
                     for item in data!{
@@ -694,7 +694,7 @@ class YMNetworkTool: NSObject {
                     finished(results)
                 }
                 else{
-                    print("暂无内容")
+                    debugPrint("暂无内容")
                 }
                 
             }
@@ -711,11 +711,11 @@ class YMNetworkTool: NSObject {
             
             if let value = response.result.value {
                 let dict = JSON(value)
-                //                    print("dict:",dict)
+                //                    debugPrint("dict:",dict)
                 
                 if dict["data"].arrayObject != nil{
                     let data = dict["data"].arrayObject
-                    //                        print("data:",data)
+                    //                        debugPrint("data:",data)
                     var results = [PeiXun]()
                     
                     for item in data!{
@@ -725,7 +725,7 @@ class YMNetworkTool: NSObject {
                     finished(results)
                 }
                 else{
-                    print("暂无内容")
+                    debugPrint("暂无内容")
                 }
                 
             }
@@ -742,11 +742,11 @@ class YMNetworkTool: NSObject {
             
             if let value = response.result.value {
                 let dict = JSON(value)
-                //                    print("dict:",dict)
+                //                    debugPrint("dict:",dict)
                 
                 if dict["data"].arrayObject != nil{
                     let data = dict["data"].arrayObject
-                    //                        print("data:",data)
+                    //                        debugPrint("data:",data)
                     var results = [PeiXun]()
                     
                     for item in data!{
@@ -756,7 +756,7 @@ class YMNetworkTool: NSObject {
                     finished(results)
                 }
                 else{
-                    print("暂无内容")
+                    debugPrint("暂无内容")
                 }
                 
             }
@@ -773,11 +773,11 @@ class YMNetworkTool: NSObject {
             
             if let value = response.result.value {
                 let dict = JSON(value)
-                //                    print("dict:",dict)
+                //                    debugPrint("dict:",dict)
                 
                 if dict["data"].arrayObject != nil{
                     let data = dict["data"].arrayObject
-                    //                        print("data:",data)
+                    //                        debugPrint("data:",data)
                     var results = [ZiXun]()
                     
                     for item in data!{
@@ -787,7 +787,7 @@ class YMNetworkTool: NSObject {
                     finished(results)
                 }
                 else{
-                    print("暂无内容")
+                    debugPrint("暂无内容")
                 }
                 
             }
@@ -805,11 +805,11 @@ class YMNetworkTool: NSObject {
             
             if let value = response.result.value {
                 let dict = JSON(value)
-                //                    print("dict:",dict)
+                //                    debugPrint("dict:",dict)
                 
                 if dict["data"].arrayObject != nil{
                     let data = dict["data"].arrayObject
-                    //                        print("data:",data)
+                    //                        debugPrint("data:",data)
                     var results = [ZiXun]()
                     
                     for item in data!{
@@ -819,7 +819,7 @@ class YMNetworkTool: NSObject {
                     finished(results)
                 }
                 else{
-                    print("暂无内容")
+                    debugPrint("暂无内容")
                 }
                 
             }
@@ -835,10 +835,10 @@ class YMNetworkTool: NSObject {
         Alamofire.request(url, method: .get, parameters: params, encoding: URLEncoding.default, headers: nil).responseJSON { (response) in
             if let value = response.result.value {
                 let dict = JSON(value)
-                print("dict:",dict)
+                debugPrint("dict:",dict)
                 if dict["data"].arrayObject != nil {
                     let data = dict["data"].arrayObject
-                    print("data:",data)
+                    debugPrint("data:",data)
                     var results = [News]()
                     for item in data! {
                         let result = News(dict: item as! [String : AnyObject])
@@ -847,7 +847,7 @@ class YMNetworkTool: NSObject {
                     finished(results)
                 }
                 else{
-                    print("暂无内容")
+                    debugPrint("暂无内容")
                 }
             }
         }
@@ -873,7 +873,7 @@ class YMNetworkTool: NSObject {
                     finished(results)
                 }
                 else{
-                    print("暂无内容")
+                    debugPrint("暂无内容")
                 }
             }else{
                 SVProgressHUD.showError(withStatus: "数据加载失败请检测网络是否正常")
@@ -898,8 +898,8 @@ class YMNetworkTool: NSObject {
                 let message = dict["message"].stringValue
                 if success{
                     let accessToken = data["accessToken"].stringValue
-                    print("accessToken:",accessToken)
-                    print("message:",message)
+                    debugPrint("accessToken:",accessToken)
+                    debugPrint("message:",message)
                     loginValidate = true
                     let userId = data["id"].stringValue
                     
@@ -915,7 +915,7 @@ class YMNetworkTool: NSObject {
                     
                 }else{
                     
-                    print("message:",message)
+                    debugPrint("message:",message)
                     loginValidate = false
                 }
                 finished(loginValidate!)
@@ -940,14 +940,14 @@ class YMNetworkTool: NSObject {
                       "code_type":code_type] as [String : Any]
         //        let params = ["sms_code":smscode]
         Alamofire.request(url, method: .post, parameters: params, encoding: URLEncoding.default, headers: nil).responseJSON { (response) in
-            print(url)
+            debugPrint(url)
             if let value = response.result.value {
                 let dict = JSON(value)
                 let success = dict["success"].boolValue
                 let error_code = dict["error_code"].int
                 if success{
                     error_codeMsg = error_code
-                    print("error_code:",error_code)
+                    debugPrint("error_code:",error_code)
                     
                 }else{
                     error_codeMsg = error_code
@@ -975,7 +975,7 @@ class YMNetworkTool: NSObject {
                 let error_code = dict["error_code"].int
                 if success{
                     error_codeMsg = error_code
-                    print("error_code:",error_code)
+                    debugPrint("error_code:",error_code)
                     
                 }else{
                     error_codeMsg = error_code
@@ -993,19 +993,19 @@ class YMNetworkTool: NSObject {
         
         var error_codeMsg : Int?
         let url = URLSTR + "user_signup"
-        print("username = \(username)")
+        debugPrint("username = \(username)")
         let params = ["user_name": username,
                       "user_email":useremail,
                       "user_pass":userpass
         ]
-        print("url === \(url)")
+        debugPrint("url === \(url)")
         //        Alamofire.NSURLCache.setSharedURLCache(NSURLCache(memoryCapacity: 0, diskCapacity: 0, diskPath: nil))
         //        Alamofire.Manager.sharedInstance.session.configuration.requestCachePolicy = .ReloadIgnoringLocalCacheData
         
         Alamofire.request(url, method: .post, parameters: params, encoding: URLEncoding.default, headers: nil).responseJSON { (response) in
             if let value = response.result.value {
                 let dict = JSON(value)
-                print("dict --------->\(dict.arrayValue)")
+                debugPrint("dict --------->\(dict.arrayValue)")
                 let data = dict["data"].array
                 let error_code = dict["error_code"].int
                 let msg = dict["message"].string
@@ -1031,10 +1031,10 @@ class YMNetworkTool: NSObject {
                 for dict in datas{
                     let post = CK_Cate(dict: dict as! [String : AnyObject])
                     items.append(post)
-                    //                           print("ck cate:：",dict)
+                    //                           debugPrint("ck cate:：",dict)
                 }
                 finished(items)
-                //                    print("ck cate items",items.count)
+                //                    debugPrint("ck cate items",items.count)
             }
             
             
@@ -1080,9 +1080,9 @@ class YMNetworkTool: NSObject {
                 var items = [CK_Cate]()
                 for item in sub {
                     let sub = item["sub"].arrayValue
-                    //                        print("sub2 :",sub)
+                    //                        debugPrint("sub2 :",sub)
                     for result in sub {
-                        print("result:" ,result.dictionaryObject)
+                        debugPrint("result:" ,result.dictionaryObject)
                         let res = CK_Cate(dict: result.dictionaryObject! as! [String : AnyObject])
                         items.append(res)
                     }
@@ -1107,9 +1107,9 @@ class YMNetworkTool: NSObject {
                 var items = [CK_Cate]()
                 for item in sub {
                     let sub = item["sub"].arrayValue
-                    //print("sub2 :",sub)
+                    //debugPrint("sub2 :",sub)
                     for result in sub {
-                        print("result:" ,result.dictionaryObject)
+                        debugPrint("result:" ,result.dictionaryObject)
                         let res = CK_Cate(dict: result.dictionaryObject! as! [String : AnyObject])
                         items.append(res)
                     }
@@ -1137,7 +1137,7 @@ class YMNetworkTool: NSObject {
                 var results = [CK_Cate]()
                 
                 for item in data!{
-                    print("item:" ,item)
+                    debugPrint("item:" ,item)
                     let result = CK_Cate(dict: item as! [String : AnyObject])
                     results.append(result)
                 }
@@ -1162,7 +1162,7 @@ class YMNetworkTool: NSObject {
                 var results = [CK_Cate]()
                 
                 for item in data!{
-                    print("item:" ,item)
+                    debugPrint("item:" ,item)
                     let result = CK_Cate(dict: item as! [String : AnyObject])
                     results.append(result)
                 }
@@ -1187,7 +1187,7 @@ class YMNetworkTool: NSObject {
                 var results = [CK_Cate]()
                 
                 for item in data!{
-                    print("item:" ,item)
+                    debugPrint("item:" ,item)
                     let result = CK_Cate(dict: item as! [String : AnyObject])
                     results.append(result)
                 }
@@ -1210,9 +1210,9 @@ class YMNetworkTool: NSObject {
                 var items = [CK_Cate]()
                 for item in sub {
                     let sub = item["sub"].arrayValue
-                    //                        print("sub2 :",sub)
+                    //                        debugPrint("sub2 :",sub)
                     for result in sub {
-                        print("result:" ,result.dictionaryObject)
+                        debugPrint("result:" ,result.dictionaryObject)
                         let res = CK_Cate(dict: result.dictionaryObject! as! [String : AnyObject])
                         items.append(res)
                     }
@@ -1238,9 +1238,9 @@ class YMNetworkTool: NSObject {
                 var items = [CK_Cate]()
                 for item in sub {
                     let sub = item["sub"].arrayValue
-                    //                        print("sub2 :",sub)
+                    //                        debugPrint("sub2 :",sub)
                     for result in sub {
-                        print("result:" ,result.dictionaryObject)
+                        debugPrint("result:" ,result.dictionaryObject)
                         let res = CK_Cate(dict: result.dictionaryObject! as! [String : AnyObject])
                         items.append(res)
                     }
@@ -1265,9 +1265,9 @@ class YMNetworkTool: NSObject {
                 var items = [CK_Cate]()
                 for item in sub {
                     let sub = item["sub"].arrayValue
-                    //                        print("sub2 :",sub)
+                    //                        debugPrint("sub2 :",sub)
                     for result in sub {
-                        print("result:" ,result.dictionaryObject)
+                        debugPrint("result:" ,result.dictionaryObject)
                         let res = CK_Cate(dict: result.dictionaryObject! as! [String : AnyObject])
                         items.append(res)
                     }
@@ -1292,9 +1292,9 @@ class YMNetworkTool: NSObject {
                 var items = [CK_Cate]()
                 for item in sub {
                     let sub = item["sub"].arrayValue
-                    //                        print("sub2 :",sub)
+                    //                        debugPrint("sub2 :",sub)
                     for result in sub {
-                        print("result:" ,result.dictionaryObject)
+                        debugPrint("result:" ,result.dictionaryObject)
                         let res = CK_Cate(dict: result.dictionaryObject! as! [String : AnyObject])
                         items.append(res)
                     }
@@ -1322,13 +1322,13 @@ class YMNetworkTool: NSObject {
         Alamofire.request(url, method: .post, parameters: params, encoding: URLEncoding.default, headers: nil).responseJSON { (response) in
             if let value = response.result.value {
                 let dict = JSON(value)
-                print("collectResult  ---> url ====== \(url)")
-                print("collectResult  ---> dict ====== \(dict.arrayValue.description)")
+                debugPrint("collectResult  ---> url ====== \(url)")
+                debugPrint("collectResult  ---> dict ====== \(dict.arrayValue.description)")
                 let success = dict["success"].boolValue
                 let error_code = dict["error_code"].int
                 if success{
                     error_codeMsg = error_code
-                    print("error_code:",error_code)
+                    debugPrint("error_code:",error_code)
                     
                 }else{
                     error_codeMsg = error_code
@@ -1354,7 +1354,7 @@ class YMNetworkTool: NSObject {
                 let error_code = dict["error_code"].int
                 if success{
                     error_codeMsg = error_code
-                    print("error_code:",error_code)
+                    debugPrint("error_code:",error_code)
                     
                 }else{
                     error_codeMsg = error_code
@@ -1378,12 +1378,12 @@ class YMNetworkTool: NSObject {
             
             if let value = response.result.value {
                 var dict = JSON(value)
-                print("collectList ==== \(dict)")
+                debugPrint("collectList ==== \(dict)")
                 if dict["error_code"] == 0{
                     
                     if dict["data"].arrayObject != nil{
                         let data = dict["data"].arrayObject
-                        //                        print("data:",data)
+                        //                        debugPrint("data:",data)
                         var results = [VideoModel]()
                         
                         for item in data!{
@@ -1393,10 +1393,10 @@ class YMNetworkTool: NSObject {
                         finished(results)
                     }
                     else{
-                        print("暂无内容")
+                        debugPrint("暂无内容")
                     }
                 }else{
-                    print("请重新登录")
+                    debugPrint("请重新登录")
                 }
             }
         }
@@ -1415,13 +1415,13 @@ class YMNetworkTool: NSObject {
             
             if let value = response.result.value {
                 var dict = JSON(value)
-                print("dict:",dict)
+                debugPrint("dict:",dict)
                 let success = dict["success"].boolValue
                 let message = dict["message"].stringValue
                 
                 if success{
                     let data1 = dict["data"].dictionaryObject
-                    print("data1:",data1)
+                    debugPrint("data1:",data1)
                     var results = [UserInfoModel]()
                     
                     //                        for item in data1!{
@@ -1432,8 +1432,8 @@ class YMNetworkTool: NSObject {
                     finished(results)
                     
                 }else{
-                    print("message",message)
-                    print("请重新登录")
+                    debugPrint("message",message)
+                    debugPrint("请重新登录")
                 }
             }
         }
@@ -1453,7 +1453,7 @@ class YMNetworkTool: NSObject {
                     
                     if dict["data"].arrayObject != nil{
                         let data = dict["data"].arrayObject
-                        //                        print("data:",data)
+                        //                        debugPrint("data:",data)
                         var results = [VideoModel]()
                         
                         for item in data!{
@@ -1463,10 +1463,10 @@ class YMNetworkTool: NSObject {
                         finished(results)
                     }
                     else{
-                        print("暂无内容")
+                        debugPrint("暂无内容")
                     }
                 }else{
-                    print("请重新登录")
+                    debugPrint("请重新登录")
                     Toast(text: "请重新登录").show()
                 }
             }
@@ -1486,7 +1486,7 @@ class YMNetworkTool: NSObject {
                 let error_code = dict["error_code"].int
                 if success{
                     error_codeMsg = error_code
-                    print("error_code:",error_code)
+                    debugPrint("error_code:",error_code)
                     
                 }else{
                     error_codeMsg = error_code
@@ -1516,7 +1516,7 @@ class YMNetworkTool: NSObject {
                 let error_code = dict["error_code"].int
                 if success{
                     error_codeMsg = error_code
-                    print("error_code:",error_code)
+                    debugPrint("error_code:",error_code)
                     
                 }else{
                     error_codeMsg = error_code
@@ -1544,7 +1544,7 @@ class YMNetworkTool: NSObject {
                 let error_code = dict["error_code"].int
                 if success{
                     error_codeMsg = error_code
-                    print("error_code:",error_code)
+                    debugPrint("error_code:",error_code)
                     
                 }else{
                     error_codeMsg = error_code
@@ -1573,7 +1573,7 @@ class YMNetworkTool: NSObject {
                 let message = dict["message"].stringValue
                 if success{
                     error_codeMsg = error_code
-                    print("error_code:",error_code)
+                    debugPrint("error_code:",error_code)
                     SVProgressHUD.showProgress(0.5, status: message)
                     
                 }else{

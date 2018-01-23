@@ -62,7 +62,7 @@ class ChuangKeViewController: YMBaseViewController {
             self!.page = 1
             self!.loadVideoData()
             self!.data = self!.videos
-//            print("data:",self!.data)
+//            debugPrint("data:",self!.data)
             self?.tableView.es_stopPullToRefresh(ignoreDate: true)
             /// Set ignore footer or not
             self?.tableView.es_stopPullToRefresh(ignoreDate: true, ignoreFooter: false)
@@ -78,10 +78,10 @@ class ChuangKeViewController: YMBaseViewController {
                 
             }else{
                 self?.page = self!.page!+1
-                print("page",self!.page)
+                debugPrint("page",self!.page)
                 self!.loadmoreVideoData()
                 self?.tableView!.es_stopLoadingMore()
-                print("self?.videos.count:",self?.videos.count)
+                debugPrint("self?.videos.count:",self?.videos.count)
             }
             self!.tableView!.reloadData()
         }
@@ -104,7 +104,7 @@ class ChuangKeViewController: YMBaseViewController {
         YMNetworkTool.shareNetworkTool.getChuangKe(desctype!, categoryid: categoryid!, page: page!){ [weak self](items) in
             self?.videos=items
             self!.data.append(contentsOf: self!.videos)
-            print("data.count:",self!.data.count)
+            debugPrint("data.count:",self!.data.count)
             
         }
         
@@ -190,7 +190,7 @@ extension ChuangKeViewController: VideoTableViewCellDelegate,UITableViewDataSour
         let cell = tableView.dequeueReusableCell(withIdentifier: mmessageCellID) as! VideoTableViewCell
         cell.selectionStyle = .none
         cell.videoItem = data[indexPath.row] 
-        print("videoItem:",cell.videoItem)
+        debugPrint("videoItem:",cell.videoItem)
         //收藏按钮
         cell.btn_collect.tag = indexPath.row   //设置button的tag 为tableview对应的行
         
@@ -220,7 +220,7 @@ extension ChuangKeViewController: VideoTableViewCellDelegate,UITableViewDataSour
     
      func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
-        print(indexPath.row)
+        debugPrint(indexPath.row)
         
         //播放器
         //        let model = data![indexPath.row] as! VideoModel
@@ -230,8 +230,8 @@ extension ChuangKeViewController: VideoTableViewCellDelegate,UITableViewDataSour
         
         let url = data[indexPath.row].videoUrl
         let name = data[indexPath.row].name
-        print("url:",url)
-        print("name:",name)
+        debugPrint("url:",url)
+        debugPrint("name:",name)
         //跳转传值VideoPlayViewController
         let video = VideoPlayViewController()
         video.videoname=name as NSString!
@@ -244,7 +244,7 @@ extension ChuangKeViewController: VideoTableViewCellDelegate,UITableViewDataSour
         //获取保存的accessToken
         let userDefault = UserDefaults.standard
         let accessToken = userDefault.object(forKey: "accessToken") as? String
-        print("accessToken:",accessToken)
+        debugPrint("accessToken:",accessToken)
         let model = "chuangke"
         if collectTAG == 0{
             let id = data[collectbtn.tag].id
@@ -256,21 +256,21 @@ extension ChuangKeViewController: VideoTableViewCellDelegate,UITableViewDataSour
                         self!.collectTAG = 1
                         collectbtn.isSelected = true
                         collectbtn.setImage(UIImage(named: "detail_interaction_bar_favorite_pressed"), for: .selected)
-                        print("收藏成功")
+                        debugPrint("收藏成功")
                         Toast(text: "收藏成功").show()
-                        print("name:",self!.data[collectbtn.tag].name)
+                        debugPrint("name:",self!.data[collectbtn.tag].name)
                         
                     }else if self!.error_codeMsg == 2 {
-                        print("已经收藏过了")
+                        debugPrint("已经收藏过了")
                         Toast(text: "已经收藏过了").show()
-                        print("name:",self!.data[collectbtn.tag].name)
+                        debugPrint("name:",self!.data[collectbtn.tag].name)
                     }else{
-                        print("请重新登录")
+                        debugPrint("请重新登录")
                         Toast(text: "请重新登录").show()
                     }
                 }
             }else{
-                print("请先进行登录")
+                debugPrint("请先进行登录")
                 Toast(text: "请先进行登录").show()
             }
             
@@ -286,16 +286,16 @@ extension ChuangKeViewController: VideoTableViewCellDelegate,UITableViewDataSour
                         self!.collectTAG = 0
                         collectbtn.isSelected = false
                         collectbtn.setImage(UIImage(named: "detail_interaction_bar_favorite"), for: UIControlState())
-                        print("取消收藏")
+                        debugPrint("取消收藏")
                         Toast(text: "取消收藏").show()
-                        print("name:",self!.data[collectbtn.tag].name)
+                        debugPrint("name:",self!.data[collectbtn.tag].name)
                     }else{
-                        print("请重新登录")
+                        debugPrint("请重新登录")
                         Toast(text: "请重新登录").show()
                     }
                 }
             }else{
-                print("请先进行登录")
+                debugPrint("请先进行登录")
                 Toast(text: "请先进行登录").show()
             }
         }
@@ -303,8 +303,8 @@ extension ChuangKeViewController: VideoTableViewCellDelegate,UITableViewDataSour
         
     }
     func shareButton(_ sender: UIButton){
-        print(sender.tag)
-        print("name:",data[sender.tag].name)
+        debugPrint(sender.tag)
+        debugPrint("name:",data[sender.tag].name)
         YMActionSheet.show()
     }
     
@@ -338,7 +338,7 @@ extension ChuangKeViewController:DropMenuViewDelegate{
                 break
             default:
                 categoryid = ck_cate[row - 1].id
-                print("categoryid:",categoryid)
+                debugPrint("categoryid:",categoryid)
                 loadVideoData()
                 break
             }

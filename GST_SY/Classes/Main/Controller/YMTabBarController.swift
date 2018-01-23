@@ -49,12 +49,12 @@ class YMTabBarController: UITabBarController {
         vc.tabBarItem.image = UIImage(named: imageName)
         vc.tabBarItem.selectedImage = UIImage(named: imageName + "selected")
         vc.title = title
-        print("title === \(title)")
+        debugPrint("title === \(title)")
       
         let nav = YMNavigationController()
         //获取导航栏高度
-//        print("nav.navigationBar.height ===== \(nav.navigationBar.height)")
-//        print("tabBar.height ===== \(self.tabBar.height)")
+//        debugPrint("nav.navigationBar.height ===== \(nav.navigationBar.height)")
+//        debugPrint("tabBar.height ===== \(self.tabBar.height)")
         
         nav.addChildViewController(vc)
         addChildViewController(nav)

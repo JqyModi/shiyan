@@ -41,8 +41,8 @@ class SetPassViewController: YMBaseViewController {
         let userpass=passField.text
         let useremail=emailField.text
         
-        print("邮箱  == \(useremail)")
-        print("密码 == \(userpass)")
+        debugPrint("邮箱  == \(useremail)")
+        debugPrint("密码 == \(userpass)")
         
         let userpass_md5 = userpass!.md5()
 //        let userpass_md5 = userpass!.md5Hash()
@@ -56,7 +56,7 @@ class SetPassViewController: YMBaseViewController {
 //                self!.error_codeMsg=error_codeMsg
 //                
 //                if (self!.error_codeMsg == 0) {
-//                    print("error_codeMsg:",self!.error_codeMsg)
+//                    debugPrint("error_codeMsg:",self!.error_codeMsg)
 //                    JLToast.makeText("注册成功", delay: 0.5, duration: JLToastDelay.ShortDelay).show()
 //                    let userinfo = YMLoginViewController()
 //                    userinfo.title="登陆"
@@ -73,10 +73,10 @@ class SetPassViewController: YMBaseViewController {
             YMNetworkTool.shareNetworkTool.setpassResult(user_name!, smscode: user_code!,userpass:userpass_md5, useremail:useremail!){[weak self](error_codeMsg,msg1) in
                 self!.error_codeMsg=error_codeMsg
                 
-                print("注册返回消息\(msg1)")
+                debugPrint("注册返回消息\(msg1)")
                 
                 if (self!.error_codeMsg == 0) {
-                    print("error_codeMsg:",self!.error_codeMsg)
+                    debugPrint("error_codeMsg:",self!.error_codeMsg)
 //                    Toast(text: "注册成功").show()
                     SVProgressHUD.showError(withStatus: "注册成功")
                     let userinfo = YMLoginViewController()

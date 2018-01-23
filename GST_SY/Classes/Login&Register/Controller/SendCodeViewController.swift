@@ -46,12 +46,12 @@ class SendCodeViewController: YMBaseViewController {
                     SVProgressHUD.showError(withStatus: "验证码已经发送,请注意查收")
 //                    Toast(text: "验证码已经发送").show()
                     self.showTimeInButton(btn: sender)
-                    print("请求成功,请等待短信～")
+                    debugPrint("请求成功,请等待短信～")
                 }
                 else
                 {
                     SVProgressHUD.showError(withStatus: "请求失败")
-                    print("请求失败", error)
+                    debugPrint("请求失败", error)
                 }
             }
         })
@@ -107,11 +107,11 @@ class SendCodeViewController: YMBaseViewController {
             
             //提交短信验证码
             SMSSDK.commitVerificationCode(VerificationCode, phoneNumber: username, zone: "86", result: {(error) in
-                print("开始验证短信")
+                debugPrint("开始验证短信")
                 
                 if (!(error != nil)){
                     // 验证成功
-                    print("短信验证成功")
+                    debugPrint("短信验证成功")
 //                    Toast(text: "验证码验证成功").show()
                     SVProgressHUD.showError(withStatus: "验证码验证成功")
                     let userinfo = ResetViewController()
@@ -122,7 +122,7 @@ class SendCodeViewController: YMBaseViewController {
                     
                 }else{
                     // error
-                    print("短信验证失败")
+                    debugPrint("短信验证失败")
                     
 //                    Toast(text: "验证失败").show()
                     SVProgressHUD.showError(withStatus: "验证失败")

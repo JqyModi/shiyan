@@ -50,12 +50,12 @@ class KaoPingDetailViewController: ViewPagerController, ViewPagerDelegate, ViewP
         YMNetworkTool.shareNetworkTool.getPaper(paperId!){ [weak self](items) in
             self?.papers=items
             self!.data = self!.papers
-            print("papers.count  = \(self!.papers.count)")
+            debugPrint("papers.count  = \(self!.papers.count)")
             if items.count>0 {
-                print("题目条数：\(items.count)")
+                debugPrint("题目条数：\(items.count)")
                 self?.reloadData()
             }else{
-                print("暂无内容")
+                debugPrint("暂无内容")
                 Toast(text: "服务器数据异常，请稍后再试").show()
                 //禁止操作
                 self!.view.isUserInteractionEnabled = false
@@ -102,7 +102,7 @@ class KaoPingDetailViewController: ViewPagerController, ViewPagerDelegate, ViewP
     func tabBar(_ tabBar: UITabBar, didSelect item: UITabBarItem) {
         switch item.tag {
         case 0:
-            print("上一题")
+            debugPrint("上一题")
             //上一题操作
             if self.currentIndex == 0 {
                 Toast(text: "已经是第一题了").show()
@@ -111,7 +111,7 @@ class KaoPingDetailViewController: ViewPagerController, ViewPagerDelegate, ViewP
             }
             break
         case 1:
-            print("提交")
+            debugPrint("提交")
             //添加最后一题答案进入答案集合
             if self.paperVC?.pTkAnswer.text != "" {
                 //记录当前试题答案
@@ -122,7 +122,7 @@ class KaoPingDetailViewController: ViewPagerController, ViewPagerDelegate, ViewP
             }
             
             if PaperAnswers.count>0 && PaperAnswers.count == papers.count {
-                print("数据保存成功")
+                debugPrint("数据保存成功")
                 //跳转到答案显示详情页
                 let showAnswerDetailVC = ShowAnswerDetailViewController()
                 showAnswerDetailVC.title = "试题解析"
@@ -135,7 +135,7 @@ class KaoPingDetailViewController: ViewPagerController, ViewPagerDelegate, ViewP
             }
             break
         case 2:
-            print("下一题")
+            debugPrint("下一题")
             //下一题操作
             if self.currentIndex == UInt(self.data.count-1) {
                 Toast(text: "没有更多题目了").show()
@@ -152,7 +152,7 @@ class KaoPingDetailViewController: ViewPagerController, ViewPagerDelegate, ViewP
         return UInt(self.data.count)
     }
     func viewPager(_ viewPager: ViewPagerController!, contentViewControllerForTabAt index: UInt) -> UIViewController! {
-        print("contentViewControllerForTabAtIndex  =  \(index)")
+        debugPrint("contentViewControllerForTabAtIndex  =  \(index)")
         
         //是否显示提交按钮
         if PaperAnswers.count >= data.count - 2 {
@@ -177,7 +177,7 @@ class KaoPingDetailViewController: ViewPagerController, ViewPagerDelegate, ViewP
             let answer = (PaperAnswers.value(forKey: key) as AnyObject).value(forKey: "user")
             if answer != nil {
                 paperVC!.answer = (answer as AnyObject).description!
-                print("当前题目答案为: \(answer)")
+                debugPrint("当前题目答案为: \(answer)")
             }
             
         }
@@ -190,7 +190,7 @@ class KaoPingDetailViewController: ViewPagerController, ViewPagerDelegate, ViewP
         return vc
     }
     func viewPager(_ viewPager: ViewPagerController!, didChangeTabTo index: UInt) {
-        print("didChangeTabToIndex  =  \(index)")
+        debugPrint("didChangeTabToIndex  =  \(index)")
         self.currentIndex = index
         
     }

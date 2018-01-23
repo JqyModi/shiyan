@@ -50,8 +50,8 @@ class YMLoginViewController: YMBaseViewController {
         let username=mobileField.text
         let userpass = passwordField.text
         let userpass_md5 = userpass!.md5()
-        print("userpass_md5:",userpass_md5)
-        print("username:",username)
+        debugPrint("userpass_md5:",userpass_md5)
+        debugPrint("username:",username)
 //        if !YMIstelphnum.init().isTelNumber(username! as NSString) {
 ////            Toast(text: "手机号码输入有误").show()
 //            SVProgressHUD.showError(withStatus: "手机号码输入有误")
@@ -67,8 +67,8 @@ class YMLoginViewController: YMBaseViewController {
             self?.loginValidates=loginValidate
             
             if (self!.loginValidates == true) {
-                print("loginValidates:",self!.loginValidates)
-                print("登录成功")
+                debugPrint("loginValidates:",self!.loginValidates)
+                debugPrint("登录成功")
                 SVProgressHUD.showError(withStatus: "登录成功")
                 let userInfoViewController = UserInfoViewController()
                 userInfoViewController.title="账号信息"
@@ -78,7 +78,7 @@ class YMLoginViewController: YMBaseViewController {
                 
             }
             else{
-                print("登录失败")
+                debugPrint("登录失败")
                 SVProgressHUD.showError(withStatus: "登录失败")
             }
         }

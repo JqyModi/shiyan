@@ -44,14 +44,14 @@ class ExperimentDetailViewController: YMBaseViewController {
     }
     override func viewWillTransition(to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator) {
         if UIDevice.current.orientation.isLandscape {
-            print("Landscape")
+            debugPrint("Landscape")
             webView.frame = CGRect(x: 0, y: 0, width: SCREENH, height: SCREENW)
 //            self.navigationController?.navigationBarHidden=true
             navigationController?.setNavigationBarHidden(true, animated: false)
             UIApplication.shared.setStatusBarStyle(UIStatusBarStyle.lightContent, animated: false)
 
         } else {
-            print("Portrait")
+            debugPrint("Portrait")
             webView.frame = CGRect(x: 0, y: 0, width: SCREENW, height: SCREENH)
             self.navigationController?.isNavigationBarHidden=false
             

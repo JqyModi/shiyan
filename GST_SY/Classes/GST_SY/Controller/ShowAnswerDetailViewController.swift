@@ -151,7 +151,7 @@ class ShowAnswerDetailViewController: UIViewController {
         
         let json = JSON.init(self.submitData)
         let str = json.description
-        print("提交到服务器的数据：str = \(str)")
+        debugPrint("提交到服务器的数据：str = \(str)")
         
         YMNetworkTool.shareNetworkTool.submitAnswer(str)
     }
@@ -166,13 +166,13 @@ class ShowAnswerDetailViewController: UIViewController {
         //填充数据
         let orgData = self.data[row]
         let tHeight = orgData.title.stringHeightWith(14, width: 359)
-        print("即将移除图片时的title高度 = \(tHeight)")
+        debugPrint("即将移除图片时的title高度 = \(tHeight)")
         
 //        cell.pImgHeightLayout.constant = 0
         //获取到用户填写的答案数据
         let key = "answer"+"\(row)"
         let userData = (PaperAnswers.value(forKey: String(row)) as AnyObject).value(forKey: "user")
-        print("userData  = \(userData)")
+        debugPrint("userData  = \(userData)")
         
         cell.orgData = orgData
         cell.userData = (userData as AnyObject).description!

@@ -44,13 +44,13 @@ class FeedBackViewController: YMBaseViewController {
 //            Toast(text: "为了让我联系到您，请至少填一种联系方式吧～").show()
             SVProgressHUD.showError(withStatus: "为了让我联系到您，请至少填一种联系方式吧～")
         }else{
-            print("成功")
+            debugPrint("成功")
             
             YMNetworkTool.shareNetworkTool.feedbackResult(adviceField.text!, name: name!,tel: phoneField.text!,email: emailField.text!,qq: qqField.text!){[weak self](error_codeMsg) in
                 self!.error_codeMsg=error_codeMsg
                 
                 if (self!.error_codeMsg == 0) {
-                    print("error_codeMsg:",self!.error_codeMsg)
+                    debugPrint("error_codeMsg:",self!.error_codeMsg)
 //                    Toast(text: "提交反馈成功").show()
                     SVProgressHUD.showError(withStatus: "提交反馈成功")
                     self!.navigationController?.popToRootViewController(animated: true)

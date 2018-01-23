@@ -49,7 +49,7 @@ class ZiXunViewController: YMBaseViewController {
             self!.page = 1
             self!.loadVideoData()
             self!.data = self!.videos
-            print("data:",self!.data)
+            debugPrint("data:",self!.data)
             self?.tableView.es_stopPullToRefresh(ignoreDate: true)
             /// Set ignore footer or not
             self?.tableView.es_stopPullToRefresh(ignoreDate: true, ignoreFooter: false)
@@ -66,10 +66,10 @@ class ZiXunViewController: YMBaseViewController {
                 
             }else{
                 self?.page = self!.page!+1
-                print("page",self!.page)
+                debugPrint("page",self!.page)
                 self!.loadmoreVideoData()
                 self?.tableView.es_stopLoadingMore()
-                print("self?.videos.count:",self?.videos.count)
+                debugPrint("self?.videos.count:",self?.videos.count)
             }
             
             self!.tableView!.reloadData()
@@ -90,7 +90,7 @@ class ZiXunViewController: YMBaseViewController {
             self.tableView.reloadData()
             
             self.data = self.videos
-            print("data:",self.data)
+            debugPrint("data:",self.data)
             
         }
         func loadmoreVideoData() {
@@ -98,7 +98,7 @@ class ZiXunViewController: YMBaseViewController {
             YMNetworkTool.shareNetworkTool.getZiXun(desctype!, categoryid: categoryid!, page: page!){ [weak self](items) in
                 self?.videos=items
                 self!.data.append(contentsOf: self!.videos)
-                print("data.count:",self!.data.count)
+                debugPrint("data.count:",self!.data.count)
                 
             }
             
@@ -160,7 +160,7 @@ extension ZiXunViewController: ZiXunTableViewCellDelegate,UITableViewDelegate,UI
     
      func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
-        print(indexPath.row)
+        debugPrint(indexPath.row)
         
         
         let content = data[indexPath.row].content

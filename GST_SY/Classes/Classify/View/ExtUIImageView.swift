@@ -30,7 +30,7 @@ extension UIImageView{
             do{
                 image = try generator.copyCGImage(at: time, actualTime: &actualTime)
             }catch let error as NSError{
-                print("error === \(error)")
+                debugPrint("error === \(error)")
             }
             DispatchQueue.main.async(execute: {
                 
@@ -38,7 +38,7 @@ extension UIImageView{
                 if image != nil {
                     self.image = UIImage(cgImage: image)
                 }else{
-                    print("image为nil")
+                    debugPrint("image为nil")
                     return
                 }
                 
@@ -52,7 +52,7 @@ extension UIImageView{
 
 //class MyImg: UIImageView {
 //    override init(image: UIImage?) {
-//        print("我是构造函数")
+//        debugPrint("我是构造函数")
 //        super.init(image: image)
 //        self.getNetWorkVidoeImage(url: String)
 //    }

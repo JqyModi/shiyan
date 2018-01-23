@@ -80,7 +80,7 @@ class ParseTableViewController: UITableViewController {
         
         let json = JSON(submitData)
         let str = json.description
-        print("提交到服务器的数据：str = \(str)")
+        debugPrint("提交到服务器的数据：str = \(str)")
         
         YMNetworkTool.shareNetworkTool.submitAnswer(str)
     }

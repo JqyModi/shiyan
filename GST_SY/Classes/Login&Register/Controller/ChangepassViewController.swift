@@ -27,7 +27,7 @@ class ChangepassViewController: YMBaseViewController {
 
         let userDefault = UserDefaults.standard
         accessToken = userDefault.object(forKey: "accessToken") as? String
-        print("accessToken:",accessToken)
+        debugPrint("accessToken:",accessToken)
     }
 
     @IBAction func changepassClick(_ sender: UIButton) {
@@ -56,12 +56,12 @@ class ChangepassViewController: YMBaseViewController {
                     self!.navigationController?.pushViewController(userinfo, animated: true)
                     Toast(text: "修改成功").show()
                 }else{
-                    print("修改失败")
+                    debugPrint("修改失败")
                     Toast(text: "修改失败").show()
                 }
             }
         }else{
-            print("请先进行登录")
+            debugPrint("请先进行登录")
             Toast(text: "请先进行登录").show()
         }
         }

@@ -37,13 +37,13 @@ class UserInfoViewController: YMBaseViewController {
         if accessToken != nil{
             YMNetworkTool.shareNetworkTool.userInfoList(accessToken!, table: table!){ [weak self](results) in
                 self?.user=results
-                print("user get",self?.user)
+                debugPrint("user get",self?.user)
                 //更新用户信息
                 self!.setUserUI()
             }
             
         }else{
-            print("请先进行登录")
+            debugPrint("请先进行登录")
             Toast(text: "请先进行登录").show()
         }
 

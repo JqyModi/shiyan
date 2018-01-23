@@ -38,7 +38,7 @@ class ResetViewController: YMBaseViewController {
                 self!.error_codeMsg=error_codeMsg
                 
                 if (self!.error_codeMsg == 0) {
-                    print("error_codeMsg:",self!.error_codeMsg)
+                    debugPrint("error_codeMsg:",self!.error_codeMsg)
                     Toast(text: "重置成功").show()
                     let userinfo = YMLoginViewController()
                     userinfo.title="登陆"

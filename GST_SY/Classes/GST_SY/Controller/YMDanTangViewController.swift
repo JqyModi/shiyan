@@ -99,7 +99,7 @@ class YMGST_SYViewController: YMBaseViewController,CarouselBannerViewDelegate,UI
     }
    
     func  scrollView ( toScrollView scrollView : CarouselBannerView, didTappedImageAtIndex  index : NSInteger){
-        print("点击\(index)")
+        debugPrint("点击\(index)")
     }
 
 
@@ -150,10 +150,10 @@ class YMGST_SYViewController: YMBaseViewController,CarouselBannerViewDelegate,UI
 
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         
-//        print("点击了：",indexPath)
+//        debugPrint("点击了：",indexPath)
         switch indexPath.item {
         case 0:
-            print("点击了：",indexPath.item)
+            debugPrint("点击了：",indexPath.item)
             let syncVideo = YMProductViewController(nibName: nil, bundle: nil)
             self.navigationController?.pushViewController(syncVideo, animated: true)
             syncVideo.title = "同步视频"
@@ -167,7 +167,7 @@ class YMGST_SYViewController: YMBaseViewController,CarouselBannerViewDelegate,UI
             //判断用户是否登录
             let userDefault = UserDefaults.standard
             let accessToken = userDefault.object(forKey: "accessToken") as? String
-            print("accessToken:",accessToken)
+            debugPrint("accessToken:",accessToken)
             if (accessToken != "") {
                 let chuangke = KaoPingViewController()
                 chuangke.title = "考评系统"
@@ -177,9 +177,9 @@ class YMGST_SYViewController: YMBaseViewController,CarouselBannerViewDelegate,UI
                 return
             }
             
-            print("点击了：",indexPath.item)
+            debugPrint("点击了：",indexPath.item)
         case 3:
-            print("点击了：",indexPath.item)
+            debugPrint("点击了：",indexPath.item)
             let chuangke = KaoShiViewController()
             chuangke.title = "备考视频"
             
@@ -190,17 +190,17 @@ class YMGST_SYViewController: YMBaseViewController,CarouselBannerViewDelegate,UI
             self.navigationController?.pushViewController(chuangke, animated: true)
 
         case 5:
-            print("点击了：",indexPath.item)
+            debugPrint("点击了：",indexPath.item)
             let chuangke = MingShiViewController()
             chuangke.title = "名师讲堂"
             self.navigationController?.pushViewController(chuangke, animated: true)
         case 6:
-            print("点击了：",indexPath.item)
+            debugPrint("点击了：",indexPath.item)
             let chuangke = ChuangKeViewController()
             chuangke.title = "创新实验"
             self.navigationController?.pushViewController(chuangke, animated: true)
         case 7:
-            print("点击了：",indexPath.item)
+            debugPrint("点击了：",indexPath.item)
             let chuangke = VoteListCollectionViewController()
             chuangke.title = "活动赛事"
             self.navigationController?.pushViewController(chuangke, animated: true)
@@ -210,29 +210,29 @@ class YMGST_SYViewController: YMBaseViewController,CarouselBannerViewDelegate,UI
              chuangke.title = "新闻动态"
             chuangke.categoryid = "134"
             self.navigationController?.pushViewController(chuangke, animated: true)
-            print("点击了：",indexPath.item)
+            debugPrint("点击了：",indexPath.item)
 //        case 9:
 //            let chuangke = XueKeViewController()
 //            chuangke.title = "初中物理"
 //            chuangke.categoryid = "386"
 //            self.navigationController?.pushViewController(chuangke, animated: true)
-//            print("点击了：",indexPath.item)
+//            debugPrint("点击了：",indexPath.item)
 //        case 10:
 //            let chuangke = XueKeViewController()
 //            chuangke.title = "初中化学"
 //            chuangke.categoryid = "387"
 //            self.navigationController?.pushViewController(chuangke, animated: true)
-//            print("点击了：",indexPath.item)
+//            debugPrint("点击了：",indexPath.item)
 //        case 11:
 //            let chuangke = XueKeViewController()
 //            chuangke.title = "初中生物"
 //            chuangke.categoryid = "388"
 //            self.navigationController?.pushViewController(chuangke, animated: true)
-//            print("点击了：",indexPath.item)
+//            debugPrint("点击了：",indexPath.item)
         
             
         default:
-            print("点击了：",indexPath.item)
+            debugPrint("点击了：",indexPath.item)
         }
     }
 

@@ -38,7 +38,7 @@ class YMRegisterViewController: YMBaseViewController {
     @IBAction func registerButtonClick(_ sender: UIButton) {
         let username=mobileField.text
 //        Toast(text: "提示信息").show()
-        print("username ==== \(username)")
+        debugPrint("username ==== \(username)")
         
         if !YMIstelphnum.init().isTelNumber(username! as NSString) {
 //            Toast(text: "手机号码输入有误").show()
@@ -52,10 +52,10 @@ class YMRegisterViewController: YMBaseViewController {
                     SVProgressHUD.showError(withStatus: "验证码已经发送，请注意查收")
                     
                     self.showTimeInButton(btn: sender)
-                    print("请求成功,请等待短信～")
+                    debugPrint("请求成功,请等待短信～")
                 }else{
                     // 错误码可以参考‘SMS_SDK.framework / SMSSDKResultHanderDef.h’
-                    print("请求失败", error)
+                    debugPrint("请求失败", error)
                     SVProgressHUD.showError(withStatus: "请求失败")
                 }
             })
@@ -110,11 +110,11 @@ class YMRegisterViewController: YMBaseViewController {
         else {
             //提交短信验证码
             SMSSDK.commitVerificationCode(VerificationCode, phoneNumber: username, zone: "86", result: {(error) in
-                print("开始验证短信")
+                debugPrint("开始验证短信")
                 if ((error == nil))
                 {
                     // 验证成功
-                    print("短信验证成功")
+                    debugPrint("短信验证成功")
 //                    Toast(text: "验证码验证成功").show()
                     SVProgressHUD.showError(withStatus: "验证码验证成功")
                     let userinfo = SetPassViewController()
@@ -126,7 +126,7 @@ class YMRegisterViewController: YMBaseViewController {
                 else
                 {
                     // error
-                    print("短信验证失败")
+                    debugPrint("短信验证失败")
 //                    Toast(text: "验证码错误").show()
                     SVProgressHUD.showError(withStatus: "验证码错误")
 //                    self.error_codeMsg=error.code

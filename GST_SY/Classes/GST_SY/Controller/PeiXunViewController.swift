@@ -51,7 +51,7 @@ class PeiXunViewController: YMBaseViewController {
             self!.page = 1
             self!.loadVideoData()
             self!.data = self!.videos
-            print("data:",self!.data)
+            debugPrint("data:",self!.data)
             self?.tableView.es_stopPullToRefresh(ignoreDate: true)
             /// Set ignore footer or not
             self?.tableView.es_stopPullToRefresh(ignoreDate: true, ignoreFooter: false)
@@ -68,10 +68,10 @@ class PeiXunViewController: YMBaseViewController {
                 
             }else{
                 self?.page = self!.page!+1
-                print("page",self!.page)
+                debugPrint("page",self!.page)
                 self!.loadmoreVideoData()
                 self?.tableView.es_stopLoadingMore()
-                print("self?.videos.count:",self?.videos.count)
+                debugPrint("self?.videos.count:",self?.videos.count)
             }
             
             self!.tableView!.reloadData()
@@ -84,7 +84,7 @@ class PeiXunViewController: YMBaseViewController {
             self!.videos.removeAll()
             self?.videos=videos
             self!.data = self!.videos
-            print("data:",self!.data)
+            debugPrint("data:",self!.data)
             self!.tableView.reloadData()
             
         }
@@ -98,7 +98,7 @@ class PeiXunViewController: YMBaseViewController {
         YMNetworkTool.shareNetworkTool.getPeiXun(desctype!, categoryid: categoryid!, page: page!){ [weak self](items) in
             self?.videos=items
             self!.data.append(contentsOf: self!.videos)
-            print("data.count:",self!.data.count)
+            debugPrint("data.count:",self!.data.count)
             
         }
         
@@ -176,12 +176,12 @@ extension PeiXunViewController: PeiXunTableViewCellDelegate,UITableViewDataSourc
     
      func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
-        print(indexPath.row)
+        debugPrint(indexPath.row)
         
         let url = videos[indexPath.row].videoUrl
         let name = videos[indexPath.row].title
-        print("url:",url)
-        print("name:",name)
+        debugPrint("url:",url)
+        debugPrint("name:",name)
       
         let video = VideoPlayViewController()
         video.videoname=name as NSString!
@@ -203,7 +203,7 @@ extension PeiXunViewController:DropMenuViewDelegate{
                 break
             default:
                 categoryid = px_cate[row - 1].id
-                print("categoryid:",categoryid)
+                debugPrint("categoryid:",categoryid)
                 loadVideoData()
                 break
             }

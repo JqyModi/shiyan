@@ -58,7 +58,7 @@ class YMCategoryViewController: YMBaseViewController {
             self!.page = 1
             self!.loadVideoData()
             self!.data = self!.videos
-            print("data:",self!.data)
+            debugPrint("data:",self!.data)
             self?.tableView.es_stopPullToRefresh(ignoreDate: true)
             /// Set ignore footer or not
             self?.tableView.es_stopPullToRefresh(ignoreDate: true, ignoreFooter: false)
@@ -75,10 +75,10 @@ class YMCategoryViewController: YMBaseViewController {
                 
             }else{
                 self?.page = self!.page!+1
-                print("page",self!.page)
+                debugPrint("page",self!.page)
                 self!.loadmoreVideoData()
                 self?.tableView.es_stopLoadingMore()
-                print("self?.videos.count:",self?.videos.count)
+                debugPrint("self?.videos.count:",self?.videos.count)
             }
             
             self!.tableView!.reloadData()
@@ -93,7 +93,7 @@ class YMCategoryViewController: YMBaseViewController {
                 self!.videos.removeAll()
                 self?.videos=videos
                 self!.data = self!.videos
-                print("data:",self!.data)
+                debugPrint("data:",self!.data)
                 self!.tableView.reloadData()
             }else{
                 SVProgressHUD.showError(withStatus: "数据加载失败请检测网络是否正常")
@@ -109,7 +109,7 @@ class YMCategoryViewController: YMBaseViewController {
             
             self?.videos=items
             self!.data.append(contentsOf: self!.videos)
-            print("data.count:",self!.data.count)
+            debugPrint("data.count:",self!.data.count)
             
         }
         
@@ -208,12 +208,12 @@ extension YMCategoryViewController: ExperimentTableViewCellDelegate,UITableViewD
     
      func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
-        print(indexPath.row)
+        debugPrint(indexPath.row)
         
         let url = data[indexPath.row].html5Url
         let name = data[indexPath.row].name
-        print("url:",url)
-        print("name:",name)
+        debugPrint("url:",url)
+        debugPrint("name:",name)
         let video = ExperimentDetailViewController()
         video.expname=name as NSString!
         video.expurl=url as NSString!
@@ -298,8 +298,8 @@ extension YMCategoryViewController:DropMenuViewDelegate{
                 break
             default:
                 gradeid = exp_cate[row - 1].id
-                print("gradeid:",gradeid)
-                print("gradeidname:",exp_cate[row - 1].name)
+                debugPrint("gradeid:",gradeid)
+                debugPrint("gradeidname:",exp_cate[row - 1].name)
                 loadVideoData()
                 break
             }
@@ -356,8 +356,8 @@ extension YMCategoryViewController:DropMenuViewDelegate{
                 break
             default:
                 categoryid = exp_cate[row - 1].id
-                print("categoryid:",categoryid)
-                print("categoryidname:",exp_cate[row - 1].name)
+                debugPrint("categoryid:",categoryid)
+                debugPrint("categoryidname:",exp_cate[row - 1].name)
                 loadVideoData()
                 break
             }
@@ -390,7 +390,7 @@ extension YMCategoryViewController:DropMenuViewDelegate{
     
     //当视图将要显示的时候调用
     override func viewWillAppear(_ animated: Bool) {
-        print("视图将要显示")
+        debugPrint("视图将要显示")
         //刷新下拉菜单的数据源
         self.tableView.es_startPullToRefresh()
         configMenuView()

@@ -144,8 +144,8 @@ extension YMSearchViewController: UISearchBarDelegate, UICollectionViewDelegate,
         
         let url = HOST + results[indexPath.row].url!
         let name = results[indexPath.row].title
-        print("url:",url)
-        print("name:",name)
+        debugPrint("url:",url)
+        debugPrint("name:",name)
 
         if (url.contains(".mp4")) {
             //展示视频
@@ -168,13 +168,13 @@ extension YMSearchViewController: UISearchBarDelegate, UICollectionViewDelegate,
     
 //    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
 //        tableView.deselectRowAtIndexPath(indexPath, animated: true)
-//        print(indexPath.row)
+//        debugPrint(indexPath.row)
 //        
 //        
 //        let url = data[indexPath.row].videoUrl
 //        let name = data[indexPath.row].name
-//        print("url:",url)
-//        print("name:",name)
+//        debugPrint("url:",url)
+//        debugPrint("name:",name)
 //        
 //        let video = VideoPlayViewController()
 //        video.videoname=name

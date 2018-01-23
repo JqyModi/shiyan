@@ -63,7 +63,7 @@ class PaperViewController: UIViewController, UITextViewDelegate, UIScrollViewDel
         self.initView()
         self.initEvent()
         
-        print("*********************currentIndex = \(self.currentIndex)****************************")
+        debugPrint("*********************currentIndex = \(self.currentIndex)****************************")
         
     }
     
@@ -80,12 +80,12 @@ class PaperViewController: UIViewController, UITextViewDelegate, UIScrollViewDel
         
         //当当前题目显示时回填答案
         if self.answer != nil && self.answer != "" {
-            print("详情页当前题目答案为：\(self.answer)")
+            debugPrint("详情页当前题目答案为：\(self.answer)")
             //判断时选择还是填空／简答
             if self.answer?.characters.count == 1 {
                 self.pAnswer.text? = "答案:(\(self.answer!))"
             }else{
-                print("详情页填空题答案：\(self.answer)")
+                debugPrint("详情页填空题答案：\(self.answer)")
                 //隐藏提示文字
                 self.tvPlaceHolder.isHidden = true
                 self.pTkAnswer.text = self.answer
@@ -103,7 +103,7 @@ class PaperViewController: UIViewController, UITextViewDelegate, UIScrollViewDel
         let tkframeY = self.pTkAnswer.frame.maxY
         //隐藏导航栏
         let viewCount = self.view.subviews.count
-        print("子View的个数：\(viewCount)")
+        debugPrint("子View的个数：\(viewCount)")
         scollView = self.view.subviews[0] as! UIScrollView
         //tkframeY + 50 加上底部tabbar的高度
         scollView?.contentSize = CGSize(width: SCREENW, height: tkframeY + 50)
@@ -118,7 +118,7 @@ class PaperViewController: UIViewController, UITextViewDelegate, UIScrollViewDel
         
         if paper!.title != nil && paper!.title != "" {
             self.pTitle.text = "题目：" + String(self.currentIndex! + 1) + "."+paper!.title
-            print("题目：  ->  \(paper?.title)")
+            debugPrint("题目：  ->  \(paper?.title)")
         }else{
             self.pTitle.text = "题目："
         }
@@ -129,7 +129,7 @@ class PaperViewController: UIViewController, UITextViewDelegate, UIScrollViewDel
             
             url = url.replacingOccurrences(of: "\"", with: "")
             url = url.replacingOccurrences(of: " ", with: "")
-            print("url  --> \(url)")
+            debugPrint("url  --> \(url)")
             self.pImg.kf_setImage(with: URL(string: url))
 //            self.pImg.kf_setImageWithURL(URL(string: url))
             
@@ -139,7 +139,7 @@ class PaperViewController: UIViewController, UITextViewDelegate, UIScrollViewDel
             self.pImg.isHidden = true
         }
         if paper!.A != nil && paper!.A != "" {
-            print("显示答案label")
+            debugPrint("显示答案label")
             self.pAnswer1.isHidden = false
             self.pAnswer2.isHidden = false
             self.pAnswer3.isHidden = false
@@ -190,7 +190,7 @@ class PaperViewController: UIViewController, UITextViewDelegate, UIScrollViewDel
     }
     
     func scrollGesture(){
-        print("上滑手势")
+        debugPrint("上滑手势")
     }
     
     /**
@@ -200,7 +200,7 @@ class PaperViewController: UIViewController, UITextViewDelegate, UIScrollViewDel
     func keyboardWillShowNotification(_ notify: Notification){
         
         UIView.animate(withDuration: 0.3, animations: { 
-            print("开始执行动画")
+            debugPrint("开始执行动画")
             //将约束设置为-200,则界面会上移，需要将上移过程变慢用以下操作layoutIfNeeded():一帧一帧上移界面：动画
             self.topLayout.constant = -200
             self.view.layoutIfNeeded()
@@ -213,7 +213,7 @@ class PaperViewController: UIViewController, UITextViewDelegate, UIScrollViewDel
     func keyboardWillHideNotification(_ notify: Notification){
         
         UIView.animate(withDuration: 0.3, animations: { 
-            print("开始执行动画")
+            debugPrint("开始执行动画")
             //将约束设置为-200,则界面会上移，需要将上移过程变慢用以下操作layoutIfNeeded():一帧一帧上移界面：动画
             self.topLayout.constant = 0
             self.view.layoutIfNeeded()
@@ -228,27 +228,27 @@ class PaperViewController: UIViewController, UITextViewDelegate, UIScrollViewDel
         //用户点击答案显示到答案标签
         switch sender.tag {
         case 1:
-            print("选择的答案为：A")
+            debugPrint("选择的答案为：A")
             self.pAnswer.text? = "答案:(A)"
             dictAnswer.setValue("A", forKey: "user")
             break
         case 2:
-            print("选择的答案为：B")
+            debugPrint("选择的答案为：B")
             self.pAnswer.text? = "答案:(B)"
             dictAnswer.setValue("B", forKey: "user")
             break
         case 3:
-            print("选择的答案为：C")
+            debugPrint("选择的答案为：C")
             self.pAnswer.text? = "答案:(C)"
             dictAnswer.setValue("C", forKey: "user")
             break
         case 4:
-            print("选择的答案为：D")
+            debugPrint("选择的答案为：D")
             self.pAnswer.text? = "答案:(D)"
             dictAnswer.setValue("D", forKey: "user")
             break
         default:
-            print("")
+            debugPrint("")
         }
         //记录选择题答案
         self.dictAnswer.setValue(paper?.type, forKey: "type")
@@ -268,9 +268,9 @@ class PaperViewController: UIViewController, UITextViewDelegate, UIScrollViewDel
     }
     //点击键盘上的完成回调
     func textView(_ textView: UITextView, shouldChangeTextIn range: NSRange, replacementText text: String) -> Bool {
-        print("textView")
+        debugPrint("textView")
         if text == "\n" {
-            print("shouldChangeTextInRange")
+            debugPrint("shouldChangeTextInRange")
             //取消焦点：键盘隐藏
             self.pTkAnswer.resignFirstResponder()
         }
@@ -278,7 +278,7 @@ class PaperViewController: UIViewController, UITextViewDelegate, UIScrollViewDel
     }
     
     func scrollViewWillBeginDragging(_ scrollView: UIScrollView) {
-        print("scrollViewWillBeginDragging")
+        debugPrint("scrollViewWillBeginDragging")
         self.pTkAnswer.resignFirstResponder()
     }
     
@@ -287,7 +287,7 @@ class PaperViewController: UIViewController, UITextViewDelegate, UIScrollViewDel
     }
     
     override func viewWillDisappear(_ animated: Bool) {
-        print("页面即将消失的时候保存数据")
+        debugPrint("页面即将消失的时候保存数据")
         if self.pTkAnswer.text != "" {
             //记录当前试题答案
             self.dictAnswer.setValue(paper?.type, forKey: "type")

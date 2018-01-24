@@ -1130,7 +1130,7 @@
 						CreatedOnToolsVersion = 7.3.1;
 						DevelopmentTeam = KJ2S6KBYBK;
 						LastSwiftMigration = 0810;
-						ProvisioningStyle = Automatic;
+						ProvisioningStyle = Manual;
 					};
 					250041A31D3DD15D00994B58 = {
 						CreatedOnToolsVersion = 7.3.1;
@@ -1577,19 +1577,19 @@
 				CLANG_CXX_LIBRARY = "libc++";
 				CODE_SIGN_IDENTITY = "iPhone Developer: 2316168779@qq.com (445E2AE578)";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				CODE_SIGN_STYLE = Automatic;
+				CODE_SIGN_STYLE = Manual;
 				DEVELOPMENT_TEAM = KJ2S6KBYBK;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/GST_SY/Classes/SMS_SDK",
 				);
 				INFOPLIST_FILE = GST_SY/Classes/Others/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.gst.shiyan;
 				PRODUCT_NAME = GST_SY;
-				PROVISIONING_PROFILE = "";
-				PROVISIONING_PROFILE_SPECIFIER = "";
+				PROVISIONING_PROFILE = "9b28e448-242a-4b71-9c13-2887652d6f3e";
+				PROVISIONING_PROFILE_SPECIFIER = shiyan_profile;
 				SWIFT_OBJC_BRIDGING_HEADER = "SMSSDK-Bridging-Header.h";
 				SWIFT_VERSION = 3.0;
 				TARGETED_DEVICE_FAMILY = 1;
@@ -1605,19 +1605,19 @@
 				CLANG_CXX_LIBRARY = "libc++";
 				CODE_SIGN_IDENTITY = "iPhone Distribution: Yonghong Wang (KJ2S6KBYBK)";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				CODE_SIGN_STYLE = Automatic;
+				CODE_SIGN_STYLE = Manual;
 				DEVELOPMENT_TEAM = KJ2S6KBYBK;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/GST_SY/Classes/SMS_SDK",
 				);
 				INFOPLIST_FILE = GST_SY/Classes/Others/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.gst.shiyan;
 				PRODUCT_NAME = GST_SY;
-				PROVISIONING_PROFILE = "";
-				PROVISIONING_PROFILE_SPECIFIER = "";
+				PROVISIONING_PROFILE = "9b28e448-242a-4b71-9c13-2887652d6f3e";
+				PROVISIONING_PROFILE_SPECIFIER = shiyan_profile;
 				SWIFT_OBJC_BRIDGING_HEADER = "SMSSDK-Bridging-Header.h";
 				SWIFT_VERSION = 3.0;
 				TARGETED_DEVICE_FAMILY = 1;

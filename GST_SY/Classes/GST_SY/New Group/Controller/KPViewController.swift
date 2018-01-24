@@ -42,9 +42,18 @@ class KPViewController: TabmanViewController {
         view.addSubview(tabBar)
         
         //添加约束
-        tabBar.snp.makeConstraints { (make) in
-            make.left.right.bottom.equalTo(view)
-            make.height.equalTo(50)
+        
+        //适配iPhone X
+        if UIDevice.current.isX() {
+            tabBar.snp.makeConstraints { (make) in
+                make.left.right.bottom.equalTo(view)
+                make.height.equalTo(50 + 30)
+            }
+        }else {
+            tabBar.snp.makeConstraints { (make) in
+                make.left.right.bottom.equalTo(view)
+                make.height.equalTo(50)
+            }
         }
     }
     

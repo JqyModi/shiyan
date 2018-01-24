@@ -26,6 +26,7 @@
 		04859B111F1C6B550065A549 /* KaoPing.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04859B101F1C6B550065A549 /* KaoPing.swift */; };
 		04859B131F1C8FAC0065A549 /* KaoPingTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 04859B121F1C8FAC0065A549 /* KaoPingTableViewCell.xib */; };
 		04868C362012E80700BFDA37 /* ParseTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04868C352012E80700BFDA37 /* ParseTableViewCell.swift */; };
+		0486CA8D201837220051179F /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 0486CA8C201837220051179F /* Info.plist */; };
 		0487DE311F282E60006E7363 /* XContent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0487DE301F282E60006E7363 /* XContent.swift */; };
 		0487DE331F282E74006E7363 /* TContent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0487DE321F282E74006E7363 /* TContent.swift */; };
 		0487DE351F282E84006E7363 /* JContent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0487DE341F282E84006E7363 /* JContent.swift */; };
@@ -149,7 +150,6 @@
 		04B703291F0E0B1400EF2691 /* YMSettingCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04B7028B1F0E0B1400EF2691 /* YMSettingCell.swift */; };
 		04B7032A1F0E0B1400EF2691 /* YMSettingCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 04B7028C1F0E0B1400EF2691 /* YMSettingCell.xib */; };
 		04B7032B1F0E0B1400EF2691 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04B7028E1F0E0B1400EF2691 /* AppDelegate.swift */; };
-		04B7032C1F0E0B1400EF2691 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 04B7028F1F0E0B1400EF2691 /* Info.plist */; };
 		04B7032D1F0E0B1400EF2691 /* SettingCell.plist in Resources */ = {isa = PBXBuildFile; fileRef = 04B702901F0E0B1400EF2691 /* SettingCell.plist */; };
 		04B7032E1F0E0B1400EF2691 /* VideoPlayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04B702931F0E0B1400EF2691 /* VideoPlayViewController.swift */; };
 		04B7032F1F0E0B1400EF2691 /* VideoTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04B702941F0E0B1400EF2691 /* VideoTableViewCell.swift */; };
@@ -250,6 +250,7 @@
 		04859B101F1C6B550065A549 /* KaoPing.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KaoPing.swift; sourceTree = "<group>"; };
 		04859B121F1C8FAC0065A549 /* KaoPingTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = KaoPingTableViewCell.xib; sourceTree = "<group>"; };
 		04868C352012E80700BFDA37 /* ParseTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParseTableViewCell.swift; sourceTree = "<group>"; };
+		0486CA8C201837220051179F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0487DE301F282E60006E7363 /* XContent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XContent.swift; sourceTree = "<group>"; };
 		0487DE321F282E74006E7363 /* TContent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TContent.swift; sourceTree = "<group>"; };
 		0487DE341F282E84006E7363 /* JContent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JContent.swift; sourceTree = "<group>"; };
@@ -373,7 +374,6 @@
 		04B7028B1F0E0B1400EF2691 /* YMSettingCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YMSettingCell.swift; sourceTree = "<group>"; };
 		04B7028C1F0E0B1400EF2691 /* YMSettingCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = YMSettingCell.xib; sourceTree = "<group>"; };
 		04B7028E1F0E0B1400EF2691 /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		04B7028F1F0E0B1400EF2691 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		04B702901F0E0B1400EF2691 /* SettingCell.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = SettingCell.plist; sourceTree = "<group>"; };
 		04B702931F0E0B1400EF2691 /* VideoPlayViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VideoPlayViewController.swift; sourceTree = "<group>"; };
 		04B702941F0E0B1400EF2691 /* VideoTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VideoTableViewCell.swift; sourceTree = "<group>"; };
@@ -812,9 +812,9 @@
 			isa = PBXGroup;
 			children = (
 				04B7028E1F0E0B1400EF2691 /* AppDelegate.swift */,
-				04B7028F1F0E0B1400EF2691 /* Info.plist */,
 				04B702901F0E0B1400EF2691 /* SettingCell.plist */,
 				04AF87611F0E4770004CEC5D /* AppDelegate.m */,
+				0486CA8C201837220051179F /* Info.plist */,
 			);
 			path = Others;
 			sourceTree = "<group>";
@@ -1130,7 +1130,7 @@
 						CreatedOnToolsVersion = 7.3.1;
 						DevelopmentTeam = KJ2S6KBYBK;
 						LastSwiftMigration = 0810;
-						ProvisioningStyle = Manual;
+						ProvisioningStyle = Automatic;
 					};
 					250041A31D3DD15D00994B58 = {
 						CreatedOnToolsVersion = 7.3.1;
@@ -1173,6 +1173,7 @@
 				04B703491F0E0B1400EF2691 /* duihao@2x.png in Resources */,
 				04B702FD1F0E0B1400EF2691 /* YMRefreshView.xib in Resources */,
 				04B7034E1F0E0B1400EF2691 /* WOWDropMenuColumn.xib in Resources */,
+				0486CA8D201837220051179F /* Info.plist in Resources */,
 				04B703451F0E0B1400EF2691 /* YMProductDetailToolBar.xib in Resources */,
 				04B702BD1F0E0B1400EF2691 /* YMCollectionDetailController.xib in Resources */,
 				04B702FA1F0E0B1400EF2691 /* YMHomeCell.xib in Resources */,
@@ -1199,7 +1200,6 @@
 				04B703201F0E0B1400EF2691 /* FeedBackViewController.xib in Resources */,
 				04732D511F1DE46D009BBD8A /* PaperViewController.xib in Resources */,
 				04B702BF1F0E0B1400EF2691 /* YMPostDetailViewController.xib in Resources */,
-				04B7032C1F0E0B1400EF2691 /* Info.plist in Resources */,
 				04B7034C1F0E0B1400EF2691 /* Rectangle 506@3x.png in Resources */,
 				04B703341F0E0B1400EF2691 /* YMTMALLViewController.xib in Resources */,
 				04B703411F0E0B1400EF2691 /* YMDetailCollectionViewCell.xib in Resources */,
@@ -1577,7 +1577,7 @@
 				CLANG_CXX_LIBRARY = "libc++";
 				CODE_SIGN_IDENTITY = "iPhone Developer: 2316168779@qq.com (445E2AE578)";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				CODE_SIGN_STYLE = Manual;
+				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = KJ2S6KBYBK;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -1588,8 +1588,8 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.gst.shiyan;
 				PRODUCT_NAME = GST_SY;
-				PROVISIONING_PROFILE = "9b28e448-242a-4b71-9c13-2887652d6f3e";
-				PROVISIONING_PROFILE_SPECIFIER = shiyan_profile;
+				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "SMSSDK-Bridging-Header.h";
 				SWIFT_VERSION = 3.0;
 				TARGETED_DEVICE_FAMILY = 1;
@@ -1605,7 +1605,7 @@
 				CLANG_CXX_LIBRARY = "libc++";
 				CODE_SIGN_IDENTITY = "iPhone Distribution: Yonghong Wang (KJ2S6KBYBK)";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				CODE_SIGN_STYLE = Manual;
+				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = KJ2S6KBYBK;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -1616,8 +1616,8 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.gst.shiyan;
 				PRODUCT_NAME = GST_SY;
-				PROVISIONING_PROFILE = "9b28e448-242a-4b71-9c13-2887652d6f3e";
-				PROVISIONING_PROFILE_SPECIFIER = shiyan_profile;
+				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "SMSSDK-Bridging-Header.h";
 				SWIFT_VERSION = 3.0;
 				TARGETED_DEVICE_FAMILY = 1;
